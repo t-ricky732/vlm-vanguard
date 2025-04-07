@@ -1,0 +1,8 @@
+{"time":"2025-03-22T17:34:49.588365+09:00","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"c:\\Users\\ignit\\OneDrive\\Desktop\\Study\\GeorgiaTech\\CS 7643 - Spring 2025\\Project\\code\\wandb\\run-20250322_173449-7n5w9sna\\logs\\debug-core.log"}
+{"time":"2025-03-22T17:34:49.7044127+09:00","level":"INFO","msg":"created new stream","id":"7n5w9sna"}
+{"time":"2025-03-22T17:34:49.7044127+09:00","level":"INFO","msg":"stream: started","id":"7n5w9sna"}
+{"time":"2025-03-22T17:34:49.7044127+09:00","level":"INFO","msg":"handler: started","stream_id":"7n5w9sna"}
+{"time":"2025-03-22T17:34:49.7044127+09:00","level":"INFO","msg":"sender: started","stream_id":"7n5w9sna"}
+{"time":"2025-03-22T17:34:49.7044127+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"7n5w9sna"}
+{"time":"2025-03-22T17:34:50.0297704+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-22T17:34:52.9828802+09:00","level":"INFO","msg":"Pausing system monitor"}

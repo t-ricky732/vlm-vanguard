@@ -1,0 +1,38 @@
+Formatted conversation: [{'role': 'system', 'content': 'You are a Vision Language Model specialized in interpreting visual data from chart images. Your task is to analyze the provided chart image and respond to queries with concise answers.'}, {'role': 'user', 'content': 'What is the maximum popularity of the Pop genre? <image>'}, {'role': 'assistant', 'content': '100'}]
+Image exists: True
+Training error: 'dict' object has no attribute 'count'
+Traceback (most recent call last):
+  File "C:\Users\ignit\AppData\Local\Temp\ipykernel_38460\1050014336.py", line 4, in <module>
+    trainer.train()
+  File "c:\Users\ignit\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\trainer.py", line 2245, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignit\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\trainer.py", line 2508, in _inner_training_loop
+    batch_samples, num_items_in_batch = self.get_batch_samples(epoch_iterator, num_batches, args.device)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignit\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\trainer.py", line 5224, in get_batch_samples
+    batch_samples += [next(epoch_iterator)]
+                      ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignit\AppData\Local\Programs\Python\Python311\Lib\site-packages\accelerate\data_loader.py", line 566, in __iter__
+    current_batch = next(dataloader_iter)
+                    ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignit\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\utils\data\dataloader.py", line 701, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignit\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\utils\data\dataloader.py", line 757, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignit\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\utils\data\_utils\fetch.py", line 55, in fetch
+    return self.collate_fn(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignit\AppData\Local\Temp\ipykernel_38460\2596296003.py", line 99, in prepare_inputs_for_idefics3
+    inputs = processor(
+             ^^^^^^^^^^
+  File "c:\Users\ignit\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\models\idefics3\processing_idefics3.py", line 251, in __call__
+    n_images_in_text = [sample.count(self.image_token.content) for sample in text]
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignit\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\models\idefics3\processing_idefics3.py", line 251, in <listcomp>
+    n_images_in_text = [sample.count(self.image_token.content) for sample in text]
+                        ^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'count'
+Training time: 0.03 minutes

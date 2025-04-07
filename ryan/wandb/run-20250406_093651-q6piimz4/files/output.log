@@ -1,0 +1,66 @@
+PyTorch version: 2.5.1+cu118
+CUDA available: True
+CUDA version: 11.8
+GPU: NVIDIA GeForce RTX 3070 Ti Laptop GPU
+GPU memory: 8.59 GB
+Using dtype: torch.bfloat16
+Loading processor...
+Configuring model for QLoRA (8-bit quantization)...
+Loading model 'HuggingFaceTB/SmolVLM-Base'...
+`low_cpu_mem_usage` was None, now default to True since model is quantized.
+Model loaded in 3.44 seconds
+Preparing model for LoRA training...
+Applying prepare_model_for_kbit_training for QLoRA...
+trainable params: 21,073,920 || all params: 2,267,346,800 || trainable%: 0.9295
+Checking data directory: C:\Users\ignit\OneDrive\Desktop\Study\GeorgiaTech\CS 7643 - Spring 2025\Project\code\chartllama_data
+Does directory exist? True
+Files in directory:
+  - .gitattributes
+  - box_chart_100examples_simplified_qa.json
+  - candlestick_chart_100examples_simplified_qa.json
+  - extracted_images
+  - funnel_chart_100examples_simplified_qa.json
+  - gantt_chart_100examples_simplified_qa.json
+  - heatmap_chart_100examples_simplified_qa.json
+  - ours.zip
+  - polar_chart_100examples_simplified_qa.json
+  - scatter_chart_100examples_simplified_qa.json
+Loading dataset using custom ChartDataset...
+Reading JSONs: 100%|██████████| 7/7 [00:07<00:00,  1.12s/it]
+INFO:ChartDataset: --- Loading Summary ---
+INFO:ChartDataset: JSON files found: 7
+INFO:ChartDataset: JSON read errors: 0
+INFO:ChartDataset: Raw examples processed: 980
+INFO:ChartDataset: Valid examples loaded: 980
+INFO:ChartDataset: Skipped (invalid format): 0
+INFO:ChartDataset: Skipped (missing Q/A): 0
+INFO:ChartDataset: Skipped (image missing/error): 0
+INFO:ChartDataset: Multi-part answers cleaned: 29
+INFO:ChartDataset: <image> tokens added: 0
+INFO:ChartDataset: ------------------------
+Total samples: 980
+Training samples: 784
+Validation samples: 98
+Test samples: 98
+--- Displaying Item Index: 654 ---
+Original ID: ours_simplified_qa_51_4
+Chart Type: heatmap
+Question: Does the Vegetarian diet show a consistent increase across all age groups?
+<image>...
+Answer: No
+Image Path (from JSON): ours/heatmap_chart/png/heatmap_chart_100examples_51.png
+--------------------------------------
+c:\Users\ignit\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\training_args.py:1611: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+Initializing Trainer...
+No label_names provided for model class `PeftModelForCausalLM`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+Initializing Trainer...
+No label_names provided for model class `PeftModelForCausalLM`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+Starting training...
+[34m[1mwandb[0m: [33mWARNING[0m The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+c:\Users\ignit\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\eval_frame.py:632: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+c:\Users\ignit\AppData\Local\Programs\Python\Python311\Lib\site-packages\bitsandbytes\autograd\_functions.py:315: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+c:\Users\ignit\AppData\Local\Programs\Python\Python311\Lib\site-packages\bitsandbytes\autograd\_functions.py:315: UserWarning: MatMul8bitLt: inputs will be cast from torch.bfloat16 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")

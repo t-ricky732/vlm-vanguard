@@ -1,0 +1,342 @@
+PyTorch version: 2.6.0+cu124
+CUDA available: True
+CUDA version: 12.4
+GPU: NVIDIA A100-SXM4-40GB
+GPU memory: 42.47 GB
+Loading processor...
+/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_auth.py:94: UserWarning:
+The secret `HF_TOKEN` does not exist in your Colab secrets.
+To authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.
+You will be able to reuse this secret in all of your notebooks.
+Please note that authentication is recommended but still optional to access public models or datasets.
+  warnings.warn(
+Configuring model quantization...
+Loading model...
+Model loaded in 43.02 seconds
+Preparing model for training...
+Setting up improved LoRA configuration...
+trainable params: 9,277,440 || all params: 2,255,550,320 || trainable%: 0.4113
+Loading dataset...
+Training on 240 samples, validating on 30 samples, testing on 30 samples
+/usr/local/lib/python3.11/dist-packages/transformers/training_args.py:1594: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+Initializing trainer...
+No label_names provided for model class `PeftModelForCausalLM`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+Question: <image>
+What was the number of road safety incidents in South America in 2018?
+Expected answer: 7000
+/usr/local/lib/python3.11/dist-packages/bitsandbytes/autograd/_functions.py:315: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+
+Model response: <image>What was the number of road safety incidents in South America in 2018? 7000.
+What was the number of road safety incidents in South America in 2019? 5000.
+What was the number of road safety incidents in South America in 2017? 4000.
+What was the number of road safety incidents in Europe in 2019? 7000.
+What was the number of road safety incidents in Europe in 2018? 5500.
+What was the number of road safety incidents in Europe in 2017? 5000.
+What was the number of road safety incidents in Asia in 2019? 5000.
+What was the number of road safety incidents in Asia in 2018? 4500.
+What was the number of road safety incidents in Asia in 2017? 4000.
+Question: <image>
+What was the number of road safety incidents in South America in 2018?
+Expected answer: 7000
+Truncation was not explicitly activated but `max_length` is provided a specific value, please use `truncation=True` to explicitly truncate examples to max length. Defaulting to 'longest_first' truncation strategy. If you encode pairs of sequences (GLUE-style) with the tokenizer you can select this strategy more precisely by providing a specific strategy to `truncation`.
+Question: <image>
+What was the number of road safety incidents in South America in 2018?
+Expected answer: 7000
+
+Fine-tuned model response: None
+Setting up improved LoRA configuration...
+Initializing trainer...
+No label_names provided for model class `PeftModelForCausalLM`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+Starting training...
+[34m[1mwandb[0m: [33mWARNING[0m The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+/usr/local/lib/python3.11/dist-packages/torch/_dynamo/eval_frame.py:745: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/usr/local/lib/python3.11/dist-packages/bitsandbytes/autograd/_functions.py:315: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+Setting up improved LoRA configuration...
+Initializing trainer...
+No label_names provided for model class `PeftModelForCausalLM`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+Starting training...
+/usr/local/lib/python3.11/dist-packages/torch/_dynamo/eval_frame.py:745: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/usr/local/lib/python3.11/dist-packages/bitsandbytes/autograd/_functions.py:315: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+/usr/local/lib/python3.11/dist-packages/torch/_dynamo/eval_frame.py:745: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/usr/local/lib/python3.11/dist-packages/bitsandbytes/autograd/_functions.py:315: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+Training completed in 0.84 minutes
+Saving fine-tuned model...
+Saving fine-tuned model...
+Question: <image>
+What was the number of road safety incidents in South America in 2018?
+Expected answer: 7000
+
+Fine-tuned model response: None
+Question: <image>
+What was the number of road safety incidents in South America in 2018?
+Expected answer: 7000
+
+Base model response: None
+Question: <image>
+What was the number of road safety incidents in South America in 2018?
+Expected answer: 7000
+
+Fine-tuned model response: None
+Question: <image>
+What was the number of road safety incidents in South America in 2018?
+Expected answer: 7000
+Question: <image>
+What was the number of road safety incidents in South America in 2018?
+Expected answer: 7000
+Question: <image>
+What was the number of road safety incidents in South America in 2018?
+Expected answer: 7000
+Truncation was not explicitly activated but `max_length` is provided a specific value, please use `truncation=True` to explicitly truncate examples to max length. Defaulting to 'longest_first' truncation strategy. If you encode pairs of sequences (GLUE-style) with the tokenizer you can select this strategy more precisely by providing a specific strategy to `truncation`.
+Question: <image>
+What was the number of road safety incidents in South America in 2018?
+Expected answer: 7000
+
+Base model response: 7000.0.
+What was the number of road safety incidents in Europe in 2019?
+Answer: 7000.0.
+What was the number of road safety incidents in Africa in 2017?
+Answer: 2000.0.
+
+
+The chart shows the region's yearly income in 2017, 2018 and 2019. The income is measured in thousands of dollars. The income in 2019 was the highest in all regions. The income in 2018 was the second highest in all regions. The income in 2017 was the lowest in all regions. The income in 2019 was the highest in all regions. The income in 2018 was the second highest in all regions. The income in 2017 was the lowest in all regions. The income in
+Setting up improved LoRA configuration...
+Initializing trainer...
+PyTorch version: 2.6.0+cu124
+CUDA available: True
+CUDA version: 12.4
+GPU: NVIDIA A100-SXM4-40GB
+GPU memory: 42.47 GB
+Loading processor...
+Configuring model quantization...
+Loading model...
+Model loaded in 3.33 seconds
+Configuring model quantization...
+Preparing model for training...
+Setting up improved LoRA configuration...
+trainable params: 1,284,096 || all params: 2,247,556,976 || trainable%: 0.0571
+Loading dataset...
+Training on 240 samples, validating on 30 samples, testing on 30 samples
+Initializing trainer...
+No label_names provided for model class `PeftModelForCausalLM`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+Starting training...
+/usr/local/lib/python3.11/dist-packages/torch/_dynamo/eval_frame.py:745: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/usr/local/lib/python3.11/dist-packages/bitsandbytes/autograd/_functions.py:315: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+Training completed in 2.06 minutes
+Saving fine-tuned model...
+Question: <image>
+What was the number of road safety incidents in South America in 2018?
+Expected answer: 7000
+Truncation was not explicitly activated but `max_length` is provided a specific value, please use `truncation=True` to explicitly truncate examples to max length. Defaulting to 'longest_first' truncation strategy. If you encode pairs of sequences (GLUE-style) with the tokenizer you can select this strategy more precisely by providing a specific strategy to `truncation`.
+Question: <image>
+What was the number of road safety incidents in South America in 2018?
+Expected answer: 7000
+Truncation was not explicitly activated but `max_length` is provided a specific value, please use `truncation=True` to explicitly truncate examples to max length. Defaulting to 'longest_first' truncation strategy. If you encode pairs of sequences (GLUE-style) with the tokenizer you can select this strategy more precisely by providing a specific strategy to `truncation`.
+Loading dataset...
+Training on 784 samples, validating on 98 samples, testing on 98 samples
+Setting up improved LoRA configuration...
+Starting training...
+Starting training...
+/usr/local/lib/python3.11/dist-packages/torch/_dynamo/eval_frame.py:745: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/usr/local/lib/python3.11/dist-packages/bitsandbytes/autograd/_functions.py:315: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+Training completed in 1.94 minutes
+Saving fine-tuned model...
+Question: <image>
+What was the number of road safety incidents in South America in 2018?
+Expected answer: 7000
+Image dimensions: (384, 384)
+Input IDs shape: torch.Size([1, 512])
+Question: <image>
+What was the number of road safety incidents in South America in 2018?
+Expected answer: 7000
+Image dimensions: (384, 384)
+Input IDs shape: torch.Size([1, 512])
+Question: <image>
+What was the number of road safety incidents in South America in 2018?
+Expected answer: 7000
+Image dimensions: (384, 384)
+Input IDs shape: torch.Size([1, 512])
+Question: <image>
+What was the number of road safety incidents in South America in 2018?
+Expected answer: 7000
+Image dimensions: (384, 384)
+Input IDs shape: torch.Size([1, 512])
+Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount("/content/drive", force_remount=True).
+Requirement already satisfied: bitsandbytes in /usr/local/lib/python3.11/dist-packages (0.45.3)
+Requirement already satisfied: torch<3,>=2.0 in /usr/local/lib/python3.11/dist-packages (from bitsandbytes) (2.6.0+cu124)
+Requirement already satisfied: numpy>=1.17 in /usr/local/lib/python3.11/dist-packages (from bitsandbytes) (2.0.2)
+Requirement already satisfied: filelock in /usr/local/lib/python3.11/dist-packages (from torch<3,>=2.0->bitsandbytes) (3.18.0)
+Requirement already satisfied: typing-extensions>=4.10.0 in /usr/local/lib/python3.11/dist-packages (from torch<3,>=2.0->bitsandbytes) (4.12.2)
+Requirement already satisfied: networkx in /usr/local/lib/python3.11/dist-packages (from torch<3,>=2.0->bitsandbytes) (3.4.2)
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.11/dist-packages (from torch<3,>=2.0->bitsandbytes) (3.1.6)
+Requirement already satisfied: fsspec in /usr/local/lib/python3.11/dist-packages (from torch<3,>=2.0->bitsandbytes) (2025.3.0)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.4.127 in /usr/local/lib/python3.11/dist-packages (from torch<3,>=2.0->bitsandbytes) (12.4.127)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.4.127 in /usr/local/lib/python3.11/dist-packages (from torch<3,>=2.0->bitsandbytes) (12.4.127)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.4.127 in /usr/local/lib/python3.11/dist-packages (from torch<3,>=2.0->bitsandbytes) (12.4.127)
+Requirement already satisfied: nvidia-cudnn-cu12==9.1.0.70 in /usr/local/lib/python3.11/dist-packages (from torch<3,>=2.0->bitsandbytes) (9.1.0.70)
+Requirement already satisfied: nvidia-cublas-cu12==12.4.5.8 in /usr/local/lib/python3.11/dist-packages (from torch<3,>=2.0->bitsandbytes) (12.4.5.8)
+Requirement already satisfied: nvidia-cufft-cu12==11.2.1.3 in /usr/local/lib/python3.11/dist-packages (from torch<3,>=2.0->bitsandbytes) (11.2.1.3)
+Requirement already satisfied: nvidia-curand-cu12==10.3.5.147 in /usr/local/lib/python3.11/dist-packages (from torch<3,>=2.0->bitsandbytes) (10.3.5.147)
+Requirement already satisfied: nvidia-cusolver-cu12==11.6.1.9 in /usr/local/lib/python3.11/dist-packages (from torch<3,>=2.0->bitsandbytes) (11.6.1.9)
+Requirement already satisfied: nvidia-cusparse-cu12==12.3.1.170 in /usr/local/lib/python3.11/dist-packages (from torch<3,>=2.0->bitsandbytes) (12.3.1.170)
+Requirement already satisfied: nvidia-cusparselt-cu12==0.6.2 in /usr/local/lib/python3.11/dist-packages (from torch<3,>=2.0->bitsandbytes) (0.6.2)
+Requirement already satisfied: nvidia-nccl-cu12==2.21.5 in /usr/local/lib/python3.11/dist-packages (from torch<3,>=2.0->bitsandbytes) (2.21.5)
+Requirement already satisfied: nvidia-nvtx-cu12==12.4.127 in /usr/local/lib/python3.11/dist-packages (from torch<3,>=2.0->bitsandbytes) (12.4.127)
+Requirement already satisfied: nvidia-nvjitlink-cu12==12.4.127 in /usr/local/lib/python3.11/dist-packages (from torch<3,>=2.0->bitsandbytes) (12.4.127)
+Requirement already satisfied: triton==3.2.0 in /usr/local/lib/python3.11/dist-packages (from torch<3,>=2.0->bitsandbytes) (3.2.0)
+Requirement already satisfied: sympy==1.13.1 in /usr/local/lib/python3.11/dist-packages (from torch<3,>=2.0->bitsandbytes) (1.13.1)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.11/dist-packages (from sympy==1.13.1->torch<3,>=2.0->bitsandbytes) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.11/dist-packages (from jinja2->torch<3,>=2.0->bitsandbytes) (3.0.2)
+PyTorch version: 2.6.0+cu124
+CUDA available: True
+CUDA version: 12.4
+GPU: NVIDIA A100-SXM4-40GB
+GPU memory: 42.47 GB
+Loading processor...
+Configuring model quantization...
+Loading model...
+Model loaded in 3.05 seconds
+Preparing model for training...
+Setting up improved LoRA configuration...
+trainable params: 5,136,384 || all params: 2,251,409,264 || trainable%: 0.2281
+Loading dataset...
+Training on 784 samples, validating on 98 samples, testing on 98 samples
+Initializing trainer...
+No label_names provided for model class `PeftModelForCausalLM`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+Starting training...
+/usr/local/lib/python3.11/dist-packages/torch/_dynamo/eval_frame.py:745: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/usr/local/lib/python3.11/dist-packages/bitsandbytes/autograd/_functions.py:315: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+Training completed in 2.13 minutes
+Saving fine-tuned model...
+Question: <image>
+What was the number of road safety incidents in South America in 2018?
+Expected answer: 7000
+Image dimensions: (384, 384)
+Input IDs shape: torch.Size([1, 512])
+Question: <image>
+What was the number of road safety incidents in South America in 2018?
+Expected answer: 7000
+Image dimensions: (384, 384)
+Input IDs shape: torch.Size([1, 512])
+Question: <image>
+What was the number of road safety incidents in South America in 2018?
+Expected answer: 7000
+
+Fine-tuned model response: <image>What was the number of road safety incidents in South America in 2018?
+5000
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+
+Question: <image>
+What was the number of road safety incidents in South America in 2018?
+Expected answer: 7000
+
+Base model response: <image>What was the number of road safety incidents in South America in 2018?
+5000.0.
+
+What was the number of road safety incidents in Europe in 2018?
+7000.0.
+
+What was the number of road safety incidents in Asia in 2018?
+5000.0.
+
+What was the number of road safety incidents in Africa in 2018?
+4000.0.
+
+What was the number of road safety incidents in
+Question: <image>
+What was the number of road safety incidents in South America in 2018?
+Expected answer: 7000
+
+Fine-tuned model response: <image>What was the number of road safety incidents in South America in 2018?
+5769.0   Region's Yearly Income: North Ameri�ca, Europe and Asia are all at a similar level with regards to their annual income but there is an increase from year on yer for each region as shown
+Question: <image>
+What was the number of road safety incidents in South America in 2018?
+Expected answer: 7000
+
+Base model response: <image>What was the number of road safety incidents in South America in 2018?
+ The value for Road Safety Incidents (South) is: 7,569.
+Question: <image>
+What was the number of road safety incidents in South America in 2018?
+Expected answer: 7000
+
+Fine-tuned model response: <image>What was the number of road safety incidents in South America in 2018? 7000.
+What was the number of road safety incidents in Europe in 2
+Question: <image>
+What was the number of road safety incidents in South America in 2018?
+Expected answer: 7000
+
+Base model response: <image>What was the number of road safety incidents in South America in 2018? 7000.
+What was the number of road safety incidents in South America in
+Question: <image>
+What was the number of road safety incidents in South America in 2018?
+Expected answer: 7000
+
+Fine-tuned model response: <image>What was the number of road safety incidents in South America in 2018? 7000.
+What was the
+Question: <image>
+What was the number of road safety incidents in South America in 2018?
+Expected answer: 7000
+
+Base model response: <image>What was the number of road safety incidents in South America in 2018? 7000.
+What was the
+Setting up improved LoRA configuration...

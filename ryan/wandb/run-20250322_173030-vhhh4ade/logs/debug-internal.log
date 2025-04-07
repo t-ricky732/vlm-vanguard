@@ -1,0 +1,14 @@
+{"time":"2025-03-22T17:30:30.08869+09:00","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"c:\\Users\\ignit\\OneDrive\\Desktop\\Study\\GeorgiaTech\\CS 7643 - Spring 2025\\Project\\code\\wandb\\run-20250322_173030-vhhh4ade\\logs\\debug-core.log"}
+{"time":"2025-03-22T17:30:30.3625609+09:00","level":"INFO","msg":"created new stream","id":"vhhh4ade"}
+{"time":"2025-03-22T17:30:30.3625609+09:00","level":"INFO","msg":"stream: started","id":"vhhh4ade"}
+{"time":"2025-03-22T17:30:30.3625609+09:00","level":"INFO","msg":"handler: started","stream_id":"vhhh4ade"}
+{"time":"2025-03-22T17:30:30.3625609+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"vhhh4ade"}
+{"time":"2025-03-22T17:30:30.3630801+09:00","level":"INFO","msg":"sender: started","stream_id":"vhhh4ade"}
+{"time":"2025-03-22T17:30:30.6483362+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-22T17:30:32.0745965+09:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-22T17:32:08.9358879+09:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-22T17:32:08.9369093+09:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-22T17:32:11.6262876+09:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-22T17:32:11.6357521+09:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-22T17:32:15.3297075+09:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-22T17:32:36.2190565+09:00","level":"INFO","msg":"Pausing system monitor"}
