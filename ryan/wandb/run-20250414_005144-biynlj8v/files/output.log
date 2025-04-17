@@ -1,0 +1,201 @@
+WandB initialized.
+--- WandB Setup Complete ---
+
+--- Defining Data Loading Function ---
+Data loading function defined.
+
+--- Loading and Splitting Data ---
+Loading data from: /content/drive/MyDrive/code/chartllama_data
+Found 7 JSON files in /content/drive/MyDrive/code/chartllama_data
+
+Loaded 980 raw examples. Skipped 0 invalid/missing samples.
+
+Raw data loaded and split.
+Train samples: 882
+Eval samples (Validation): 98
+
+Sample train data point (raw):
+{'id': 'ours_simplified_qa_59_0', 'question': 'What is the theme of the chart?', 'answer': 'Variation in the Consumer Price Index (CPI)', 'image_path': '/content/drive/MyDrive/code/chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_59.png'}
+
+--- Loading Model and Processor for Training ---
+Loading processor for model: HuggingFaceTB/SmolVLM-256M-Base
+/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_auth.py:94: UserWarning:
+The secret `HF_TOKEN` does not exist in your Colab secrets.
+To authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.
+You will be able to reuse this secret in all of your notebooks.
+Please note that authentication is recommended but still optional to access public models or datasets.
+  warnings.warn(
+Processor loaded.
+
+Configuring model loading...
+Configuring model for QLoRA (4-bit).
+Loading config for HuggingFaceTB/SmolVLM-256M-Base...
+Config does not have 'attn_implementation' attribute.
+Loading model 'HuggingFaceTB/SmolVLM-256M-Base' with configuration...
+
+Model loaded.
+  - Device Map: {'': 0}
+  - Attention Implementation: N/A
+  - Use Cache: False
+
+Applying PEFT/LoRA configuration...
+Preparing model for K-bit training (QLoRA)...
+Gradient checkpointing enabled via prepare_model_for_kbit_training.
+Wrapping model with get_peft_model...
+trainable params: 3,283,456 || all params: 259,768,384 || trainable%: 1.2640
+
+--- Model and Processor Setup Complete ---
+
+--- Defining Formatting Function & Data Collator ---
+Collator Initialized: Found image token ID: 49190
+
+Custom Collator instantiated.
+
+--- Configuring Training Arguments ---
+/usr/local/lib/python3.11/dist-packages/transformers/training_args.py:1611: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+SFTConfig set.
+
+--- Initializing SFTTrainer ---
+All components ready, initializing trainer...
+No label_names provided for model class `PeftModelForCausalLM`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+SFTTrainer initialized successfully.
+
+--- Checking if Training Should Be Skipped ---
+
+Final output files not found or incomplete on Drive.
+  - Model Check: False (Checked dir: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Base-qlora-tuned/final_model)
+  - Processor Check: False (Checked dir: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Base-qlora-tuned/final_processor)
+--- Proceeding with Training ---
+Starting training run...
+Ensuring output directory exists: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Base-qlora-tuned
+Ensuring final model directory exists: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Base-qlora-tuned/final_model
+Ensuring final processor directory exists: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Base-qlora-tuned/final_processor
+Pausing briefly for Drive sync...
+[34m[1mwandb[0m: [33mWARNING[0m The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+/usr/local/lib/python3.11/dist-packages/peft/utils/save_and_load.py:230: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+  warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
+Training finished in 41.40 minutes.
+
+Saving final model/adapter to: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Base-qlora-tuned/final_model
+Saving processor to: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Base-qlora-tuned/final_processor
+Processor saving initiated.
+Verifying processor save...
+Processor config file verified.
+
+Logging metrics and saving state...
+***** train metrics *****
+  total_flos               =  3554622GF
+  train_loss               =     2.5719
+  train_runtime            = 0:41:18.41
+  train_samples_per_second =      1.068
+  train_steps_per_second   =      0.067
+Metrics and state saved successfully.
+
+Cleaning up trainer object...
+
+--- Training Step Execution Finished ---
+
+--- Setting up Evaluation Environment ---
+Fine-tuned model will be loaded from: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Base-qlora-tuned/final_model
+Processor will be loaded from: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Base-qlora-tuned/final_processor
+Base model will be loaded from Hub ID: HuggingFaceTB/SmolVLM-256M-Base
+Results will be saved to: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Base-qlora-tuned/chartqa_evaluation_results_comparison.json
+
+Loading processor from /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Base-qlora-tuned/final_processor...
+Processor loaded from Drive.
+
+Loading fine-tuned model/adapter from /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Base-qlora-tuned/final_model...
+Loaded config from fine-tuned model directory: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Base-qlora-tuned/final_model
+Pad token ID from loaded processor: 2
+Modifying text_config within base config.
+Base model config pad_token_id already matches loaded processor (2).
+Configuring base model for QLoRA (4-bit) loading for evaluation...
+Loading base model 'HuggingFaceTB/SmolVLM-256M-Base' for LoRA adapter merging (using potentially modified config)...
+Loading LoRA adapter from /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Base-qlora-tuned/final_model...
+LoRA/QLoRA model loaded.
+Fine-tuned model ready. Device map: {'': 0}
+
+Loading original base model 'HuggingFaceTB/SmolVLM-256M-Base' from Hub for comparison...
+Loading base model config for HuggingFaceTB/SmolVLM-256M-Base...
+Base model config has no attn_implementation attr, adding to kwargs: 'flash_attention_2'
+Loading base model 'HuggingFaceTB/SmolVLM-256M-Base' with config and kwargs...
+Base model loaded. Device map: {'': 0}
+Base model attention implementation: N/A
+Base model use_cache: True
+
+Loading evaluation dataset 'HuggingFaceM4/ChartQA' split 'test'...
+Loaded and limited to 100 samples for evaluation.
+
+Evaluation Readiness:
+  - Processor Ready: True
+  - Fine-tuned Model Ready: True
+  - Base Model Ready: True
+  - Dataset Ready: True
+  - Can Evaluate Fine-tuned: True
+  - Can Evaluate Base: True
+Evaluation will run on device inferred from models (likely: cuda)
+
+--- Evaluation Setup Complete ---
+
+--- Defining Evaluation Helper Functions ---
+Evaluation helper functions defined.
+
+--- Starting Comparative Evaluation Generation ---
+Evaluating models: ['Finetuned', 'Base'] on 100 samples.
+
+--- Sample 0 Prompt String ---
+'<|im_start|>System: You are a Vision Language Model specialized in interpreting visual data from chart images.\nYour task is to analyze the provided chart image and respond to queries with concise answers, usually a single word, number, or short phrase.\nThe charts include a variety of types (e.g., line charts, bar charts) and contain colors, labels, and text.\nFocus on delivering accurate, succinct answers based on the visual information. Avoid additional explanation unless absolutely necessary.<|endoftext|>\nUser:<image>How many food item is shown in the bar graph?<|endoftext|>\nAssistant:'
+------------------------------
+
+
+--- Sample 0 Prompt String ---
+'<|im_start|>System: You are a Vision Language Model specialized in interpreting visual data from chart images.\nYour task is to analyze the provided chart image and respond to queries with concise answers, usually a single word, number, or short phrase.\nThe charts include a variety of types (e.g., line charts, bar charts) and contain colors, labels, and text.\nFocus on delivering accurate, succinct answers based on the visual information. Avoid additional explanation unless absolutely necessary.<|endoftext|>\nUser:<image>How many food item is shown in the bar graph?<|endoftext|>\nAssistant:'
+------------------------------
+
+
+--- Sample 1 Prompt String ---
+'<|im_start|>System: You are a Vision Language Model specialized in interpreting visual data from chart images.\nYour task is to analyze the provided chart image and respond to queries with concise answers, usually a single word, number, or short phrase.\nThe charts include a variety of types (e.g., line charts, bar charts) and contain colors, labels, and text.\nFocus on delivering accurate, succinct answers based on the visual information. Avoid additional explanation unless absolutely necessary.<|endoftext|>\nUser:<image>What is the difference in value between Lamb and Corn?<|endoftext|>\nAssistant:'
+------------------------------
+
+
+Finished comparative generation. Processed 100 samples.
+
+--- Calculating and Displaying Comparative Evaluation Metrics ---
+
+Total samples in results: 100
+
+Calculating Exact Match (EM) scores...
+<ipython-input-31-336f2db4f048>:44: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  results_df[match_col] = results_df[match_col].fillna(False).astype(bool) #
+
+Finetuned Model:
+  - Valid Samples (non-error): 100
+  - Correct Matches (EM): 0
+  - EM Score: 0.00%
+  - Error Samples (Generation): 0
+<ipython-input-31-336f2db4f048>:44: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  results_df[match_col] = results_df[match_col].fillna(False).astype(bool) #
+
+Base Model:
+  - Valid Samples (non-error): 100
+  - Correct Matches (EM): 0
+  - EM Score: 0.00%
+  - Error Samples (Generation): 0
+
+--- Sample Evaluation Results (DataFrame) ---
+
+Saving combined evaluation results to: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Base-qlora-tuned/chartqa_evaluation_results_comparison.json
+Combined results saved successfully to: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Base-qlora-tuned/chartqa_evaluation_results_comparison.json
+
+--- Final Evaluation Metrics Summary ---
+{
+  "finetuned_error_samples": 0,
+  "finetuned_valid_samples": 100,
+  "finetuned_exact_match_normalized": 0.0,
+  "base_error_samples": 0,
+  "base_valid_samples": 100,
+  "base_exact_match_normalized": 0.0
+}
+
+--- Evaluation Script Finished ---

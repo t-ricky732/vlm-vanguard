@@ -1,0 +1,114 @@
+WandB initialized.
+--- Environment Setup Complete ---
+
+--- Defining Data Loading Function ---
+
+--- Loading and Splitting Data ---
+Found 7 JSON files in chartllama_data.
+Loaded 980 raw examples. Skipped 0 invalid samples.
+
+Raw data loaded and split.
+Train samples: 882
+Eval samples: 98
+
+Sample train data point (raw):
+{'id': 'ours_simplified_qa_59_0', 'question': 'What is the theme of the chart?', 'answer': 'Variation in the Consumer Price Index (CPI)', 'image_path': 'chartllama_data/extracted_images/ours/candlestick_chart/png/candlestick_chart_100examples_59.png'}
+
+--- Loading Model and Processor ---
+/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_auth.py:94: UserWarning:
+The secret `HF_TOKEN` does not exist in your Colab secrets.
+To authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.
+You will be able to reuse this secret in all of your notebooks.
+Please note that authentication is recommended but still optional to access public models or datasets.
+  warnings.warn(
+Processor loaded.
+Using standard attention implementation: eager
+Configuring model for QLoRA (4-bit)...
+Loading model 'HuggingFaceTB/SmolVLM-Base'...
+Model loaded. Device: cuda:0. Footprint: 1.43 GB
+
+Applying PEFT/LoRA configuration...
+Preparing model for K-bit training (QLoRA)...
+trainable params: 10,946,584 || all params: 2,257,219,464 || trainable%: 0.4850
+
+--- Defining Formatting and Collator ---
+Custom Collator defined.
+
+--- Configuring Training Arguments ---
+/usr/local/lib/python3.11/dist-packages/transformers/training_args.py:1611: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+SFTConfig set.
+
+--- Initializing SFTTrainer ---
+No label_names provided for model class `PeftModelForCausalLM`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+SFTTrainer initialized.
+
+--- Starting Training ---
+Calling trainer.train()...
+[34m[1mwandb[0m: [33mWARNING[0m The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+
+ERROR during training: shape mismatch: value tensor of shape [5508, 2048] cannot be broadcast to indexing result of shape [5403, 2048]
+Traceback (most recent call last):
+  File "<ipython-input-20-1f1ba8a5b0c9>", line 9, in <cell line: 0>
+    train_result = trainer.train()
+                   ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/transformers/trainer.py", line 2245, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/transformers/trainer.py", line 2556, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/transformers/trainer.py", line 3718, in training_step
+    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/trl/trainer/sft_trainer.py", line 558, in compute_loss
+    (loss, outputs) = super().compute_loss(
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/transformers/trainer.py", line 3783, in compute_loss
+    outputs = model(**inputs)
+              ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/accelerate/utils/operations.py", line 819, in forward
+    return model_forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/accelerate/utils/operations.py", line 807, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/amp/autocast_mode.py", line 44, in decorate_autocast
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/peft/peft_model.py", line 1719, in forward
+    return self.base_model(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/peft/tuners/tuners_utils.py", line 197, in forward
+    return self.model.forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/transformers/models/idefics3/modeling_idefics3.py", line 1198, in forward
+    outputs = self.model(
+              ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/transformers/models/idefics3/modeling_idefics3.py", line 1018, in forward
+    inputs_embeds = self.inputs_merger(
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/transformers/models/idefics3/modeling_idefics3.py", line 907, in inputs_merger
+    new_inputs_embeds[special_image_token_mask] = reshaped_image_hidden_states
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: shape mismatch: value tensor of shape [5508, 2048] cannot be broadcast to indexing result of shape [5403, 2048]
+Attempted to save trainer state after error.

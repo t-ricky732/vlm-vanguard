@@ -1,0 +1,123 @@
+PyTorch version: 2.6.0+cu124
+CUDA available: True
+CUDA version: 12.4
+GPU: NVIDIA A100-SXM4-40GB
+GPU memory: 42.47 GB
+Using dtype: torch.bfloat16
+Loading processor...
+/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_auth.py:94: UserWarning:
+The secret `HF_TOKEN` does not exist in your Colab secrets.
+To authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.
+You will be able to reuse this secret in all of your notebooks.
+Please note that authentication is recommended but still optional to access public models or datasets.
+  warnings.warn(
+Configuring model for QLoRA (8-bit quantization)...
+Loading model 'HuggingFaceTB/SmolVLM-Base'...
+`low_cpu_mem_usage` was None, now default to True since model is quantized.
+Model loaded in 5.83 seconds
+Preparing model for LoRA training...
+Applying prepare_model_for_kbit_training for QLoRA...
+trainable params: 21,073,920 || all params: 2,267,346,800 || trainable%: 0.9295
+Checking data directory: /content/drive/MyDrive/code/chartllama_data
+Does directory exist? True
+Files in directory:
+  - funnel_chart_100examples_simplified_qa.json
+  - ours.zip
+  - heatmap_chart_100examples_simplified_qa.json
+  - gantt_chart_100examples_simplified_qa.json
+  - scatter_chart_100examples_simplified_qa.json
+  - polar_chart_100examples_simplified_qa.json
+  - box_chart_100examples_simplified_qa.json
+  - .gitattributes
+  - candlestick_chart_100examples_simplified_qa.json
+  - extracted_images
+  - .cache
+Loading dataset using custom ChartDataset...
+Loading data: 100%|██████████| 7/7 [00:15<00:00,  2.21s/it]
+Total samples: 980
+Training samples: 784
+Validation samples: 98
+Test samples: 98
+--- Displaying Item Index: 654 ---
+Original ID: ours_simplified_qa_9_6
+Chart Type: polar
+Question: What type of chart is used to represent the data?
+<image>...
+Answer: Polar bar chart
+Image Path (from JSON): ours/polar_chart/png/polar_chart_100examples_9.png
+--------------------------------------
+/usr/local/lib/python3.11/dist-packages/transformers/training_args.py:1611: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+Initializing Trainer...
+No label_names provided for model class `PeftModelForCausalLM`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+Starting training...
+[34m[1mwandb[0m: [33mWARNING[0m The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+
+--- Collator: Shapes received from __getitem__ ---
+  Item 0: input_ids=torch.Size([24]), labels=torch.Size([24])
+  Item 1: input_ids=torch.Size([37]), labels=torch.Size([37])
+--- Collator: Calculated max_length = 37 ---
+--- Collator: Shapes before torch.stack ---
+  labels_padded shapes: [torch.Size([37]), torch.Size([37])]
+
+--- Collator: Shapes received from __getitem__ ---
+  Item 0: input_ids=torch.Size([22]), labels=torch.Size([22])
+  Item 1: input_ids=torch.Size([23]), labels=torch.Size([23])
+--- Collator: Calculated max_length = 23 ---
+--- Collator: Shapes before torch.stack ---
+  labels_padded shapes: [torch.Size([23]), torch.Size([23])]
+
+--- Collator: Shapes received from __getitem__ ---
+  Item 0: input_ids=torch.Size([30]), labels=torch.Size([30])
+  Item 1: input_ids=torch.Size([20]), labels=torch.Size([20])
+--- Collator: Calculated max_length = 30 ---
+--- Collator: Shapes before torch.stack ---
+  labels_padded shapes: [torch.Size([30]), torch.Size([30])]
+
+--- Collator: Shapes received from __getitem__ ---
+  Item 0: input_ids=torch.Size([26]), labels=torch.Size([26])
+  Item 1: input_ids=torch.Size([32]), labels=torch.Size([32])
+--- Collator: Calculated max_length = 32 ---
+--- Collator: Shapes before torch.stack ---
+  labels_padded shapes: [torch.Size([32]), torch.Size([32])]
+
+--- Collator: Shapes received from __getitem__ ---
+  Item 0: input_ids=torch.Size([28]), labels=torch.Size([28])
+  Item 1: input_ids=torch.Size([27]), labels=torch.Size([27])
+--- Collator: Calculated max_length = 28 ---
+--- Collator: Shapes before torch.stack ---
+  labels_padded shapes: [torch.Size([28]), torch.Size([28])]
+
+--- Collator: Shapes received from __getitem__ ---
+  Item 0: input_ids=torch.Size([28]), labels=torch.Size([28])
+  Item 1: input_ids=torch.Size([23]), labels=torch.Size([23])
+--- Collator: Calculated max_length = 28 ---
+--- Collator: Shapes before torch.stack ---
+  labels_padded shapes: [torch.Size([28]), torch.Size([28])]
+
+--- Collator: Shapes received from __getitem__ ---
+  Item 0: input_ids=torch.Size([22]), labels=torch.Size([22])
+  Item 1: input_ids=torch.Size([24]), labels=torch.Size([24])
+--- Collator: Calculated max_length = 24 ---
+--- Collator: Shapes before torch.stack ---
+  labels_padded shapes: [torch.Size([24]), torch.Size([24])]
+
+--- Collator: Shapes received from __getitem__ ---
+  Item 0: input_ids=torch.Size([20]), labels=torch.Size([20])
+  Item 1: input_ids=torch.Size([28]), labels=torch.Size([28])
+--- Collator: Calculated max_length = 28 ---
+--- Collator: Shapes before torch.stack ---
+  labels_padded shapes: [torch.Size([28]), torch.Size([28])]
+
+--- Collator: Shapes received from __getitem__ ---
+  Item 0: input_ids=torch.Size([25]), labels=torch.Size([25])
+  Item 1: input_ids=torch.Size([17]), labels=torch.Size([17])
+--- Collator: Calculated max_length = 25 ---
+--- Collator: Shapes before torch.stack ---
+  labels_padded shapes: [torch.Size([25]), torch.Size([25])]
+/usr/local/lib/python3.11/dist-packages/torch/_dynamo/eval_frame.py:745: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/usr/local/lib/python3.11/dist-packages/bitsandbytes/autograd/_functions.py:315: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+/usr/local/lib/python3.11/dist-packages/bitsandbytes/autograd/_functions.py:315: UserWarning: MatMul8bitLt: inputs will be cast from torch.bfloat16 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")

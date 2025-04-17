@@ -1,0 +1,570 @@
+WandB initialized.
+--- WandB Setup Complete ---
+
+--- Defining Data Loading Function ---
+Data loading function defined.
+
+--- Loading and Splitting Data ---
+Loading data from: /content/drive/MyDrive/code/chartllama_data
+Found 7 JSON files in /content/drive/MyDrive/code/chartllama_data
+
+Loaded 980 raw examples. Skipped 0 invalid/missing samples.
+
+Raw data loaded and split.
+Train samples: 882
+Eval samples (Validation): 98
+
+Sample train data point (raw):
+{'id': 'ours_simplified_qa_59_0', 'question': 'What is the theme of the chart?', 'answer': 'Variation in the Consumer Price Index (CPI)', 'image_path': '/content/drive/MyDrive/code/chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_59.png'}
+
+--- Loading Model and Processor for Training ---
+Loading processor for model: HuggingFaceTB/SmolVLM-256M-Instruct
+/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_auth.py:94: UserWarning:
+The secret `HF_TOKEN` does not exist in your Colab secrets.
+To authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.
+You will be able to reuse this secret in all of your notebooks.
+Please note that authentication is recommended but still optional to access public models or datasets.
+  warnings.warn(
+Processor loaded.
+
+Configuring model loading...
+Configuring model for LoRA (dtype: torch.bfloat16).
+Loading config for HuggingFaceTB/SmolVLM-256M-Instruct...
+Config does not have 'attn_implementation' attribute.
+Loading model 'HuggingFaceTB/SmolVLM-256M-Instruct' with configuration...
+
+Model loaded.
+  - Device Map: {'': 0}
+  - Attention Implementation: N/A
+  - Use Cache: False
+
+Applying PEFT/LoRA configuration...
+Enabling gradient checkpointing for LoRA.
+Wrapping model with get_peft_model...
+trainable params: 3,283,456 || all params: 259,768,384 || trainable%: 1.2640
+
+--- Model and Processor Setup Complete ---
+
+--- Defining Formatting Function & Data Collator ---
+Collator Initialized: Found image token ID: 49190
+
+Custom Collator instantiated.
+
+--- Configuring Training Arguments ---
+SFTConfig set.
+
+--- Initializing SFTTrainer ---
+All components ready, initializing trainer...
+No label_names provided for model class `PeftModelForCausalLM`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+SFTTrainer initialized successfully.
+
+--- Checking if Training Should Be Skipped ---
+Detected existing final outputs on Google Drive:
+  - Model Check: True (Checked dir: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Instruct-lora-tuned/final_model)
+  - Processor Check: True (Checked dir: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Instruct-lora-tuned/final_processor)
+--- Skipping Training Step ---
+
+--- Training Step Execution Finished ---
+
+--- Setting up Evaluation Environment ---
+Fine-tuned model will be loaded from: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Instruct-lora-tuned/final_model
+Processor will be loaded from: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Instruct-lora-tuned/final_processor
+Base model will be loaded from Hub ID: HuggingFaceTB/SmolVLM-256M-Instruct
+Results will be saved to: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Instruct-lora-tuned/chartqa_evaluation_results_comparison.json
+
+Loading processor from /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Instruct-lora-tuned/final_processor...
+Processor loaded from Drive.
+
+Loading fine-tuned model/adapter from /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Instruct-lora-tuned/final_model...
+Loaded config from fine-tuned model directory: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Instruct-lora-tuned/final_model
+Pad token ID from loaded processor: 2
+Modifying text_config within base config.
+Base model config pad_token_id already matches loaded processor (2).
+Loading base model 'HuggingFaceTB/SmolVLM-256M-Instruct' for LoRA adapter merging (using potentially modified config)...
+Loading LoRA adapter from /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Instruct-lora-tuned/final_model...
+LoRA/QLoRA model loaded.
+Fine-tuned model ready. Device map: {'': 0}
+
+Loading original base model 'HuggingFaceTB/SmolVLM-256M-Instruct' from Hub for comparison...
+Loading base model config for HuggingFaceTB/SmolVLM-256M-Instruct...
+Base model config has no attn_implementation attr, adding to kwargs: 'flash_attention_2'
+Loading base model 'HuggingFaceTB/SmolVLM-256M-Instruct' with config and kwargs...
+Base model loaded. Device map: {'': 0}
+Base model attention implementation: N/A
+Base model use_cache: True
+
+Loading evaluation dataset 'HuggingFaceM4/ChartQA' split 'test'...
+Loaded and limited to 100 samples for evaluation.
+
+Evaluation Readiness:
+  - Processor Ready: True
+  - Fine-tuned Model Ready: True
+  - Base Model Ready: True
+  - Dataset Ready: True
+  - Can Evaluate Fine-tuned: True
+  - Can Evaluate Base: True
+Evaluation will run on device inferred from models (likely: cuda)
+
+--- Evaluation Setup Complete ---
+
+--- Defining Evaluation Helper Functions ---
+Evaluation helper functions defined.
+
+--- Starting Comparative Evaluation Generation ---
+Evaluating models: ['Finetuned', 'Base'] on 100 samples.
+
+--- Sample 0 Prompt String ---
+'<|im_start|>System: You are a Vision Language Model specialized in interpreting visual data from chart images.\nYour task is to analyze the provided chart image and respond to queries with concise answers, usually a single word, number, or short phrase.\nThe charts include a variety of types (e.g., line charts, bar charts) and contain colors, labels, and text.\nFocus on delivering accurate, succinct answers based on the visual information. Avoid additional explanation unless absolutely necessary.<end_of_utterance>\nUser:<image>How many food item is shown in the bar graph?<end_of_utterance>\nAssistant:'
+------------------------------
+
+
+--- Sample 0 Prompt String ---
+'<|im_start|>System: You are a Vision Language Model specialized in interpreting visual data from chart images.\nYour task is to analyze the provided chart image and respond to queries with concise answers, usually a single word, number, or short phrase.\nThe charts include a variety of types (e.g., line charts, bar charts) and contain colors, labels, and text.\nFocus on delivering accurate, succinct answers based on the visual information. Avoid additional explanation unless absolutely necessary.<end_of_utterance>\nUser:<image>How many food item is shown in the bar graph?<end_of_utterance>\nAssistant:'
+------------------------------
+
+
+--- Sample 1 Prompt String ---
+'<|im_start|>System: You are a Vision Language Model specialized in interpreting visual data from chart images.\nYour task is to analyze the provided chart image and respond to queries with concise answers, usually a single word, number, or short phrase.\nThe charts include a variety of types (e.g., line charts, bar charts) and contain colors, labels, and text.\nFocus on delivering accurate, succinct answers based on the visual information. Avoid additional explanation unless absolutely necessary.<end_of_utterance>\nUser:<image>What is the difference in value between Lamb and Corn?<end_of_utterance>\nAssistant:'
+------------------------------
+
+
+Finished comparative generation. Processed 100 samples.
+
+--- Calculating and Displaying Comparative Evaluation Metrics ---
+
+Total samples in results: 100
+
+Calculating Exact Match (EM) scores...
+<ipython-input-31-336f2db4f048>:44: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  results_df[match_col] = results_df[match_col].fillna(False).astype(bool) #
+
+Finetuned Model:
+  - Valid Samples (non-error): 100
+  - Correct Matches (EM): 11
+  - EM Score: 11.00%
+  - Error Samples (Generation): 0
+<ipython-input-31-336f2db4f048>:44: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  results_df[match_col] = results_df[match_col].fillna(False).astype(bool) #
+
+Base Model:
+  - Valid Samples (non-error): 100
+  - Correct Matches (EM): 6
+  - EM Score: 6.00%
+  - Error Samples (Generation): 0
+
+--- Sample Evaluation Results (DataFrame) ---
+
+Saving combined evaluation results to: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Instruct-lora-tuned/chartqa_evaluation_results_comparison.json
+Combined results saved successfully to: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-256M-Instruct-lora-tuned/chartqa_evaluation_results_comparison.json
+
+--- Final Evaluation Metrics Summary ---
+{
+  "finetuned_error_samples": 0,
+  "finetuned_valid_samples": 100,
+  "finetuned_exact_match_normalized": 11.0,
+  "base_error_samples": 0,
+  "base_valid_samples": 100,
+  "base_exact_match_normalized": 6.0
+}
+
+--- Evaluation Script Finished ---
+--- Aggregating Results from Multiple Runs (Including Base Models) ---
+Searching for result files in '/content/drive/MyDrive/code' using pattern: 'smolvlm-chartllama-sft-refactored*/chartqa_evaluation_results_comparison.json'
+Found 18 potential result file(s):
+  - smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/chartqa_evaluation_results_comparison.json
+  - smolvlm-chartllama-sft-refactored-SmolVLM-Base-lora-tuned/chartqa_evaluation_results_comparison.json
+  - smolvlm-chartllama-sft-refactored-SmolVLM-Base-qlora-tuned/chartqa_evaluation_results_comparison.json
+  - smolvlm-chartllama-sft-refactored-SmolVLM-256M-Base-full-tuned/chartqa_evaluation_results_comparison.json
+  - smolvlm-chartllama-sft-refactored-SmolVLM-256M-Instruct-full-tuned/chartqa_evaluation_results_comparison.json
+  - smolvlm-chartllama-sft-refactored-SmolVLM-Instruct-full-tuned/chartqa_evaluation_results_comparison.json
+  - smolvlm-chartllama-sft-refactored-SmolVLM-500M-Base-full-tuned/chartqa_evaluation_results_comparison.json
+  - smolvlm-chartllama-sft-refactored-SmolVLM-500M-Base-qlora-tuned/chartqa_evaluation_results_comparison.json
+  - smolvlm-chartllama-sft-refactored-SmolVLM-500M-Base-lora-tuned/chartqa_evaluation_results_comparison.json
+  - smolvlm-chartllama-sft-refactored-SmolVLM-256M-Base-lora-tuned/chartqa_evaluation_results_comparison.json
+  - smolvlm-chartllama-sft-refactored-SmolVLM-256M-Base-qlora-tuned/chartqa_evaluation_results_comparison.json
+  - smolvlm-chartllama-sft-refactored-SmolVLM-Instruct-qlora-tuned/chartqa_evaluation_results_comparison.json
+  - smolvlm-chartllama-sft-refactored-SmolVLM-Instruct-lora-tuned/chartqa_evaluation_results_comparison.json
+  - smolvlm-chartllama-sft-refactored-SmolVLM-256M-Instruct-lora-tuned/chartqa_evaluation_results_comparison.json
+  - smolvlm-chartllama-sft-refactored-SmolVLM-256M-Instruct-qlora-tuned/chartqa_evaluation_results_comparison.json
+  - smolvlm-chartllama-sft-refactored-SmolVLM-500M-Instruct-qlora-tuned/chartqa_evaluation_results_comparison.json
+  - smolvlm-chartllama-sft-refactored-SmolVLM-500M-Instruct-full-tuned/chartqa_evaluation_results_comparison.json
+  - smolvlm-chartllama-sft-refactored-SmolVLM-500M-Instruct-lora-tuned/chartqa_evaluation_results_comparison.json
+
+Processing file from run: smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned
+  Fine-tuned ID: SmolVLM-Base-full-tuned, Inferred Base Model: SmolVLM-Base-full
+  Loaded 100 records.
+  (First file, selecting core columns)
+  Adding base model results for: SmolVLM-Base-full-Original
+  Prepared subset with columns: ['id', 'question', 'ground_truth', 'Normalized_GT', 'Pred_SmolVLM-Base-full-tuned', 'NormPred_SmolVLM-Base-full-tuned', 'Match_SmolVLM-Base-full-tuned', 'Pred_SmolVLM-Base-full-Original']
+
+Processing file from run: smolvlm-chartllama-sft-refactored-SmolVLM-Base-lora-tuned
+  Fine-tuned ID: SmolVLM-Base-lora-tuned, Inferred Base Model: SmolVLM-Base-lora
+  Loaded 100 records.
+  Adding base model results for: SmolVLM-Base-lora-Original
+  Prepared subset with columns: ['id', 'Pred_SmolVLM-Base-lora-tuned', 'NormPred_SmolVLM-Base-lora-tuned', 'Match_SmolVLM-Base-lora-tuned', 'Pred_SmolVLM-Base-lora-Original']
+
+Processing file from run: smolvlm-chartllama-sft-refactored-SmolVLM-Base-qlora-tuned
+  Fine-tuned ID: SmolVLM-Base-qlora-tuned, Inferred Base Model: SmolVLM-Base-qlora
+  Loaded 100 records.
+  Adding base model results for: SmolVLM-Base-qlora-Original
+  Prepared subset with columns: ['id', 'Pred_SmolVLM-Base-qlora-tuned', 'NormPred_SmolVLM-Base-qlora-tuned', 'Match_SmolVLM-Base-qlora-tuned', 'Pred_SmolVLM-Base-qlora-Original']
+
+Processing file from run: smolvlm-chartllama-sft-refactored-SmolVLM-256M-Base-full-tuned
+  Fine-tuned ID: SmolVLM-256M-Base-full-tuned, Inferred Base Model: SmolVLM-256M-Base-full
+  Loaded 100 records.
+  Adding base model results for: SmolVLM-256M-Base-full-Original
+  Prepared subset with columns: ['id', 'Pred_SmolVLM-256M-Base-full-tuned', 'NormPred_SmolVLM-256M-Base-full-tuned', 'Match_SmolVLM-256M-Base-full-tuned', 'Pred_SmolVLM-256M-Base-full-Original']
+
+Processing file from run: smolvlm-chartllama-sft-refactored-SmolVLM-256M-Instruct-full-tuned
+  Fine-tuned ID: SmolVLM-256M-Instruct-full-tuned, Inferred Base Model: SmolVLM-256M-Instruct-full
+  Loaded 100 records.
+  Adding base model results for: SmolVLM-256M-Instruct-full-Original
+  Prepared subset with columns: ['id', 'Pred_SmolVLM-256M-Instruct-full-tuned', 'NormPred_SmolVLM-256M-Instruct-full-tuned', 'Match_SmolVLM-256M-Instruct-full-tuned', 'Pred_SmolVLM-256M-Instruct-full-Original']
+
+Processing file from run: smolvlm-chartllama-sft-refactored-SmolVLM-Instruct-full-tuned
+  Fine-tuned ID: SmolVLM-Instruct-full-tuned, Inferred Base Model: SmolVLM-Instruct-full
+  Loaded 100 records.
+  Adding base model results for: SmolVLM-Instruct-full-Original
+  Prepared subset with columns: ['id', 'Pred_SmolVLM-Instruct-full-tuned', 'NormPred_SmolVLM-Instruct-full-tuned', 'Match_SmolVLM-Instruct-full-tuned', 'Pred_SmolVLM-Instruct-full-Original']
+
+Processing file from run: smolvlm-chartllama-sft-refactored-SmolVLM-500M-Base-full-tuned
+  Fine-tuned ID: SmolVLM-500M-Base-full-tuned, Inferred Base Model: SmolVLM-500M-Base-full
+  Loaded 100 records.
+  Adding base model results for: SmolVLM-500M-Base-full-Original
+  Prepared subset with columns: ['id', 'Pred_SmolVLM-500M-Base-full-tuned', 'NormPred_SmolVLM-500M-Base-full-tuned', 'Match_SmolVLM-500M-Base-full-tuned', 'Pred_SmolVLM-500M-Base-full-Original']
+
+Processing file from run: smolvlm-chartllama-sft-refactored-SmolVLM-500M-Base-qlora-tuned
+  Fine-tuned ID: SmolVLM-500M-Base-qlora-tuned, Inferred Base Model: SmolVLM-500M-Base-qlora
+  Loaded 100 records.
+  Adding base model results for: SmolVLM-500M-Base-qlora-Original
+  Prepared subset with columns: ['id', 'Pred_SmolVLM-500M-Base-qlora-tuned', 'NormPred_SmolVLM-500M-Base-qlora-tuned', 'Match_SmolVLM-500M-Base-qlora-tuned', 'Pred_SmolVLM-500M-Base-qlora-Original']
+
+Processing file from run: smolvlm-chartllama-sft-refactored-SmolVLM-500M-Base-lora-tuned
+  Fine-tuned ID: SmolVLM-500M-Base-lora-tuned, Inferred Base Model: SmolVLM-500M-Base-lora
+  Loaded 100 records.
+  Adding base model results for: SmolVLM-500M-Base-lora-Original
+  Prepared subset with columns: ['id', 'Pred_SmolVLM-500M-Base-lora-tuned', 'NormPred_SmolVLM-500M-Base-lora-tuned', 'Match_SmolVLM-500M-Base-lora-tuned', 'Pred_SmolVLM-500M-Base-lora-Original']
+
+Processing file from run: smolvlm-chartllama-sft-refactored-SmolVLM-256M-Base-lora-tuned
+  Fine-tuned ID: SmolVLM-256M-Base-lora-tuned, Inferred Base Model: SmolVLM-256M-Base-lora
+  Loaded 100 records.
+  Adding base model results for: SmolVLM-256M-Base-lora-Original
+  Prepared subset with columns: ['id', 'Pred_SmolVLM-256M-Base-lora-tuned', 'NormPred_SmolVLM-256M-Base-lora-tuned', 'Match_SmolVLM-256M-Base-lora-tuned', 'Pred_SmolVLM-256M-Base-lora-Original']
+
+Processing file from run: smolvlm-chartllama-sft-refactored-SmolVLM-256M-Base-qlora-tuned
+  Fine-tuned ID: SmolVLM-256M-Base-qlora-tuned, Inferred Base Model: SmolVLM-256M-Base-qlora
+  Loaded 100 records.
+  Adding base model results for: SmolVLM-256M-Base-qlora-Original
+  Prepared subset with columns: ['id', 'Pred_SmolVLM-256M-Base-qlora-tuned', 'NormPred_SmolVLM-256M-Base-qlora-tuned', 'Match_SmolVLM-256M-Base-qlora-tuned', 'Pred_SmolVLM-256M-Base-qlora-Original']
+
+Processing file from run: smolvlm-chartllama-sft-refactored-SmolVLM-Instruct-qlora-tuned
+  Fine-tuned ID: SmolVLM-Instruct-qlora-tuned, Inferred Base Model: SmolVLM-Instruct-qlora
+  Loaded 100 records.
+  Adding base model results for: SmolVLM-Instruct-qlora-Original
+  Prepared subset with columns: ['id', 'Pred_SmolVLM-Instruct-qlora-tuned', 'NormPred_SmolVLM-Instruct-qlora-tuned', 'Match_SmolVLM-Instruct-qlora-tuned', 'Pred_SmolVLM-Instruct-qlora-Original']
+
+Processing file from run: smolvlm-chartllama-sft-refactored-SmolVLM-Instruct-lora-tuned
+  Fine-tuned ID: SmolVLM-Instruct-lora-tuned, Inferred Base Model: SmolVLM-Instruct-lora
+  Loaded 100 records.
+  Adding base model results for: SmolVLM-Instruct-lora-Original
+  Prepared subset with columns: ['id', 'Pred_SmolVLM-Instruct-lora-tuned', 'NormPred_SmolVLM-Instruct-lora-tuned', 'Match_SmolVLM-Instruct-lora-tuned', 'Pred_SmolVLM-Instruct-lora-Original']
+
+Processing file from run: smolvlm-chartllama-sft-refactored-SmolVLM-256M-Instruct-lora-tuned
+  Fine-tuned ID: SmolVLM-256M-Instruct-lora-tuned, Inferred Base Model: SmolVLM-256M-Instruct-lora
+  Loaded 100 records.
+  Adding base model results for: SmolVLM-256M-Instruct-lora-Original
+  Prepared subset with columns: ['id', 'Pred_SmolVLM-256M-Instruct-lora-tuned', 'NormPred_SmolVLM-256M-Instruct-lora-tuned', 'Match_SmolVLM-256M-Instruct-lora-tuned', 'Pred_SmolVLM-256M-Instruct-lora-Original']
+
+Processing file from run: smolvlm-chartllama-sft-refactored-SmolVLM-256M-Instruct-qlora-tuned
+  Fine-tuned ID: SmolVLM-256M-Instruct-qlora-tuned, Inferred Base Model: SmolVLM-256M-Instruct-qlora
+  Loaded 100 records.
+  Adding base model results for: SmolVLM-256M-Instruct-qlora-Original
+  Prepared subset with columns: ['id', 'Pred_SmolVLM-256M-Instruct-qlora-tuned', 'NormPred_SmolVLM-256M-Instruct-qlora-tuned', 'Match_SmolVLM-256M-Instruct-qlora-tuned', 'Pred_SmolVLM-256M-Instruct-qlora-Original']
+
+Processing file from run: smolvlm-chartllama-sft-refactored-SmolVLM-500M-Instruct-qlora-tuned
+  Fine-tuned ID: SmolVLM-500M-Instruct-qlora-tuned, Inferred Base Model: SmolVLM-500M-Instruct-qlora
+  Loaded 100 records.
+  Adding base model results for: SmolVLM-500M-Instruct-qlora-Original
+  Prepared subset with columns: ['id', 'Pred_SmolVLM-500M-Instruct-qlora-tuned', 'NormPred_SmolVLM-500M-Instruct-qlora-tuned', 'Match_SmolVLM-500M-Instruct-qlora-tuned', 'Pred_SmolVLM-500M-Instruct-qlora-Original']
+
+Processing file from run: smolvlm-chartllama-sft-refactored-SmolVLM-500M-Instruct-full-tuned
+  Fine-tuned ID: SmolVLM-500M-Instruct-full-tuned, Inferred Base Model: SmolVLM-500M-Instruct-full
+  Loaded 100 records.
+  Adding base model results for: SmolVLM-500M-Instruct-full-Original
+  Prepared subset with columns: ['id', 'Pred_SmolVLM-500M-Instruct-full-tuned', 'NormPred_SmolVLM-500M-Instruct-full-tuned', 'Match_SmolVLM-500M-Instruct-full-tuned', 'Pred_SmolVLM-500M-Instruct-full-Original']
+
+Processing file from run: smolvlm-chartllama-sft-refactored-SmolVLM-500M-Instruct-lora-tuned
+  Fine-tuned ID: SmolVLM-500M-Instruct-lora-tuned, Inferred Base Model: SmolVLM-500M-Instruct-lora
+  Loaded 100 records.
+  Adding base model results for: SmolVLM-500M-Instruct-lora-Original
+  Prepared subset with columns: ['id', 'Pred_SmolVLM-500M-Instruct-lora-tuned', 'NormPred_SmolVLM-500M-Instruct-lora-tuned', 'Match_SmolVLM-500M-Instruct-lora-tuned', 'Pred_SmolVLM-500M-Instruct-lora-Original']
+
+Merging data from 18 sources (including base models)...
+Merging complete.
+Forward/backward filling core columns: ['question', 'ground_truth', 'Normalized_GT']
+
+--- Preview of Aggregated Results (100 samples) ---
+
+Saving aggregated results (incl. base) to CSV: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-ALL_RUNS_COMPARISON_WITH_BASE.csv
+Aggregated CSV saved successfully.
+
+--- Aggregation Script Finished ---
+
+--- Calculating Advanced Accuracy Metrics (using word2number) ---
+Pre-processing ground truth and filtering data...
+Filtered down to 84 samples for advanced accuracy calculation.
+
+Calculating advanced metrics for run: SmolVLM-Base-full-tuned
+  Relaxed Numerical Accuracy (+/- 5% on 64 numeric pairs): 14/64 = 21.88%
+  Exact Match (Adv. Proc., Filtered on 77 valid preds): 10/77 = 12.99%
+
+Calculating advanced metrics for run: SmolVLM-Base-full-Original
+  Relaxed Numerical Accuracy (+/- 5% on 6 numeric pairs): 2/6 = 33.33%
+  Exact Match (Adv. Proc., Filtered on 6 valid preds): 0/6 = 0.00%
+
+Calculating advanced metrics for run: SmolVLM-Base-lora-tuned
+  Relaxed Numerical Accuracy (+/- 5% on 51 numeric pairs): 9/51 = 17.65%
+  Exact Match (Adv. Proc., Filtered on 61 valid preds): 11/61 = 18.03%
+
+Calculating advanced metrics for run: SmolVLM-Base-lora-Original
+  Relaxed Numerical Accuracy (+/- 5% on 6 numeric pairs): 2/6 = 33.33%
+  Exact Match (Adv. Proc., Filtered on 6 valid preds): 0/6 = 0.00%
+
+Calculating advanced metrics for run: SmolVLM-Base-qlora-tuned
+  Relaxed Numerical Accuracy (+/- 5% on 41 numeric pairs): 7/41 = 17.07%
+  Exact Match (Adv. Proc., Filtered on 49 valid preds): 8/49 = 16.33%
+
+Calculating advanced metrics for run: SmolVLM-Base-qlora-Original
+  Relaxed Numerical Accuracy (+/- 5% on 6 numeric pairs): 2/6 = 33.33%
+  Exact Match (Adv. Proc., Filtered on 6 valid preds): 0/6 = 0.00%
+
+Calculating advanced metrics for run: SmolVLM-256M-Base-full-tuned
+  No valid (yes/no/numeric) predictions found for this run after processing.
+  Exact Match (Adv. Proc., Filtered on 0 valid preds): 0/0 = 0.00%
+
+Calculating advanced metrics for run: SmolVLM-256M-Base-full-Original
+  Relaxed Numerical Accuracy (+/- 5% on 28 numeric pairs): 0/28 = 0.00%
+  Exact Match (Adv. Proc., Filtered on 32 valid preds): 0/32 = 0.00%
+
+Calculating advanced metrics for run: SmolVLM-256M-Instruct-full-tuned
+  Relaxed Numerical Accuracy (+/- 5% on 66 numeric pairs): 18/66 = 27.27%
+  Exact Match (Adv. Proc., Filtered on 79 valid preds): 18/79 = 22.78%
+
+Calculating advanced metrics for run: SmolVLM-256M-Instruct-full-Original
+  Relaxed Numerical Accuracy (+/- 5% on 18 numeric pairs): 5/18 = 27.78%
+  Exact Match (Adv. Proc., Filtered on 20 valid preds): 4/20 = 20.00%
+
+Calculating advanced metrics for run: SmolVLM-Instruct-full-tuned
+  Relaxed Numerical Accuracy (+/- 5% on 69 numeric pairs): 30/69 = 43.48%
+  Exact Match (Adv. Proc., Filtered on 82 valid preds): 32/82 = 39.02%
+
+Calculating advanced metrics for run: SmolVLM-Instruct-full-Original
+  Relaxed Numerical Accuracy (+/- 5% on 39 numeric pairs): 21/39 = 53.85%
+  Exact Match (Adv. Proc., Filtered on 39 valid preds): 19/39 = 48.72%
+
+Calculating advanced metrics for run: SmolVLM-500M-Base-full-tuned
+  No valid (yes/no/numeric) predictions found for this run after processing.
+  Exact Match (Adv. Proc., Filtered on 0 valid preds): 0/0 = 0.00%
+
+Calculating advanced metrics for run: SmolVLM-500M-Base-full-Original
+  Relaxed Numerical Accuracy (+/- 5% on 1 numeric pairs): 0/1 = 0.00%
+  Exact Match (Adv. Proc., Filtered on 1 valid preds): 0/1 = 0.00%
+
+Calculating advanced metrics for run: SmolVLM-500M-Base-qlora-tuned
+  Relaxed Numerical Accuracy (+/- 5% on 5 numeric pairs): 0/5 = 0.00%
+  Exact Match (Adv. Proc., Filtered on 6 valid preds): 0/6 = 0.00%
+
+Calculating advanced metrics for run: SmolVLM-500M-Base-qlora-Original
+  Relaxed Numerical Accuracy (+/- 5% on 1 numeric pairs): 0/1 = 0.00%
+  Exact Match (Adv. Proc., Filtered on 1 valid preds): 0/1 = 0.00%
+
+Calculating advanced metrics for run: SmolVLM-500M-Base-lora-tuned
+  No valid (yes/no/numeric) predictions found for this run after processing.
+  Exact Match (Adv. Proc., Filtered on 0 valid preds): 0/0 = 0.00%
+
+Calculating advanced metrics for run: SmolVLM-500M-Base-lora-Original
+  Relaxed Numerical Accuracy (+/- 5% on 1 numeric pairs): 0/1 = 0.00%
+  Exact Match (Adv. Proc., Filtered on 1 valid preds): 0/1 = 0.00%
+
+Calculating advanced metrics for run: SmolVLM-256M-Base-lora-tuned
+  Relaxed Numerical Accuracy (+/- 5% on 29 numeric pairs): 2/29 = 6.90%
+  Exact Match (Adv. Proc., Filtered on 33 valid preds): 0/33 = 0.00%
+
+Calculating advanced metrics for run: SmolVLM-256M-Base-lora-Original
+  Relaxed Numerical Accuracy (+/- 5% on 28 numeric pairs): 0/28 = 0.00%
+  Exact Match (Adv. Proc., Filtered on 32 valid preds): 0/32 = 0.00%
+
+Calculating advanced metrics for run: SmolVLM-256M-Base-qlora-tuned
+  Relaxed Numerical Accuracy (+/- 5% on 50 numeric pairs): 3/50 = 6.00%
+  Exact Match (Adv. Proc., Filtered on 59 valid preds): 0/59 = 0.00%
+
+Calculating advanced metrics for run: SmolVLM-256M-Base-qlora-Original
+  Relaxed Numerical Accuracy (+/- 5% on 28 numeric pairs): 0/28 = 0.00%
+  Exact Match (Adv. Proc., Filtered on 32 valid preds): 0/32 = 0.00%
+
+Calculating advanced metrics for run: SmolVLM-Instruct-qlora-tuned
+  Relaxed Numerical Accuracy (+/- 5% on 56 numeric pairs): 26/56 = 46.43%
+  Exact Match (Adv. Proc., Filtered on 56 valid preds): 19/56 = 33.93%
+
+Calculating advanced metrics for run: SmolVLM-Instruct-qlora-Original
+  Relaxed Numerical Accuracy (+/- 5% on 39 numeric pairs): 21/39 = 53.85%
+  Exact Match (Adv. Proc., Filtered on 39 valid preds): 19/39 = 48.72%
+
+Calculating advanced metrics for run: SmolVLM-Instruct-lora-tuned
+  Relaxed Numerical Accuracy (+/- 5% on 56 numeric pairs): 31/56 = 55.36%
+  Exact Match (Adv. Proc., Filtered on 58 valid preds): 26/58 = 44.83%
+
+Calculating advanced metrics for run: SmolVLM-Instruct-lora-Original
+  Relaxed Numerical Accuracy (+/- 5% on 39 numeric pairs): 21/39 = 53.85%
+  Exact Match (Adv. Proc., Filtered on 39 valid preds): 19/39 = 48.72%
+
+Calculating advanced metrics for run: SmolVLM-256M-Instruct-lora-tuned
+  Relaxed Numerical Accuracy (+/- 5% on 23 numeric pairs): 9/23 = 39.13%
+  Exact Match (Adv. Proc., Filtered on 27 valid preds): 8/27 = 29.63%
+
+Calculating advanced metrics for run: SmolVLM-256M-Instruct-lora-Original
+  Relaxed Numerical Accuracy (+/- 5% on 18 numeric pairs): 5/18 = 27.78%
+  Exact Match (Adv. Proc., Filtered on 20 valid preds): 4/20 = 20.00%
+
+Calculating advanced metrics for run: SmolVLM-256M-Instruct-qlora-tuned
+  Relaxed Numerical Accuracy (+/- 5% on 22 numeric pairs): 9/22 = 40.91%
+  Exact Match (Adv. Proc., Filtered on 26 valid preds): 9/26 = 34.62%
+
+Calculating advanced metrics for run: SmolVLM-256M-Instruct-qlora-Original
+  Relaxed Numerical Accuracy (+/- 5% on 18 numeric pairs): 5/18 = 27.78%
+  Exact Match (Adv. Proc., Filtered on 20 valid preds): 4/20 = 20.00%
+
+Calculating advanced metrics for run: SmolVLM-500M-Instruct-qlora-tuned
+  Relaxed Numerical Accuracy (+/- 5% on 28 numeric pairs): 11/28 = 39.29%
+  Exact Match (Adv. Proc., Filtered on 28 valid preds): 7/28 = 25.00%
+
+Calculating advanced metrics for run: SmolVLM-500M-Instruct-qlora-Original
+  Relaxed Numerical Accuracy (+/- 5% on 26 numeric pairs): 10/26 = 38.46%
+  Exact Match (Adv. Proc., Filtered on 27 valid preds): 9/27 = 33.33%
+
+Calculating advanced metrics for run: SmolVLM-500M-Instruct-full-tuned
+  Relaxed Numerical Accuracy (+/- 5% on 67 numeric pairs): 24/67 = 35.82%
+  Exact Match (Adv. Proc., Filtered on 80 valid preds): 20/80 = 25.00%
+
+Calculating advanced metrics for run: SmolVLM-500M-Instruct-full-Original
+  Relaxed Numerical Accuracy (+/- 5% on 26 numeric pairs): 10/26 = 38.46%
+  Exact Match (Adv. Proc., Filtered on 27 valid preds): 9/27 = 33.33%
+
+Calculating advanced metrics for run: SmolVLM-500M-Instruct-lora-tuned
+  Relaxed Numerical Accuracy (+/- 5% on 21 numeric pairs): 10/21 = 47.62%
+  Exact Match (Adv. Proc., Filtered on 22 valid preds): 8/22 = 36.36%
+
+Calculating advanced metrics for run: SmolVLM-500M-Instruct-lora-Original
+  Relaxed Numerical Accuracy (+/- 5% on 26 numeric pairs): 10/26 = 38.46%
+  Exact Match (Adv. Proc., Filtered on 27 valid preds): 9/27 = 33.33%
+
+--- Advanced Accuracy Metrics Summary (Filtered Data) ---
+
+--- Preview of DataFrame with Added Processed Columns ---
+
+Saving DataFrame with processed columns to CSV: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-ALL_RUNS_COMPARISON_WITH_PROCESSED.csv
+DataFrame with processed columns saved successfully.
+
+--- Advanced Accuracy Calculation Finished ---
+
+DataFrame 'processed_final_df' (with added processed columns) is available.
+--- Aggregating and Plotting Loss Curves from All Runs (Professional Subplots) ---
+Searching for state files in '/content/drive/MyDrive/code' using pattern: 'smolvlm-chartllama-sft-refactored*/trainer_state.json'
+Found 18 potential state file(s).
+
+Processing state file from run: smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned
+  Using label: SmolVLM-Base (Full)
+  Found 6 train points, 3 val points.
+
+Processing state file from run: smolvlm-chartllama-sft-refactored-SmolVLM-Base-lora-tuned
+  Using label: SmolVLM-Base (LoRA)
+  Found 6 train points, 3 val points.
+
+Processing state file from run: smolvlm-chartllama-sft-refactored-SmolVLM-Base-qlora-tuned
+  Using label: SmolVLM-Base (QLoRA)
+  Found 6 train points, 3 val points.
+
+Processing state file from run: smolvlm-chartllama-sft-refactored-SmolVLM-256M-Base-full-tuned
+  Using label: SmolVLM-256M-Base (Full)
+  Found 6 train points, 3 val points.
+
+Processing state file from run: smolvlm-chartllama-sft-refactored-SmolVLM-256M-Instruct-full-tuned
+  Using label: SmolVLM-256M-Instruct (Full)
+  Found 6 train points, 3 val points.
+
+Processing state file from run: smolvlm-chartllama-sft-refactored-SmolVLM-Instruct-full-tuned
+  Using label: SmolVLM-Instruct (Full)
+  Found 6 train points, 3 val points.
+
+Processing state file from run: smolvlm-chartllama-sft-refactored-SmolVLM-500M-Base-full-tuned
+  Using label: SmolVLM-500M-Base (Full)
+  Found 6 train points, 3 val points.
+
+Processing state file from run: smolvlm-chartllama-sft-refactored-SmolVLM-500M-Base-qlora-tuned
+  Using label: SmolVLM-500M-Base (QLoRA)
+  Found 6 train points, 3 val points.
+
+Processing state file from run: smolvlm-chartllama-sft-refactored-SmolVLM-500M-Base-lora-tuned
+  Using label: SmolVLM-500M-Base (LoRA)
+  Found 6 train points, 3 val points.
+
+Processing state file from run: smolvlm-chartllama-sft-refactored-SmolVLM-256M-Base-lora-tuned
+  Using label: SmolVLM-256M-Base (LoRA)
+  Found 6 train points, 3 val points.
+
+Processing state file from run: smolvlm-chartllama-sft-refactored-SmolVLM-256M-Base-qlora-tuned
+  Using label: SmolVLM-256M-Base (QLoRA)
+  Found 6 train points, 3 val points.
+
+Processing state file from run: smolvlm-chartllama-sft-refactored-SmolVLM-Instruct-qlora-tuned
+  Using label: SmolVLM-Instruct (QLoRA)
+  Found 6 train points, 3 val points.
+
+Processing state file from run: smolvlm-chartllama-sft-refactored-SmolVLM-Instruct-lora-tuned
+  Using label: SmolVLM-Instruct (LoRA)
+  Found 6 train points, 3 val points.
+
+Processing state file from run: smolvlm-chartllama-sft-refactored-SmolVLM-256M-Instruct-lora-tuned
+  Using label: SmolVLM-256M-Instruct (LoRA)
+  Found 6 train points, 3 val points.
+
+Processing state file from run: smolvlm-chartllama-sft-refactored-SmolVLM-256M-Instruct-qlora-tuned
+  Using label: SmolVLM-256M-Instruct (QLoRA)
+  Found 6 train points, 3 val points.
+
+Processing state file from run: smolvlm-chartllama-sft-refactored-SmolVLM-500M-Instruct-qlora-tuned
+  Using label: SmolVLM-500M-Instruct (QLoRA)
+  Found 6 train points, 3 val points.
+
+Processing state file from run: smolvlm-chartllama-sft-refactored-SmolVLM-500M-Instruct-full-tuned
+  Using label: SmolVLM-500M-Instruct (Full)
+  Found 6 train points, 3 val points.
+
+Processing state file from run: smolvlm-chartllama-sft-refactored-SmolVLM-500M-Instruct-lora-tuned
+  Using label: SmolVLM-500M-Instruct (LoRA)
+  Found 6 train points, 3 val points.
+
+Sorted runs alphabetically for plotting.
+
+Generating professional subplot figure for 18 runs...
+  Creating a 3x6 grid.
+  Using shared Y-axis limit: (0, 4)
+
+Aggregated professional subplot figure saved to: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored_ALL_RUNS_loss_curves_PROFESSIONAL_GRID_1744720055.png
+
+--- Professional Aggregated Plotting Script Finished ---
+
+--- Displaying Comparison for SmolVLM-256M-Instruct (Base vs Fine-tuned) ---
+
+ERROR: The following required columns were not found in final_comparison_df: ['Pred_SmolVLM-256M-Instruct-Original']
+Please check the aggregation script's output and the column names defined in this cell.
+
+Available columns starting with 'Pred_SmolVLM-256M-Instruct':
+  - Pred_SmolVLM-256M-Instruct-full-tuned
+  - Pred_SmolVLM-256M-Instruct-full-Original
+  - Pred_SmolVLM-256M-Instruct-lora-tuned
+  - Pred_SmolVLM-256M-Instruct-lora-Original
+  - Pred_SmolVLM-256M-Instruct-qlora-tuned
+  - Pred_SmolVLM-256M-Instruct-qlora-Original
+
+--- Specific Comparison Display Finished ---

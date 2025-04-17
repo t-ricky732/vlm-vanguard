@@ -1,0 +1,320 @@
+WandB initialized.
+--- WandB Setup Complete ---
+
+--- Defining Data Loading Function (Corrected Path) ---
+Data loading function defined.
+
+--- Loading and Splitting Data ---
+Loading data from: /content/drive/MyDrive/code/chartllama_data
+Found 7 JSON files in chartllama_data
+File: candlestick_chart_100examples_simplified_qa.json
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_86.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_83.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_0.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_22.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_68.png'
+    Exists? True
+File: funnel_chart_100examples_simplified_qa.json
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/funnel_chart/png/funnel_chart_100examples_6.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/funnel_chart/png/funnel_chart_100examples_29.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/funnel_chart/png/funnel_chart_100examples_6.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/funnel_chart/png/funnel_chart_100examples_39.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/funnel_chart/png/funnel_chart_100examples_49.png'
+    Exists? True
+File: gantt_chart_100examples_simplified_qa.json
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/gantt_chart/png/gantt_chart_100examples_38.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/gantt_chart/png/gantt_chart_100examples_65.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/gantt_chart/png/gantt_chart_100examples_6.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/gantt_chart/png/gantt_chart_100examples_0.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/gantt_chart/png/gantt_chart_100examples_60.png'
+    Exists? True
+File: polar_chart_100examples_simplified_qa.json
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/polar_chart/png/polar_chart_100examples_119.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/polar_chart/png/polar_chart_100examples_76.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/polar_chart/png/polar_chart_100examples_121.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/polar_chart/png/polar_chart_100examples_90.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/polar_chart/png/polar_chart_100examples_67.png'
+    Exists? True
+File: heatmap_chart_100examples_simplified_qa.json
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/heatmap_chart/png/heatmap_chart_100examples_38.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/heatmap_chart/png/heatmap_chart_100examples_27.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/heatmap_chart/png/heatmap_chart_100examples_71.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/heatmap_chart/png/heatmap_chart_100examples_35.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/heatmap_chart/png/heatmap_chart_100examples_66.png'
+    Exists? True
+File: box_chart_100examples_simplified_qa.json
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/box_chart/png/box_chart_100examples_37.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/box_chart/png/box_chart_100examples_56.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/box_chart/png/box_chart_100examples_69.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/box_chart/png/box_chart_100examples_63.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/box_chart/png/box_chart_100examples_71.png'
+    Exists? True
+File: scatter_chart_100examples_simplified_qa.json
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/scatter_chart/png/scatter_chart_100examples_52.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/scatter_chart/png/scatter_chart_100examples_79.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/scatter_chart/png/scatter_chart_100examples_28.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/scatter_chart/png/scatter_chart_100examples_21.png'
+    Exists? True
+  Checking path: '/content/drive/MyDrive/code/chartllama_data/ours/scatter_chart/png/scatter_chart_100examples_46.png'
+    Exists? True
+
+Loaded 980 raw examples. Skipped 0 invalid samples.
+
+Raw data loaded and split.
+Train samples: 882
+Eval samples: 98
+
+Sample train data point (raw):
+{'id': 'ours_simplified_qa_59_0', 'question': 'What is the theme of the chart?', 'answer': 'Variation in the Consumer Price Index (CPI)', 'image_path': '/content/drive/MyDrive/code/chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_59.png'}
+
+--- Loading Model and Processor for Training ---
+Loading processor for model: HuggingFaceTB/SmolVLM-Base
+/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_auth.py:94: UserWarning:
+The secret `HF_TOKEN` does not exist in your Colab secrets.
+To authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.
+You will be able to reuse this secret in all of your notebooks.
+Please note that authentication is recommended but still optional to access public models or datasets.
+  warnings.warn(
+Processor loaded.
+
+Configuring model loading...
+Using attention implementation: eager
+Configuring model for Full Fine-Tuning (dtype: torch.bfloat16)...
+Loading model 'HuggingFaceTB/SmolVLM-Base'...
+
+Model loaded.
+  - Device Map: {'': 0}
+  - Memory Footprint: 4.49 GB
+  - Attention Implementation: N/A
+Enabling gradient checkpointing for Full Fine-Tuning.
+Setting use_cache=False for gradient checkpointing.
+
+--- Model and Processor Setup Complete ---
+
+--- Defining Formatting Function & Collator ---
+Formatting function defined.
+
+--- Defining Data Collator ---
+Collator class defined.
+Collator Initialized: Found image token ID: 49153
+Custom Collator instantiated.
+
+--- Configuring Training Arguments ---
+SFTConfig set.
+
+--- Initializing SFTTrainer ---
+All components ready, initializing trainer...
+
+--- Initializing SFTTrainer ---
+All components ready, initializing trainer...
+
+--- Initializing SFTTrainer ---
+All components ready, initializing trainer...
+
+--- Initializing SFTTrainer ---
+All components ready, initializing trainer...
+ERROR initializing SFTTrainer: ''
+Traceback (most recent call last):
+  File "<ipython-input-28-ca305c8dc47e>", line 21, in <cell line: 0>
+    trainer = SFTTrainer(
+              ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/trl/trainer/sft_trainer.py", line 286, in __init__
+    train_dataset = self._prepare_dataset(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/trl/trainer/sft_trainer.py", line 529, in _prepare_dataset
+    dataset = dataset.map(
+              ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/arrow_dataset.py", line 557, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/arrow_dataset.py", line 3074, in map
+    for rank, done, content in Dataset._map_single(**dataset_kwargs):
+  File "/usr/local/lib/python3.11/dist-packages/datasets/arrow_dataset.py", line 3492, in _map_single
+    for i, example in iter_outputs(shard_iterable):
+  File "/usr/local/lib/python3.11/dist-packages/datasets/arrow_dataset.py", line 3466, in iter_outputs
+    yield i, apply_function(example, i, offset=offset)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/arrow_dataset.py", line 3389, in apply_function
+    processed_inputs = function(*fn_args, *additional_args, **fn_kwargs)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/trl/trainer/sft_trainer.py", line 520, in tokenize
+    processed = processing_class(text=example[dataset_text_field])
+                                      ~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/formatting/formatting.py", line 280, in __getitem__
+    value = self.data[key]
+            ~~~~~~~~~^^^^^
+KeyError: ''
+
+--- Configuring Training Arguments ---
+SFTConfig set.
+
+--- Initializing SFTTrainer ---
+All components ready, initializing trainer...
+SFTTrainer initialized successfully.
+
+--- Checking if Training Already Completed on Drive ---
+
+Final output files not found or incomplete on Drive.
+  Model Check: False (Checked dir: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_checkpoint)
+  Processor Check: False (Checked file: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_processor/preprocessor_config.json)
+--- Proceeding with Training ---
+Calling trainer.train()...
+[34m[1mwandb[0m: [33mWARNING[0m The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+Training finished in 64.69 minutes.
+
+Saving final model/adapter to Drive...
+Verifying model save at: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_checkpoint
+Model/Adapter directory and key file verified on Drive.
+
+Saving processor to /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_processor on Drive...
+Verifying processor save at: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_processor/preprocessor_config.json
+Processor config file verified on Drive.
+
+Logging metrics and saving state to Drive...
+***** train metrics *****
+  total_flos               = 50621808GF
+  train_loss               =     0.1674
+  train_runtime            = 1:04:40.64
+  train_samples_per_second =      0.682
+  train_steps_per_second   =      0.043
+Trainer state file verified on Drive.
+Metrics and state saved successfully to Drive.
+
+Cleaning up trainer object...
+
+--- Training Step Execution Finished ---
+
+--- Defining Evaluation Helper Functions ---
+Evaluation helper functions defined.
+
+--- Setting up Evaluation (Loading Fine-tuned AND Base Models) ---
+Fine-tuned model will be loaded from Drive path: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_checkpoint
+Processor will be loaded from Drive path: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_processor
+Base model will be loaded from Hub ID: HuggingFaceTB/SmolVLM-Base
+Results will be saved to Drive: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/chartqa_evaluation_results_comparison.json
+
+Loading processor from /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_processor...
+Processor loaded from Drive.
+
+Loading fine-tuned model/adapter from /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_checkpoint...
+Loading fully fine-tuned model from /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_checkpoint
+Fine-tuned model loaded. Device map: {'': 0}
+
+Loading original base model 'HuggingFaceTB/SmolVLM-Base' from Hub for comparison...
+Loading base model in torch.bfloat16 for comparison
+Base model loaded. Device map: {'': 0}
+
+Loading dataset 'HuggingFaceM4/ChartQA' split 'test'...
+Loaded 100 samples using islice for evaluation subset.
+Adding 'img_idx' to dataset samples...
+
+Evaluation Readiness:
+  - Processor Ready: True
+  - Fine-tuned Model Ready: True
+  - Base Model Ready: True
+  - Dataset Ready: True
+  - Can Evaluate Fine-tuned: True
+  - Can Evaluate Base: True
+Evaluation will use device: cuda
+
+--- Evaluation Setup Complete ---
+
+--- Defining Evaluation Helper Functions ---
+Evaluation helper functions defined.
+
+--- Starting Comparative Evaluation Generation ---
+Evaluating models: ['Finetuned', 'Base'] on 100 samples.
+
+Finished comparative generation. Processed 100 samples.
+
+--- Calculating and Displaying Comparative Evaluation Metrics ---
+
+Total samples processed: 100
+
+--- Processing Results for: Finetuned Model ---
+Total errors (initial + generation) for this model: 0
+Calculating metrics on 100 valid samples...
+
+[Finetuned] Sample Normalized Comparison (First 5):
+  Pred 0: '10' | Ref 0: '14' -> Match: False
+  Pred 1: '100' | Ref 1: '057' -> Match: False
+  Pred 2: '4' | Ref 2: '3' -> Match: False
+  Pred 3: 'no' | Ref 3: 'no' -> Match: True
+  Pred 4: '29' | Ref 4: '23' -> Match: False
+[Finetuned] Calculated EM: 10.00% (10/100)
+
+Sample Correct Predictions (Finetuned):
+
+Sample Incorrect Predictions (Finetuned):
+
+--- Processing Results for: Base Model ---
+Total errors (initial + generation) for this model: 0
+Calculating metrics on 100 valid samples...
+
+[Base] Sample Normalized Comparison (First 5):
+  Pred 0: '10000' | Ref 0: '14' -> Match: False
+  Pred 1: 'image image image image imageassistant image image image image imageassistant image image image image imageassistant image image image image imageassistant image image image image image' | Ref 1: '057' -> Match: False
+  Pred 2: '048 038 03 04 source iiss military balance dataset via world bank wdi ourworldindataorgmilitaryspending • cc by' | Ref 2: '3' -> Match: False
+  Pred 3: '' | Ref 3: 'no' -> Match: False
+  Pred 4: 'im sorry i cant help you' | Ref 4: '23' -> Match: False
+[Base] Calculated EM: 0.00% (0/100)
+
+Sample Correct Predictions (Base):
+
+Sample Incorrect Predictions (Base):
+
+--- Overall Evaluation Summary ---
+Total samples processed: 100
+  Finetuned Model:
+    Errors: 0
+    Valid Samples: 100
+    EM (Normalized): 10.00%
+  Base Model:
+    Errors: 0
+    Valid Samples: 100
+    EM (Normalized): 0.00%
+--------------------------------
+
+Saving combined evaluation results to: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/chartqa_evaluation_results_comparison.json
+Combined results saved successfully to Google Drive.
+
+--- Comparative Evaluation Script Finished ---
+
+Final Metrics Summary Dictionary:
+{
+  "finetuned_error_samples": 0,
+  "finetuned_valid_samples": 100,
+  "finetuned_exact_match_normalized": 10.0,
+  "base_error_samples": 0,
+  "base_valid_samples": 100,
+  "base_exact_match_normalized": 0.0
+}
+WARNING: Runtime no longer has a reference to this dataframe, please re-run this cell and try again.
+WARNING: Runtime no longer has a reference to this dataframe, please re-run this cell and try again.

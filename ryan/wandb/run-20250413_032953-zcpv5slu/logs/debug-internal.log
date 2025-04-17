@@ -1,0 +1,44 @@
+{"time":"2025-04-13T03:29:53.558861857Z","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/content/drive/MyDrive/code/wandb/run-20250413_032953-zcpv5slu/logs/debug-core.log"}
+{"time":"2025-04-13T03:29:53.700729255Z","level":"INFO","msg":"created new stream","id":"zcpv5slu"}
+{"time":"2025-04-13T03:29:53.701392775Z","level":"INFO","msg":"stream: started","id":"zcpv5slu"}
+{"time":"2025-04-13T03:29:53.701427276Z","level":"INFO","msg":"writer: Do: started","stream_id":"zcpv5slu"}
+{"time":"2025-04-13T03:29:53.701449124Z","level":"INFO","msg":"handler: started","stream_id":"zcpv5slu"}
+{"time":"2025-04-13T03:29:53.701482926Z","level":"INFO","msg":"sender: started","stream_id":"zcpv5slu"}
+{"time":"2025-04-13T03:29:53.865040687Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-13T03:29:54.68470148Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-13T03:29:54.684878775Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-13T03:29:54.684963115Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-13T03:29:54.685048368Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-13T03:29:54.910300987Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-13T03:29:54.921687666Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-13T03:29:59.267705445Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-13T03:29:59.281815511Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-13T03:29:59.343638316Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-13T03:29:59.350189988Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-13T03:29:59.377551593Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-13T03:29:59.386092386Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-13T03:29:59.650062551Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-13T03:29:59.66168488Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-13T03:30:00.068427695Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-13T03:30:00.077984529Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-13T03:30:05.120533322Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-13T03:30:05.120733577Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-13T03:30:07.431052368Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-13T03:30:07.437856113Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-13T03:30:39.28955791Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-13T03:30:39.289710518Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-13T03:30:39.64506445Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-13T03:30:39.654776281Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-13T03:30:39.657380727Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-13T03:30:39.666852568Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-13T03:38:42.830419138Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-13T03:38:42.841210622Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-13T03:38:42.954029163Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-13T03:41:31.683556725Z","level":"INFO","msg":"stream: closing","id":"zcpv5slu"}
+{"time":"2025-04-13T03:41:31.683603521Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-13T03:41:31.683963756Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-13T03:41:31.896823548Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-13T03:41:31.948053568Z","level":"INFO","msg":"handler: closed","stream_id":"zcpv5slu"}
+{"time":"2025-04-13T03:41:31.948079919Z","level":"INFO","msg":"writer: Close: closed","stream_id":"zcpv5slu"}
+{"time":"2025-04-13T03:41:31.94814061Z","level":"INFO","msg":"sender: closed","stream_id":"zcpv5slu"}
+{"time":"2025-04-13T03:41:31.949128891Z","level":"INFO","msg":"stream: closed","id":"zcpv5slu"}

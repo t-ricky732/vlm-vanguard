@@ -1,0 +1,44 @@
+
+--- Configuration Summary ---
+Model ID: HuggingFaceTB/SmolVLM-Base
+Training Type: full-tuned
+Using LoRA: False
+Using QLoRA: False
+Output Directory: ./smolvlm-chartllama-full-tuned
+Device: cuda
+Dtype: torch.bfloat16
+Seed: 42
+---------------------------
+
+PyTorch version: 2.6.0+cu124
+CUDA available: True
+CUDA version: 12.4
+GPU: NVIDIA A100-SXM4-40GB
+GPU memory: 42.47 GB
+Using compute dtype: torch.bfloat16
+Loading processor...
+/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_auth.py:94: UserWarning:
+The secret `HF_TOKEN` does not exist in your Colab secrets.
+To authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.
+You will be able to reuse this secret in all of your notebooks.
+Please note that authentication is recommended but still optional to access public models or datasets.
+  warnings.warn(
+Processor loaded.
+
+Starting raw data loading and preprocessing...
+Loading raw ChartLlama data...
+Found 7 JSON files in chartllama_data.
+Reading JSONs: 100%|██████████| 7/7 [00:01<00:00,  6.02it/s]
+
+Initial processing complete.
+Loaded 980 valid samples.
+Skipped 0 samples due to missing data or images.
+Encountered 0 errors during file processing.
+
+Created final dataset with 980 samples.
+Dataset features: {'id': Value(dtype='string', id=None), 'image': Image(mode=None, decode=True, id=None), 'question': Value(dtype='string', id=None), 'answer': Value(dtype='string', id=None)}
+Raw data loaded: 980 samples.
+Defining output structure and columns to remove...
+Defined output features for map: {'input_ids': Sequence(feature=Value(dtype='int64', id=None), length=-1, id=None), 'attention_mask': Sequence(feature=Value(dtype='int64', id=None), length=-1, id=None), 'labels': Sequence(feature=Value(dtype='int64', id=None), length=-1, id=None), 'pixel_values': Value(dtype='binary', id=None)}
+Columns to remove after mapping: ['image', 'question', 'answer', 'id']
+Preprocessing raw data (map sample-by-sample with serialization)...

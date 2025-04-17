@@ -1,0 +1,37 @@
+2025-04-13 00:05:16,923 INFO    MainThread:1300 [wandb_setup.py:_flush():67] Current SDK version is 0.19.9
+2025-04-13 00:05:16,924 INFO    MainThread:1300 [wandb_setup.py:_flush():67] Configure stats pid to 1300
+2025-04-13 00:05:16,924 INFO    MainThread:1300 [wandb_setup.py:_flush():67] Loading settings from /root/.config/wandb/settings
+2025-04-13 00:05:16,925 INFO    MainThread:1300 [wandb_setup.py:_flush():67] Loading settings from /content/drive/MyDrive/code/wandb/settings
+2025-04-13 00:05:16,925 INFO    MainThread:1300 [wandb_setup.py:_flush():67] Loading settings from environment variables
+2025-04-13 00:05:16,926 INFO    MainThread:1300 [wandb_init.py:setup_run_log_directory():662] Logging user logs to /content/drive/MyDrive/code/wandb/run-20250413_000516-ct7kqeik/logs/debug.log
+2025-04-13 00:05:16,926 INFO    MainThread:1300 [wandb_init.py:setup_run_log_directory():663] Logging internal logs to /content/drive/MyDrive/code/wandb/run-20250413_000516-ct7kqeik/logs/debug-internal.log
+2025-04-13 00:05:16,926 INFO    MainThread:1300 [wandb_init.py:monkeypatch_ipython():581] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x7ecc55b55710>
+2025-04-13 00:05:16,926 INFO    MainThread:1300 [wandb_init.py:init():781] calling init triggers
+2025-04-13 00:05:16,926 INFO    MainThread:1300 [wandb_init.py:init():786] wandb.init called with sweep_config: {}
+config: {'model_id': 'HuggingFaceTB/SmolVLM-Base', 'training_type': 'full-tuned', 'use_lora': False, 'use_qlora': False, 'dtype': 'torch.bfloat16', 'seed': 42, 'lora_r': None, 'lora_alpha': None, 'num_epochs': 3, 'learning_rate': 5e-05, 'batch_size': 4, 'grad_accum': 4, 'max_seq_length': 2048, 'output_dir': '/content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned', 'optimizer': 'adamw_torch_fused', 'lr_scheduler': 'cosine', 'warmup_ratio': 0.1, 'weight_decay': 0.01, '_wandb': {}}
+2025-04-13 00:05:16,927 INFO    MainThread:1300 [wandb_init.py:init():809] starting backend
+2025-04-13 00:05:16,927 INFO    MainThread:1300 [wandb_init.py:init():813] sending inform_init request
+2025-04-13 00:05:16,935 INFO    MainThread:1300 [backend.py:_multiprocessing_setup():101] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-04-13 00:05:16,935 INFO    MainThread:1300 [wandb_init.py:init():823] backend started and connected
+2025-04-13 00:05:16,942 INFO    MainThread:1300 [wandb_run.py:_label_probe_notebook():1267] probe notebook
+2025-04-13 00:05:17,196 INFO    MainThread:1300 [wandb_init.py:init():915] updated telemetry
+2025-04-13 00:05:17,198 INFO    MainThread:1300 [wandb_init.py:init():939] communicating run to backend with 90.0 second timeout
+2025-04-13 00:05:17,300 INFO    MainThread:1300 [wandb_init.py:init():1014] starting run threads in backend
+2025-04-13 00:05:17,736 INFO    MainThread:1300 [wandb_run.py:_console_start():2454] atexit reg
+2025-04-13 00:05:17,738 INFO    MainThread:1300 [wandb_run.py:_redirect():2306] redirect: wrap_raw
+2025-04-13 00:05:17,739 INFO    MainThread:1300 [wandb_run.py:_redirect():2371] Wrapping output streams.
+2025-04-13 00:05:17,740 INFO    MainThread:1300 [wandb_run.py:_redirect():2394] Redirects installed.
+2025-04-13 00:05:17,746 INFO    MainThread:1300 [wandb_init.py:init():1056] run started, returning control to user process
+2025-04-13 00:05:18,084 INFO    MainThread:1300 [jupyter.py:save_ipynb():384] [no run ID] not saving jupyter notebook
+2025-04-13 00:05:18,084 INFO    MainThread:1300 [wandb_init.py:_pause_backend():546] [no run ID] pausing backend
+2025-04-13 00:05:18,863 INFO    MainThread:1300 [wandb_init.py:_resume_backend():551] [no run ID] resuming backend
+2025-04-13 00:05:18,921 INFO    MainThread:1300 [wandb_run.py:_finish():2189] finishing run ryan-seet467-georgia-institute-of-technology/smolvlm-chartllama-sft-refactored/ct7kqeik
+2025-04-13 00:05:18,921 INFO    MainThread:1300 [jupyter.py:save_history():460] not saving jupyter history
+2025-04-13 00:05:18,921 INFO    MainThread:1300 [jupyter.py:save_ipynb():384] not saving jupyter notebook
+2025-04-13 00:05:18,921 INFO    MainThread:1300 [wandb_init.py:_jupyter_teardown():563] cleaning up jupyter logic
+2025-04-13 00:05:18,922 INFO    MainThread:1300 [wandb_run.py:_atexit_cleanup():2419] got exitcode: 0
+2025-04-13 00:05:18,922 INFO    MainThread:1300 [wandb_run.py:_restore():2401] restore
+2025-04-13 00:05:18,922 INFO    MainThread:1300 [wandb_run.py:_restore():2407] restore done
+2025-04-13 00:05:19,376 INFO    MainThread:1300 [wandb_run.py:_footer_history_summary_info():4064] rendering history
+2025-04-13 00:05:19,376 INFO    MainThread:1300 [wandb_run.py:_footer_history_summary_info():4096] rendering summary
+2025-04-13 00:05:19,377 INFO    MainThread:1300 [wandb_run.py:_footer_sync_info():4025] logging synced files

@@ -1,0 +1,699 @@
+
+--- Configuration Summary ---
+Model ID: HuggingFaceTB/SmolVLM-Base
+Training Type: full-tuned
+Using LoRA: False
+Using QLoRA: False
+Output Directory: ./smolvlm-chartllama-full-tuned
+Device: cuda
+Dtype: torch.bfloat16
+Seed: 42
+---------------------------
+
+PyTorch version: 2.6.0+cu124
+CUDA available: True
+CUDA version: 12.4
+GPU: NVIDIA A100-SXM4-40GB
+GPU memory: 42.47 GB
+Using compute dtype: torch.bfloat16
+Loading processor...
+/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_auth.py:94: UserWarning:
+The secret `HF_TOKEN` does not exist in your Colab secrets.
+To authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.
+You will be able to reuse this secret in all of your notebooks.
+Please note that authentication is recommended but still optional to access public models or datasets.
+  warnings.warn(
+Processor loaded.
+Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount("/content/drive", force_remount=True).
+Mounted at /content/drive
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/usr/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 107] Transport endpoint is not connected
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/lib/python3.11/dist-packages/colab_kernel_launcher.py", line 37, in <module>
+    ColabKernelApp.launch_instance()
+  File "/usr/local/lib/python3.11/dist-packages/traitlets/config/application.py", line 992, in launch_instance
+    app.start()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelapp.py", line 712, in start
+    self.io_loop.start()
+  File "/usr/local/lib/python3.11/dist-packages/tornado/platform/asyncio.py", line 205, in start
+    self.asyncio_loop.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 608, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1936, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 510, in dispatch_queue
+    await self.process_one()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 499, in process_one
+    await dispatch(*args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 406, in dispatch_shell
+    await result
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 730, in execute_request
+    reply_content = await reply_content
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/ipkernel.py", line 383, in do_execute
+    res = shell.run_cell(
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/zmqshell.py", line 528, in run_cell
+    return super().run_cell(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/interactiveshell.py", line 2981, in run_cell
+    self.events.trigger('post_run_cell', result)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/events.py", line 89, in trigger
+    func(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/wandb/sdk/wandb_init.py", line 541, in _pause_backend
+    if self.notebook.save_ipynb():  # type: ignore
+  File "/usr/local/lib/python3.11/dist-packages/wandb/jupyter.py", line 384, in save_ipynb
+    logger.info("not saving jupyter notebook")
+Message: 'not saving jupyter notebook'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/usr/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 107] Transport endpoint is not connected
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/lib/python3.11/dist-packages/colab_kernel_launcher.py", line 37, in <module>
+    ColabKernelApp.launch_instance()
+  File "/usr/local/lib/python3.11/dist-packages/traitlets/config/application.py", line 992, in launch_instance
+    app.start()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelapp.py", line 712, in start
+    self.io_loop.start()
+  File "/usr/local/lib/python3.11/dist-packages/tornado/platform/asyncio.py", line 205, in start
+    self.asyncio_loop.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 608, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1936, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 510, in dispatch_queue
+    await self.process_one()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 499, in process_one
+    await dispatch(*args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 406, in dispatch_shell
+    await result
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 730, in execute_request
+    reply_content = await reply_content
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/ipkernel.py", line 383, in do_execute
+    res = shell.run_cell(
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/zmqshell.py", line 528, in run_cell
+    return super().run_cell(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/interactiveshell.py", line 2981, in run_cell
+    self.events.trigger('post_run_cell', result)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/events.py", line 89, in trigger
+    func(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/wandb/sdk/wandb_init.py", line 546, in _pause_backend
+    self._logger.info("pausing backend")  # type: ignore
+Message: 'pausing backend'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/usr/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 107] Transport endpoint is not connected
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/lib/python3.11/dist-packages/colab_kernel_launcher.py", line 37, in <module>
+    ColabKernelApp.launch_instance()
+  File "/usr/local/lib/python3.11/dist-packages/traitlets/config/application.py", line 992, in launch_instance
+    app.start()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelapp.py", line 712, in start
+    self.io_loop.start()
+  File "/usr/local/lib/python3.11/dist-packages/tornado/platform/asyncio.py", line 205, in start
+    self.asyncio_loop.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 608, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1936, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 510, in dispatch_queue
+    await self.process_one()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 499, in process_one
+    await dispatch(*args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 406, in dispatch_shell
+    await result
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 730, in execute_request
+    reply_content = await reply_content
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/ipkernel.py", line 383, in do_execute
+    res = shell.run_cell(
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/zmqshell.py", line 528, in run_cell
+    return super().run_cell(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/interactiveshell.py", line 2975, in run_cell
+    result = self._run_cell(
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/interactiveshell.py", line 3030, in _run_cell
+    return runner(coro)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/async_helpers.py", line 78, in _pseudo_sync_runner
+    coro.send(None)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/interactiveshell.py", line 3148, in run_cell_async
+    self.events.trigger('pre_run_cell', info)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/events.py", line 89, in trigger
+    func(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/wandb/sdk/wandb_init.py", line 551, in _resume_backend
+    self._logger.info("resuming backend")  # type: ignore
+Message: 'resuming backend'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/usr/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 107] Transport endpoint is not connected
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/lib/python3.11/dist-packages/colab_kernel_launcher.py", line 37, in <module>
+    ColabKernelApp.launch_instance()
+  File "/usr/local/lib/python3.11/dist-packages/traitlets/config/application.py", line 992, in launch_instance
+    app.start()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelapp.py", line 712, in start
+    self.io_loop.start()
+  File "/usr/local/lib/python3.11/dist-packages/tornado/platform/asyncio.py", line 205, in start
+    self.asyncio_loop.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 608, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1936, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 510, in dispatch_queue
+    await self.process_one()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 499, in process_one
+    await dispatch(*args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 406, in dispatch_shell
+    await result
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 730, in execute_request
+    reply_content = await reply_content
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/ipkernel.py", line 383, in do_execute
+    res = shell.run_cell(
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/zmqshell.py", line 528, in run_cell
+    return super().run_cell(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/interactiveshell.py", line 2981, in run_cell
+    self.events.trigger('post_run_cell', result)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/events.py", line 89, in trigger
+    func(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/wandb/sdk/wandb_init.py", line 541, in _pause_backend
+    if self.notebook.save_ipynb():  # type: ignore
+  File "/usr/local/lib/python3.11/dist-packages/wandb/jupyter.py", line 384, in save_ipynb
+    logger.info("not saving jupyter notebook")
+Message: 'not saving jupyter notebook'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/usr/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 107] Transport endpoint is not connected
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/lib/python3.11/dist-packages/colab_kernel_launcher.py", line 37, in <module>
+    ColabKernelApp.launch_instance()
+  File "/usr/local/lib/python3.11/dist-packages/traitlets/config/application.py", line 992, in launch_instance
+    app.start()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelapp.py", line 712, in start
+    self.io_loop.start()
+  File "/usr/local/lib/python3.11/dist-packages/tornado/platform/asyncio.py", line 205, in start
+    self.asyncio_loop.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 608, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1936, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 510, in dispatch_queue
+    await self.process_one()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 499, in process_one
+    await dispatch(*args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 406, in dispatch_shell
+    await result
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 730, in execute_request
+    reply_content = await reply_content
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/ipkernel.py", line 383, in do_execute
+    res = shell.run_cell(
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/zmqshell.py", line 528, in run_cell
+    return super().run_cell(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/interactiveshell.py", line 2981, in run_cell
+    self.events.trigger('post_run_cell', result)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/events.py", line 89, in trigger
+    func(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/wandb/sdk/wandb_init.py", line 546, in _pause_backend
+    self._logger.info("pausing backend")  # type: ignore
+Message: 'pausing backend'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/usr/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 107] Transport endpoint is not connected
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/lib/python3.11/dist-packages/colab_kernel_launcher.py", line 37, in <module>
+    ColabKernelApp.launch_instance()
+  File "/usr/local/lib/python3.11/dist-packages/traitlets/config/application.py", line 992, in launch_instance
+    app.start()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelapp.py", line 712, in start
+    self.io_loop.start()
+  File "/usr/local/lib/python3.11/dist-packages/tornado/platform/asyncio.py", line 205, in start
+    self.asyncio_loop.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 608, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1936, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 510, in dispatch_queue
+    await self.process_one()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 499, in process_one
+    await dispatch(*args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 406, in dispatch_shell
+    await result
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 730, in execute_request
+    reply_content = await reply_content
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/ipkernel.py", line 383, in do_execute
+    res = shell.run_cell(
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/zmqshell.py", line 528, in run_cell
+    return super().run_cell(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/interactiveshell.py", line 2975, in run_cell
+    result = self._run_cell(
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/interactiveshell.py", line 3030, in _run_cell
+    return runner(coro)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/async_helpers.py", line 78, in _pseudo_sync_runner
+    coro.send(None)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/interactiveshell.py", line 3148, in run_cell_async
+    self.events.trigger('pre_run_cell', info)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/events.py", line 89, in trigger
+    func(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/wandb/sdk/wandb_init.py", line 551, in _resume_backend
+    self._logger.info("resuming backend")  # type: ignore
+Message: 'resuming backend'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/usr/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 107] Transport endpoint is not connected
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/lib/python3.11/dist-packages/colab_kernel_launcher.py", line 37, in <module>
+    ColabKernelApp.launch_instance()
+  File "/usr/local/lib/python3.11/dist-packages/traitlets/config/application.py", line 992, in launch_instance
+    app.start()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelapp.py", line 712, in start
+    self.io_loop.start()
+  File "/usr/local/lib/python3.11/dist-packages/tornado/platform/asyncio.py", line 205, in start
+    self.asyncio_loop.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 608, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1936, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 510, in dispatch_queue
+    await self.process_one()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 499, in process_one
+    await dispatch(*args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 406, in dispatch_shell
+    await result
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 730, in execute_request
+    reply_content = await reply_content
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/ipkernel.py", line 383, in do_execute
+    res = shell.run_cell(
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/zmqshell.py", line 528, in run_cell
+    return super().run_cell(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/interactiveshell.py", line 2981, in run_cell
+    self.events.trigger('post_run_cell', result)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/events.py", line 89, in trigger
+    func(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/wandb/sdk/wandb_init.py", line 541, in _pause_backend
+    if self.notebook.save_ipynb():  # type: ignore
+  File "/usr/local/lib/python3.11/dist-packages/wandb/jupyter.py", line 384, in save_ipynb
+    logger.info("not saving jupyter notebook")
+Message: 'not saving jupyter notebook'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/usr/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 107] Transport endpoint is not connected
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/lib/python3.11/dist-packages/colab_kernel_launcher.py", line 37, in <module>
+    ColabKernelApp.launch_instance()
+  File "/usr/local/lib/python3.11/dist-packages/traitlets/config/application.py", line 992, in launch_instance
+    app.start()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelapp.py", line 712, in start
+    self.io_loop.start()
+  File "/usr/local/lib/python3.11/dist-packages/tornado/platform/asyncio.py", line 205, in start
+    self.asyncio_loop.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 608, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1936, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 510, in dispatch_queue
+    await self.process_one()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 499, in process_one
+    await dispatch(*args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 406, in dispatch_shell
+    await result
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 730, in execute_request
+    reply_content = await reply_content
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/ipkernel.py", line 383, in do_execute
+    res = shell.run_cell(
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/zmqshell.py", line 528, in run_cell
+    return super().run_cell(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/interactiveshell.py", line 2981, in run_cell
+    self.events.trigger('post_run_cell', result)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/events.py", line 89, in trigger
+    func(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/wandb/sdk/wandb_init.py", line 546, in _pause_backend
+    self._logger.info("pausing backend")  # type: ignore
+Message: 'pausing backend'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/usr/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 107] Transport endpoint is not connected
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/lib/python3.11/dist-packages/colab_kernel_launcher.py", line 37, in <module>
+    ColabKernelApp.launch_instance()
+  File "/usr/local/lib/python3.11/dist-packages/traitlets/config/application.py", line 992, in launch_instance
+    app.start()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelapp.py", line 712, in start
+    self.io_loop.start()
+  File "/usr/local/lib/python3.11/dist-packages/tornado/platform/asyncio.py", line 205, in start
+    self.asyncio_loop.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 608, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1936, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 510, in dispatch_queue
+    await self.process_one()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 499, in process_one
+    await dispatch(*args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 406, in dispatch_shell
+    await result
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 730, in execute_request
+    reply_content = await reply_content
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/ipkernel.py", line 383, in do_execute
+    res = shell.run_cell(
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/zmqshell.py", line 528, in run_cell
+    return super().run_cell(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/interactiveshell.py", line 2975, in run_cell
+    result = self._run_cell(
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/interactiveshell.py", line 3030, in _run_cell
+    return runner(coro)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/async_helpers.py", line 78, in _pseudo_sync_runner
+    coro.send(None)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/interactiveshell.py", line 3148, in run_cell_async
+    self.events.trigger('pre_run_cell', info)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/events.py", line 89, in trigger
+    func(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/wandb/sdk/wandb_init.py", line 551, in _resume_backend
+    self._logger.info("resuming backend")  # type: ignore
+Message: 'resuming backend'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/usr/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 107] Transport endpoint is not connected
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/lib/python3.11/dist-packages/colab_kernel_launcher.py", line 37, in <module>
+    ColabKernelApp.launch_instance()
+  File "/usr/local/lib/python3.11/dist-packages/traitlets/config/application.py", line 992, in launch_instance
+    app.start()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelapp.py", line 712, in start
+    self.io_loop.start()
+  File "/usr/local/lib/python3.11/dist-packages/tornado/platform/asyncio.py", line 205, in start
+    self.asyncio_loop.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 608, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1936, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 510, in dispatch_queue
+    await self.process_one()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 499, in process_one
+    await dispatch(*args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 406, in dispatch_shell
+    await result
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 730, in execute_request
+    reply_content = await reply_content
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/ipkernel.py", line 383, in do_execute
+    res = shell.run_cell(
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/zmqshell.py", line 528, in run_cell
+    return super().run_cell(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/interactiveshell.py", line 2981, in run_cell
+    self.events.trigger('post_run_cell', result)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/events.py", line 89, in trigger
+    func(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/wandb/sdk/wandb_init.py", line 541, in _pause_backend
+    if self.notebook.save_ipynb():  # type: ignore
+  File "/usr/local/lib/python3.11/dist-packages/wandb/jupyter.py", line 384, in save_ipynb
+    logger.info("not saving jupyter notebook")
+Message: 'not saving jupyter notebook'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/usr/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 107] Transport endpoint is not connected
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/lib/python3.11/dist-packages/colab_kernel_launcher.py", line 37, in <module>
+    ColabKernelApp.launch_instance()
+  File "/usr/local/lib/python3.11/dist-packages/traitlets/config/application.py", line 992, in launch_instance
+    app.start()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelapp.py", line 712, in start
+    self.io_loop.start()
+  File "/usr/local/lib/python3.11/dist-packages/tornado/platform/asyncio.py", line 205, in start
+    self.asyncio_loop.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 608, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1936, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 510, in dispatch_queue
+    await self.process_one()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 499, in process_one
+    await dispatch(*args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 406, in dispatch_shell
+    await result
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 730, in execute_request
+    reply_content = await reply_content
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/ipkernel.py", line 383, in do_execute
+    res = shell.run_cell(
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/zmqshell.py", line 528, in run_cell
+    return super().run_cell(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/interactiveshell.py", line 2981, in run_cell
+    self.events.trigger('post_run_cell', result)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/events.py", line 89, in trigger
+    func(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/wandb/sdk/wandb_init.py", line 546, in _pause_backend
+    self._logger.info("pausing backend")  # type: ignore
+Message: 'pausing backend'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/usr/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 107] Transport endpoint is not connected
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/lib/python3.11/dist-packages/colab_kernel_launcher.py", line 37, in <module>
+    ColabKernelApp.launch_instance()
+  File "/usr/local/lib/python3.11/dist-packages/traitlets/config/application.py", line 992, in launch_instance
+    app.start()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelapp.py", line 712, in start
+    self.io_loop.start()
+  File "/usr/local/lib/python3.11/dist-packages/tornado/platform/asyncio.py", line 205, in start
+    self.asyncio_loop.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 608, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1936, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 510, in dispatch_queue
+    await self.process_one()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 499, in process_one
+    await dispatch(*args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 406, in dispatch_shell
+    await result
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 730, in execute_request
+    reply_content = await reply_content
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/ipkernel.py", line 383, in do_execute
+    res = shell.run_cell(
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/zmqshell.py", line 528, in run_cell
+    return super().run_cell(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/interactiveshell.py", line 2975, in run_cell
+    result = self._run_cell(
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/interactiveshell.py", line 3030, in _run_cell
+    return runner(coro)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/async_helpers.py", line 78, in _pseudo_sync_runner
+    coro.send(None)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/interactiveshell.py", line 3148, in run_cell_async
+    self.events.trigger('pre_run_cell', info)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/events.py", line 89, in trigger
+    func(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/wandb/sdk/wandb_init.py", line 551, in _resume_backend
+    self._logger.info("resuming backend")  # type: ignore
+Message: 'resuming backend'
+Arguments: ()
+Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount("/content/drive", force_remount=True).
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/usr/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 107] Transport endpoint is not connected
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/lib/python3.11/dist-packages/colab_kernel_launcher.py", line 37, in <module>
+    ColabKernelApp.launch_instance()
+  File "/usr/local/lib/python3.11/dist-packages/traitlets/config/application.py", line 992, in launch_instance
+    app.start()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelapp.py", line 712, in start
+    self.io_loop.start()
+  File "/usr/local/lib/python3.11/dist-packages/tornado/platform/asyncio.py", line 205, in start
+    self.asyncio_loop.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 608, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1936, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 510, in dispatch_queue
+    await self.process_one()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 499, in process_one
+    await dispatch(*args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 406, in dispatch_shell
+    await result
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 730, in execute_request
+    reply_content = await reply_content
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/ipkernel.py", line 383, in do_execute
+    res = shell.run_cell(
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/zmqshell.py", line 528, in run_cell
+    return super().run_cell(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/interactiveshell.py", line 2981, in run_cell
+    self.events.trigger('post_run_cell', result)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/events.py", line 89, in trigger
+    func(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/wandb/sdk/wandb_init.py", line 541, in _pause_backend
+    if self.notebook.save_ipynb():  # type: ignore
+  File "/usr/local/lib/python3.11/dist-packages/wandb/jupyter.py", line 384, in save_ipynb
+    logger.info("not saving jupyter notebook")
+Message: 'not saving jupyter notebook'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/usr/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 107] Transport endpoint is not connected
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/lib/python3.11/dist-packages/colab_kernel_launcher.py", line 37, in <module>
+    ColabKernelApp.launch_instance()
+  File "/usr/local/lib/python3.11/dist-packages/traitlets/config/application.py", line 992, in launch_instance
+    app.start()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelapp.py", line 712, in start
+    self.io_loop.start()
+  File "/usr/local/lib/python3.11/dist-packages/tornado/platform/asyncio.py", line 205, in start
+    self.asyncio_loop.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 608, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1936, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 510, in dispatch_queue
+    await self.process_one()
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 499, in process_one
+    await dispatch(*args)
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 406, in dispatch_shell
+    await result
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py", line 730, in execute_request
+    reply_content = await reply_content
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/ipkernel.py", line 383, in do_execute
+    res = shell.run_cell(
+  File "/usr/local/lib/python3.11/dist-packages/ipykernel/zmqshell.py", line 528, in run_cell
+    return super().run_cell(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/interactiveshell.py", line 2981, in run_cell
+    self.events.trigger('post_run_cell', result)
+  File "/usr/local/lib/python3.11/dist-packages/IPython/core/events.py", line 89, in trigger
+    func(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/wandb/sdk/wandb_init.py", line 546, in _pause_backend
+    self._logger.info("pausing backend")  # type: ignore
+Message: 'pausing backend'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/usr/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 107] Transport endpoint is not connected
+Call stack:
+  File "/usr/lib/python3.11/threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.11/threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/wandb/sdk/interface/router.py", line 71, in message_loop
+    self._mailbox.close()
+  File "/usr/local/lib/python3.11/dist-packages/wandb/sdk/mailbox/mailbox.py", line 129, in close
+    _logger.info(
+Message: 'Closing mailbox, abandoning 1 handles.'
+Arguments: ()

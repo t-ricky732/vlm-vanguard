@@ -1,0 +1,21 @@
+{"time":"2025-04-12T07:57:32.995314646Z","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/content/drive/MyDrive/code/wandb/run-20250412_075732-w415xz7m/logs/debug-core.log"}
+{"time":"2025-04-12T07:57:33.139234786Z","level":"INFO","msg":"created new stream","id":"w415xz7m"}
+{"time":"2025-04-12T07:57:33.139716182Z","level":"INFO","msg":"stream: started","id":"w415xz7m"}
+{"time":"2025-04-12T07:57:33.139773572Z","level":"INFO","msg":"sender: started","stream_id":"w415xz7m"}
+{"time":"2025-04-12T07:57:33.139817023Z","level":"INFO","msg":"writer: Do: started","stream_id":"w415xz7m"}
+{"time":"2025-04-12T07:57:33.139878194Z","level":"INFO","msg":"handler: started","stream_id":"w415xz7m"}
+{"time":"2025-04-12T07:57:33.39183223Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-12T07:57:33.914209532Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-12T07:57:33.914388369Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-12T07:57:33.914462486Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-12T07:57:33.914620744Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-12T07:57:33.914740317Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-12T07:57:33.914809558Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-12T07:57:33.914887358Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-12T07:57:33.91501284Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-12T07:57:35.149075092Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-12T07:57:35.165261116Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-12T07:57:35.169132069Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-12T07:57:35.17775167Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-12T07:57:35.180033082Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-12T07:57:35.195326612Z","level":"INFO","msg":"Resuming system monitor"}

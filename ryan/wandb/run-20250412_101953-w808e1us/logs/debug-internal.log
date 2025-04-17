@@ -1,0 +1,36 @@
+{"time":"2025-04-12T10:19:54.012618995Z","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/content/drive/MyDrive/code/wandb/run-20250412_101953-w808e1us/logs/debug-core.log"}
+{"time":"2025-04-12T10:19:54.153607266Z","level":"INFO","msg":"created new stream","id":"w808e1us"}
+{"time":"2025-04-12T10:19:54.154084449Z","level":"INFO","msg":"stream: started","id":"w808e1us"}
+{"time":"2025-04-12T10:19:54.154126865Z","level":"INFO","msg":"writer: Do: started","stream_id":"w808e1us"}
+{"time":"2025-04-12T10:19:54.154172465Z","level":"INFO","msg":"sender: started","stream_id":"w808e1us"}
+{"time":"2025-04-12T10:19:54.154185516Z","level":"INFO","msg":"handler: started","stream_id":"w808e1us"}
+{"time":"2025-04-12T10:19:54.343719571Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-12T10:19:55.185379706Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-12T10:19:55.185503721Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-12T10:19:55.185600072Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-12T10:19:55.185729195Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-12T10:19:55.384845319Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-12T10:19:55.393824865Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-12T10:19:59.174021218Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-12T10:19:59.179459809Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-12T10:19:59.182378707Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-12T10:19:59.19641008Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-12T10:19:59.200627697Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-12T10:19:59.204627747Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-12T10:19:59.206422838Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-12T10:19:59.212524114Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-12T10:19:59.241619828Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-12T10:19:59.247829623Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-12T10:19:59.485503271Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-12T10:19:59.493813519Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-12T10:38:42.478475603Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-12T10:38:42.492601743Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-12T10:38:42.606851957Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-12T10:55:05.788856683Z","level":"INFO","msg":"stream: closing","id":"w808e1us"}
+{"time":"2025-04-12T10:55:05.788999128Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-12T10:55:05.78915596Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-12T10:55:06.092688299Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-12T10:55:06.251624684Z","level":"INFO","msg":"handler: closed","stream_id":"w808e1us"}
+{"time":"2025-04-12T10:55:06.251699713Z","level":"INFO","msg":"writer: Close: closed","stream_id":"w808e1us"}
+{"time":"2025-04-12T10:55:06.251727811Z","level":"INFO","msg":"sender: closed","stream_id":"w808e1us"}
+{"time":"2025-04-12T10:55:06.253225671Z","level":"INFO","msg":"stream: closed","id":"w808e1us"}

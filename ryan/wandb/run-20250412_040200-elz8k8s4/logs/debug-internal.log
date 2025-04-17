@@ -1,0 +1,7 @@
+{"time":"2025-04-12T04:02:01.550331668Z","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/content/drive/MyDrive/code/wandb/run-20250412_040200-elz8k8s4/logs/debug-core.log"}
+{"time":"2025-04-12T04:02:01.68676791Z","level":"INFO","msg":"created new stream","id":"elz8k8s4"}
+{"time":"2025-04-12T04:02:01.687563105Z","level":"INFO","msg":"stream: started","id":"elz8k8s4"}
+{"time":"2025-04-12T04:02:01.687594754Z","level":"INFO","msg":"writer: Do: started","stream_id":"elz8k8s4"}
+{"time":"2025-04-12T04:02:01.687604398Z","level":"INFO","msg":"sender: started","stream_id":"elz8k8s4"}
+{"time":"2025-04-12T04:02:01.687621195Z","level":"INFO","msg":"handler: started","stream_id":"elz8k8s4"}
+{"time":"2025-04-12T04:02:01.877426424Z","level":"INFO","msg":"Starting system monitor"}

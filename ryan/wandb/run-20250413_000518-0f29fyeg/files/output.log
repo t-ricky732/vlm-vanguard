@@ -1,0 +1,22 @@
+WandB initialized.
+--- WandB Setup Complete ---
+
+--- Defining Data Loading Function ---
+Data loading function defined.
+
+--- Loading and Splitting Data ---
+
+--- Loading and Splitting Data ---
+
+--- Loading and Splitting Data ---
+Loading data from: /content/drive/MyDrive/code/chartllama_data
+Found 7 JSON files in /content/drive/MyDrive/code/chartllama_data
+
+Loaded 100 raw examples. Skipped 0 invalid/missing samples.
+
+Raw data loaded and split.
+Train samples: 90
+Eval samples (Validation): 10
+
+Sample train data point (raw):
+{'id': 'ours_simplified_qa_0_0', 'question': 'What is the title of the chart?', 'answer': 'Candlestick Chart', 'image_path': '/content/drive/MyDrive/code/chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_0.png'}

@@ -1,0 +1,100 @@
+
+--- Configuration Summary ---
+Model ID: HuggingFaceTB/SmolVLM-Base
+Training Type: full-tuned
+Using LoRA: False
+Using QLoRA: False
+Output Directory: ./smolvlm-chartllama-full-tuned
+Device: cuda
+Dtype: torch.bfloat16
+Seed: 42
+---------------------------
+
+PyTorch version: 2.6.0+cu124
+CUDA available: True
+CUDA version: 12.4
+GPU: NVIDIA A100-SXM4-40GB
+GPU memory: 42.47 GB
+Using compute dtype: torch.bfloat16
+Loading processor...
+/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_auth.py:94: UserWarning:
+The secret `HF_TOKEN` does not exist in your Colab secrets.
+To authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.
+You will be able to reuse this secret in all of your notebooks.
+Please note that authentication is recommended but still optional to access public models or datasets.
+  warnings.warn(
+Processor loaded.
+
+Starting raw data loading and preprocessing...
+Loading raw ChartLlama data...
+Found 7 JSON files in chartllama_data.
+Reading JSONs: 100%|██████████| 7/7 [00:01<00:00,  6.48it/s]
+
+Initial processing complete.
+Loaded 980 valid samples.
+Skipped 0 samples due to missing data or images.
+Encountered 0 errors during file processing.
+
+Created final dataset with 980 samples.
+Dataset features: {'id': Value(dtype='string', id=None), 'image': Image(mode=None, decode=True, id=None), 'question': Value(dtype='string', id=None), 'answer': Value(dtype='string', id=None)}
+Raw data loaded: 980 samples.
+Raw dataset columns: ['id', 'image', 'question', 'answer']
+Preprocessing raw data (batch_size=1)...
+Columns to remove after mapping: ['image', 'question', 'answer', 'id']
+
+An error occurred during data loading/processing: Column 2 named pixel_values expected length 1334 but got length 13
+Traceback (most recent call last):
+  File "<ipython-input-17-628f770123c8>", line 58, in <cell line: 0>
+    processed_dataset = raw_dataset.map(
+                        ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/arrow_dataset.py", line 557, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/arrow_dataset.py", line 3074, in map
+    for rank, done, content in Dataset._map_single(**dataset_kwargs):
+  File "/usr/local/lib/python3.11/dist-packages/datasets/arrow_dataset.py", line 3531, in _map_single
+    writer.write_batch(batch)
+  File "/usr/local/lib/python3.11/dist-packages/datasets/arrow_writer.py", line 609, in write_batch
+    pa_table = pa.Table.from_arrays(arrays, schema=schema)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/table.pxi", line 4868, in pyarrow.lib.Table.from_arrays
+  File "pyarrow/table.pxi", line 4214, in pyarrow.lib.Table.validate
+  File "pyarrow/error.pxi", line 92, in pyarrow.lib.check_status
+pyarrow.lib.ArrowInvalid: Column 2 named pixel_values expected length 1334 but got length 13
+
+ERROR: Dataset preparation failed. Cannot proceed.
+Configuring model for Full Fine-Tuning (dtype: torch.bfloat16)...
+
+Loading model 'HuggingFaceTB/SmolVLM-Base' with config: {'torch_dtype': torch.bfloat16}
+Moving model to device: cuda
+Model loaded in 2.53 seconds
+Model device: cuda:0
+
+Model configured for Full Fine-tuning.
+Enabling gradient checkpointing for Full Fine-Tuning.
+
+Setting Training Arguments for full-tuned...
+Batch Size (Train): 2, Grad Accum: 8
+Effective Batch Size: 16
+Learning Rate: 2e-05
+/usr/local/lib/python3.11/dist-packages/transformers/training_args.py:1611: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+
+Skipping Trainer initialization due to dataset loading/processing errors.
+
+Training skipped due to errors in data loading, preprocessing, or trainer initialization.
+
+--- Preparing for Evaluation ---
+
+Downloading ChartQA dataset...
+Limiting evaluation to 100 samples.
+Loaded ChartQA test split with 100 examples.
+
+First ChartQA test sample structure:
+{'image': <PIL.PngImagePlugin.PngImageFile image mode=RGBA size=850x600 at 0x7DE5BFED7710>, 'query': 'How many food item is shown in the bar graph?', 'label': ['14'], 'human_or_machine': 0}
+
+Using accuracy function: calculate_relaxed_accuracy
+
+Evaluation setup complete.
+
+Evaluation setup complete.

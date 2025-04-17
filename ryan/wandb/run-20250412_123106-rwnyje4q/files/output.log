@@ -1,0 +1,750 @@
+WandB initialized.
+--- Environment Setup Complete ---
+
+--- Defining Data Loading Function (with Debugging) ---
+
+--- Loading and Splitting Data ---
+Found 7 JSON files in chartllama_data.
+
+Processing file: candlestick_chart_100examples_simplified_qa.json (165 entries)
+  Entry 0:
+    img_rel_path from JSON: 'ours/candlestick_chart/png/candlestick_chart_100examples_86.png'
+    Constructed full path: 'chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_86.png'
+    Path exists (is_file)? True
+  Entry 1:
+    img_rel_path from JSON: 'ours/candlestick_chart/png/candlestick_chart_100examples_83.png'
+    Constructed full path: 'chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_83.png'
+    Path exists (is_file)? True
+  Entry 2:
+    img_rel_path from JSON: 'ours/candlestick_chart/png/candlestick_chart_100examples_0.png'
+    Constructed full path: 'chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_0.png'
+    Path exists (is_file)? True
+  Entry 3:
+    img_rel_path from JSON: 'ours/candlestick_chart/png/candlestick_chart_100examples_22.png'
+    Constructed full path: 'chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_22.png'
+    Path exists (is_file)? True
+  Entry 4:
+    img_rel_path from JSON: 'ours/candlestick_chart/png/candlestick_chart_100examples_68.png'
+    Constructed full path: 'chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_68.png'
+    Path exists (is_file)? True
+  Entry 5:
+    img_rel_path from JSON: 'ours/candlestick_chart/png/candlestick_chart_100examples_1.png'
+    Constructed full path: 'chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_1.png'
+    Path exists (is_file)? True
+  Entry 6:
+    img_rel_path from JSON: 'ours/candlestick_chart/png/candlestick_chart_100examples_54.png'
+    Constructed full path: 'chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_54.png'
+    Path exists (is_file)? True
+  Entry 7:
+    img_rel_path from JSON: 'ours/candlestick_chart/png/candlestick_chart_100examples_87.png'
+    Constructed full path: 'chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_87.png'
+    Path exists (is_file)? True
+  Entry 8:
+    img_rel_path from JSON: 'ours/candlestick_chart/png/candlestick_chart_100examples_12.png'
+    Constructed full path: 'chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_12.png'
+    Path exists (is_file)? True
+  Entry 9:
+    img_rel_path from JSON: 'ours/candlestick_chart/png/candlestick_chart_100examples_21.png'
+    Constructed full path: 'chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_21.png'
+    Path exists (is_file)? True
+
+Processing file: funnel_chart_100examples_simplified_qa.json (153 entries)
+  Entry 0:
+    img_rel_path from JSON: 'ours/funnel_chart/png/funnel_chart_100examples_6.png'
+    Constructed full path: 'chartllama_data/ours/funnel_chart/png/funnel_chart_100examples_6.png'
+    Path exists (is_file)? True
+  Entry 1:
+    img_rel_path from JSON: 'ours/funnel_chart/png/funnel_chart_100examples_29.png'
+    Constructed full path: 'chartllama_data/ours/funnel_chart/png/funnel_chart_100examples_29.png'
+    Path exists (is_file)? True
+  Entry 2:
+    img_rel_path from JSON: 'ours/funnel_chart/png/funnel_chart_100examples_6.png'
+    Constructed full path: 'chartllama_data/ours/funnel_chart/png/funnel_chart_100examples_6.png'
+    Path exists (is_file)? True
+  Entry 3:
+    img_rel_path from JSON: 'ours/funnel_chart/png/funnel_chart_100examples_39.png'
+    Constructed full path: 'chartllama_data/ours/funnel_chart/png/funnel_chart_100examples_39.png'
+    Path exists (is_file)? True
+  Entry 4:
+    img_rel_path from JSON: 'ours/funnel_chart/png/funnel_chart_100examples_49.png'
+    Constructed full path: 'chartllama_data/ours/funnel_chart/png/funnel_chart_100examples_49.png'
+    Path exists (is_file)? True
+  Entry 5:
+    img_rel_path from JSON: 'ours/funnel_chart/png/funnel_chart_100examples_17.png'
+    Constructed full path: 'chartllama_data/ours/funnel_chart/png/funnel_chart_100examples_17.png'
+    Path exists (is_file)? True
+  Entry 6:
+    img_rel_path from JSON: 'ours/funnel_chart/png/funnel_chart_100examples_41.png'
+    Constructed full path: 'chartllama_data/ours/funnel_chart/png/funnel_chart_100examples_41.png'
+    Path exists (is_file)? True
+  Entry 7:
+    img_rel_path from JSON: 'ours/funnel_chart/png/funnel_chart_100examples_2.png'
+    Constructed full path: 'chartllama_data/ours/funnel_chart/png/funnel_chart_100examples_2.png'
+    Path exists (is_file)? True
+  Entry 8:
+    img_rel_path from JSON: 'ours/funnel_chart/png/funnel_chart_100examples_47.png'
+    Constructed full path: 'chartllama_data/ours/funnel_chart/png/funnel_chart_100examples_47.png'
+    Path exists (is_file)? True
+  Entry 9:
+    img_rel_path from JSON: 'ours/funnel_chart/png/funnel_chart_100examples_67.png'
+    Constructed full path: 'chartllama_data/ours/funnel_chart/png/funnel_chart_100examples_67.png'
+    Path exists (is_file)? True
+
+Processing file: gantt_chart_100examples_simplified_qa.json (167 entries)
+  Entry 0:
+    img_rel_path from JSON: 'ours/gantt_chart/png/gantt_chart_100examples_38.png'
+    Constructed full path: 'chartllama_data/ours/gantt_chart/png/gantt_chart_100examples_38.png'
+    Path exists (is_file)? True
+  Entry 1:
+    img_rel_path from JSON: 'ours/gantt_chart/png/gantt_chart_100examples_65.png'
+    Constructed full path: 'chartllama_data/ours/gantt_chart/png/gantt_chart_100examples_65.png'
+    Path exists (is_file)? True
+  Entry 2:
+    img_rel_path from JSON: 'ours/gantt_chart/png/gantt_chart_100examples_6.png'
+    Constructed full path: 'chartllama_data/ours/gantt_chart/png/gantt_chart_100examples_6.png'
+    Path exists (is_file)? True
+  Entry 3:
+    img_rel_path from JSON: 'ours/gantt_chart/png/gantt_chart_100examples_0.png'
+    Constructed full path: 'chartllama_data/ours/gantt_chart/png/gantt_chart_100examples_0.png'
+    Path exists (is_file)? True
+  Entry 4:
+    img_rel_path from JSON: 'ours/gantt_chart/png/gantt_chart_100examples_60.png'
+    Constructed full path: 'chartllama_data/ours/gantt_chart/png/gantt_chart_100examples_60.png'
+    Path exists (is_file)? True
+  Entry 5:
+    img_rel_path from JSON: 'ours/gantt_chart/png/gantt_chart_100examples_36.png'
+    Constructed full path: 'chartllama_data/ours/gantt_chart/png/gantt_chart_100examples_36.png'
+    Path exists (is_file)? True
+  Entry 6:
+    img_rel_path from JSON: 'ours/gantt_chart/png/gantt_chart_100examples_98.png'
+    Constructed full path: 'chartllama_data/ours/gantt_chart/png/gantt_chart_100examples_98.png'
+    Path exists (is_file)? True
+  Entry 7:
+    img_rel_path from JSON: 'ours/gantt_chart/png/gantt_chart_100examples_13.png'
+    Constructed full path: 'chartllama_data/ours/gantt_chart/png/gantt_chart_100examples_13.png'
+    Path exists (is_file)? True
+  Entry 8:
+    img_rel_path from JSON: 'ours/gantt_chart/png/gantt_chart_100examples_56.png'
+    Constructed full path: 'chartllama_data/ours/gantt_chart/png/gantt_chart_100examples_56.png'
+    Path exists (is_file)? True
+  Entry 9:
+    img_rel_path from JSON: 'ours/gantt_chart/png/gantt_chart_100examples_60.png'
+    Constructed full path: 'chartllama_data/ours/gantt_chart/png/gantt_chart_100examples_60.png'
+    Path exists (is_file)? True
+
+Processing file: polar_chart_100examples_simplified_qa.json (142 entries)
+  Entry 0:
+    img_rel_path from JSON: 'ours/polar_chart/png/polar_chart_100examples_119.png'
+    Constructed full path: 'chartllama_data/ours/polar_chart/png/polar_chart_100examples_119.png'
+    Path exists (is_file)? True
+  Entry 1:
+    img_rel_path from JSON: 'ours/polar_chart/png/polar_chart_100examples_76.png'
+    Constructed full path: 'chartllama_data/ours/polar_chart/png/polar_chart_100examples_76.png'
+    Path exists (is_file)? True
+  Entry 2:
+    img_rel_path from JSON: 'ours/polar_chart/png/polar_chart_100examples_121.png'
+    Constructed full path: 'chartllama_data/ours/polar_chart/png/polar_chart_100examples_121.png'
+    Path exists (is_file)? True
+  Entry 3:
+    img_rel_path from JSON: 'ours/polar_chart/png/polar_chart_100examples_90.png'
+    Constructed full path: 'chartllama_data/ours/polar_chart/png/polar_chart_100examples_90.png'
+    Path exists (is_file)? True
+  Entry 4:
+    img_rel_path from JSON: 'ours/polar_chart/png/polar_chart_100examples_67.png'
+    Constructed full path: 'chartllama_data/ours/polar_chart/png/polar_chart_100examples_67.png'
+    Path exists (is_file)? True
+  Entry 5:
+    img_rel_path from JSON: 'ours/polar_chart/png/polar_chart_100examples_100.png'
+    Constructed full path: 'chartllama_data/ours/polar_chart/png/polar_chart_100examples_100.png'
+    Path exists (is_file)? True
+  Entry 6:
+    img_rel_path from JSON: 'ours/polar_chart/png/polar_chart_100examples_160.png'
+    Constructed full path: 'chartllama_data/ours/polar_chart/png/polar_chart_100examples_160.png'
+    Path exists (is_file)? True
+  Entry 7:
+    img_rel_path from JSON: 'ours/polar_chart/png/polar_chart_100examples_10.png'
+    Constructed full path: 'chartllama_data/ours/polar_chart/png/polar_chart_100examples_10.png'
+    Path exists (is_file)? True
+  Entry 8:
+    img_rel_path from JSON: 'ours/polar_chart/png/polar_chart_100examples_149.png'
+    Constructed full path: 'chartllama_data/ours/polar_chart/png/polar_chart_100examples_149.png'
+    Path exists (is_file)? True
+  Entry 9:
+    img_rel_path from JSON: 'ours/polar_chart/png/polar_chart_100examples_112.png'
+    Constructed full path: 'chartllama_data/ours/polar_chart/png/polar_chart_100examples_112.png'
+    Path exists (is_file)? True
+
+Processing file: heatmap_chart_100examples_simplified_qa.json (155 entries)
+  Entry 0:
+    img_rel_path from JSON: 'ours/heatmap_chart/png/heatmap_chart_100examples_38.png'
+    Constructed full path: 'chartllama_data/ours/heatmap_chart/png/heatmap_chart_100examples_38.png'
+    Path exists (is_file)? True
+  Entry 1:
+    img_rel_path from JSON: 'ours/heatmap_chart/png/heatmap_chart_100examples_27.png'
+    Constructed full path: 'chartllama_data/ours/heatmap_chart/png/heatmap_chart_100examples_27.png'
+    Path exists (is_file)? True
+  Entry 2:
+    img_rel_path from JSON: 'ours/heatmap_chart/png/heatmap_chart_100examples_71.png'
+    Constructed full path: 'chartllama_data/ours/heatmap_chart/png/heatmap_chart_100examples_71.png'
+    Path exists (is_file)? True
+  Entry 3:
+    img_rel_path from JSON: 'ours/heatmap_chart/png/heatmap_chart_100examples_35.png'
+    Constructed full path: 'chartllama_data/ours/heatmap_chart/png/heatmap_chart_100examples_35.png'
+    Path exists (is_file)? True
+  Entry 4:
+    img_rel_path from JSON: 'ours/heatmap_chart/png/heatmap_chart_100examples_66.png'
+    Constructed full path: 'chartllama_data/ours/heatmap_chart/png/heatmap_chart_100examples_66.png'
+    Path exists (is_file)? True
+  Entry 5:
+    img_rel_path from JSON: 'ours/heatmap_chart/png/heatmap_chart_100examples_25.png'
+    Constructed full path: 'chartllama_data/ours/heatmap_chart/png/heatmap_chart_100examples_25.png'
+    Path exists (is_file)? True
+  Entry 6:
+    img_rel_path from JSON: 'ours/heatmap_chart/png/heatmap_chart_100examples_71.png'
+    Constructed full path: 'chartllama_data/ours/heatmap_chart/png/heatmap_chart_100examples_71.png'
+    Path exists (is_file)? True
+  Entry 7:
+    img_rel_path from JSON: 'ours/heatmap_chart/png/heatmap_chart_100examples_17.png'
+    Constructed full path: 'chartllama_data/ours/heatmap_chart/png/heatmap_chart_100examples_17.png'
+    Path exists (is_file)? True
+  Entry 8:
+    img_rel_path from JSON: 'ours/heatmap_chart/png/heatmap_chart_100examples_47.png'
+    Constructed full path: 'chartllama_data/ours/heatmap_chart/png/heatmap_chart_100examples_47.png'
+    Path exists (is_file)? True
+  Entry 9:
+    img_rel_path from JSON: 'ours/heatmap_chart/png/heatmap_chart_100examples_31.png'
+    Constructed full path: 'chartllama_data/ours/heatmap_chart/png/heatmap_chart_100examples_31.png'
+    Path exists (is_file)? True
+
+Processing file: box_chart_100examples_simplified_qa.json (109 entries)
+  Entry 0:
+    img_rel_path from JSON: 'ours/box_chart/png/box_chart_100examples_37.png'
+    Constructed full path: 'chartllama_data/ours/box_chart/png/box_chart_100examples_37.png'
+    Path exists (is_file)? True
+  Entry 1:
+    img_rel_path from JSON: 'ours/box_chart/png/box_chart_100examples_56.png'
+    Constructed full path: 'chartllama_data/ours/box_chart/png/box_chart_100examples_56.png'
+    Path exists (is_file)? True
+  Entry 2:
+    img_rel_path from JSON: 'ours/box_chart/png/box_chart_100examples_69.png'
+    Constructed full path: 'chartllama_data/ours/box_chart/png/box_chart_100examples_69.png'
+    Path exists (is_file)? True
+  Entry 3:
+    img_rel_path from JSON: 'ours/box_chart/png/box_chart_100examples_63.png'
+    Constructed full path: 'chartllama_data/ours/box_chart/png/box_chart_100examples_63.png'
+    Path exists (is_file)? True
+  Entry 4:
+    img_rel_path from JSON: 'ours/box_chart/png/box_chart_100examples_71.png'
+    Constructed full path: 'chartllama_data/ours/box_chart/png/box_chart_100examples_71.png'
+    Path exists (is_file)? True
+  Entry 5:
+    img_rel_path from JSON: 'ours/box_chart/png/box_chart_100examples_26.png'
+    Constructed full path: 'chartllama_data/ours/box_chart/png/box_chart_100examples_26.png'
+    Path exists (is_file)? True
+  Entry 6:
+    img_rel_path from JSON: 'ours/box_chart/png/box_chart_100examples_27.png'
+    Constructed full path: 'chartllama_data/ours/box_chart/png/box_chart_100examples_27.png'
+    Path exists (is_file)? True
+  Entry 7:
+    img_rel_path from JSON: 'ours/box_chart/png/box_chart_100examples_80.png'
+    Constructed full path: 'chartllama_data/ours/box_chart/png/box_chart_100examples_80.png'
+    Path exists (is_file)? True
+  Entry 8:
+    img_rel_path from JSON: 'ours/box_chart/png/box_chart_100examples_7.png'
+    Constructed full path: 'chartllama_data/ours/box_chart/png/box_chart_100examples_7.png'
+    Path exists (is_file)? True
+  Entry 9:
+    img_rel_path from JSON: 'ours/box_chart/png/box_chart_100examples_37.png'
+    Constructed full path: 'chartllama_data/ours/box_chart/png/box_chart_100examples_37.png'
+    Path exists (is_file)? True
+
+Processing file: scatter_chart_100examples_simplified_qa.json (89 entries)
+  Entry 0:
+    img_rel_path from JSON: 'ours/scatter_chart/png/scatter_chart_100examples_52.png'
+    Constructed full path: 'chartllama_data/ours/scatter_chart/png/scatter_chart_100examples_52.png'
+    Path exists (is_file)? True
+  Entry 1:
+    img_rel_path from JSON: 'ours/scatter_chart/png/scatter_chart_100examples_79.png'
+    Constructed full path: 'chartllama_data/ours/scatter_chart/png/scatter_chart_100examples_79.png'
+    Path exists (is_file)? True
+  Entry 2:
+    img_rel_path from JSON: 'ours/scatter_chart/png/scatter_chart_100examples_28.png'
+    Constructed full path: 'chartllama_data/ours/scatter_chart/png/scatter_chart_100examples_28.png'
+    Path exists (is_file)? True
+  Entry 3:
+    img_rel_path from JSON: 'ours/scatter_chart/png/scatter_chart_100examples_21.png'
+    Constructed full path: 'chartllama_data/ours/scatter_chart/png/scatter_chart_100examples_21.png'
+    Path exists (is_file)? True
+  Entry 4:
+    img_rel_path from JSON: 'ours/scatter_chart/png/scatter_chart_100examples_46.png'
+    Constructed full path: 'chartllama_data/ours/scatter_chart/png/scatter_chart_100examples_46.png'
+    Path exists (is_file)? True
+  Entry 5:
+    img_rel_path from JSON: 'ours/scatter_chart/png/scatter_chart_100examples_29.png'
+    Constructed full path: 'chartllama_data/ours/scatter_chart/png/scatter_chart_100examples_29.png'
+    Path exists (is_file)? True
+  Entry 6:
+    img_rel_path from JSON: 'ours/scatter_chart/png/scatter_chart_100examples_64.png'
+    Constructed full path: 'chartllama_data/ours/scatter_chart/png/scatter_chart_100examples_64.png'
+    Path exists (is_file)? True
+  Entry 7:
+    img_rel_path from JSON: 'ours/scatter_chart/png/scatter_chart_100examples_31.png'
+    Constructed full path: 'chartllama_data/ours/scatter_chart/png/scatter_chart_100examples_31.png'
+    Path exists (is_file)? True
+  Entry 8:
+    img_rel_path from JSON: 'ours/scatter_chart/png/scatter_chart_100examples_54.png'
+    Constructed full path: 'chartllama_data/ours/scatter_chart/png/scatter_chart_100examples_54.png'
+    Path exists (is_file)? True
+  Entry 9:
+    img_rel_path from JSON: 'ours/scatter_chart/png/scatter_chart_100examples_68.png'
+    Constructed full path: 'chartllama_data/ours/scatter_chart/png/scatter_chart_100examples_68.png'
+    Path exists (is_file)? True
+
+Loaded 980 raw examples. Skipped 0 invalid samples.
+
+Raw data loaded and split.
+Train samples: 882
+Eval samples: 98
+
+Sample train data point (raw):
+{'id': 'ours_simplified_qa_59_0', 'question': 'What is the theme of the chart?', 'answer': 'Variation in the Consumer Price Index (CPI)', 'image_path': 'chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_59.png'}
+
+--- Loading Model and Processor ---
+/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_auth.py:94: UserWarning:
+The secret `HF_TOKEN` does not exist in your Colab secrets.
+To authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.
+You will be able to reuse this secret in all of your notebooks.
+Please note that authentication is recommended but still optional to access public models or datasets.
+  warnings.warn(
+Processor loaded.
+Using standard attention implementation: eager
+Configuring model for Full Fine-Tuning (dtype: torch.bfloat16)...
+Loading model 'HuggingFaceTB/SmolVLM-Base'...
+Moving model to device: cuda
+Model loaded. Device: cuda:0. Footprint: 4.49 GB
+Enabling gradient checkpointing for Full Fine-Tuning.
+
+--- Defining Formatting and Collator ---
+Custom Collator defined.
+
+--- Configuring Training Arguments ---
+/usr/local/lib/python3.11/dist-packages/transformers/training_args.py:1611: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+SFTConfig set.
+
+--- Initializing SFTTrainer ---
+SFTTrainer initialized.
+
+--- Checking if Training Already Completed ---
+
+Detected existing final outputs:
+  Model Check (Full): True (Checked dir: /content/smolvlm-chartllama-sft-refactored-full-tuned/final_checkpoint)
+  Processor Check: True (Checked file: /content/smolvlm-chartllama-sft-refactored-full-tuned/final_processor/preprocessor_config.json)
+--- Skipping Training Step ---
+(Cleaned up existing trainer object)
+
+--- Cell 10 Execution Finished ---
+
+--- Copying Training Output to Google Drive ---
+Source (local): /content/smolvlm-chartllama-sft-refactored-full-tuned
+Destination (Drive): /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned
+Ensured Drive destination directory exists.
+Destination directory exists, copying contents...
+Using 'cp -a' command to copy...
+Executing: cp -a "/content/smolvlm-chartllama-sft-refactored-full-tuned/." "/content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/"
+cp: cannot create regular file '/content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/./trainer_state.json': File exists
+cp: cannot create regular file '/content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/./checkpoint-112/tokenizer_config.json': No such file or directory
+cp: cannot create regular file '/content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/./checkpoint-112/special_tokens_map.json': No such file or directory
+cp: cannot create regular file '/content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/./checkpoint-112/added_tokens.json': No such file or directory
+cp: cannot create regular file '/content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/./checkpoint-112/vocab.json': No such file or directory
+cp: cannot create regular file '/content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/./checkpoint-112/merges.txt': No such file or directory
+cp: cannot create regular file '/content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/./checkpoint-112/tokenizer.json': No such file or directory
+cp: cannot create regular file '/content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/./checkpoint-112/training_args.bin': No such file or directory
+cp: cannot create regular file '/content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/./checkpoint-112/optimizer.pt': No such file or directory
+cp: cannot create regular file '/content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/./checkpoint-112/scheduler.pt': No such file or directory
+cp: cannot create regular file '/content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/./checkpoint-112/rng_state.pth': No such file or directory
+cp: cannot create regular file '/content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/./checkpoint-112/trainer_state.json': No such file or directory
+cp: preserving times for '/content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/./checkpoint-112': No such file or directory
+cp: cannot create regular file '/content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/./checkpoint-165/scheduler.pt': No such file or directory
+cp: cannot create regular file '/content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/./checkpoint-165/rng_state.pth': No such file or directory
+cp: cannot create regular file '/content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/./checkpoint-165/trainer_state.json': No such file or directory
+cp: preserving times for '/content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/./checkpoint-165': No such file or directory
+Verified processor config exists in Drive destination.
+--- File Copying Complete ---
+
+Updating OUTPUT_DIR and FINAL_PROCESSOR_DIR to point to Google Drive location for subsequent evaluation cells.
+New OUTPUT_DIR: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned
+New FINAL_PROCESSOR_DIR: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/final_processor
+
+--- Setting up Evaluation (Loading from Local Path) ---
+Attempting to load from LOCAL paths:
+  Model/Adapter: /content/smolvlm-chartllama-sft-refactored-full-tuned/final_checkpoint
+  Processor: /content/smolvlm-chartllama-sft-refactored-full-tuned/final_processor
+Results will be saved to Drive: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/chartqa_evaluation_results.json
+
+Loading processor from /content/smolvlm-chartllama-sft-refactored-full-tuned/final_processor...
+Processor loaded from local path.
+
+Loading model/adapter from /content/smolvlm-chartllama-sft-refactored-full-tuned/final_checkpoint...
+Loading fully fine-tuned model from /content/smolvlm-chartllama-sft-refactored-full-tuned/final_checkpoint
+Model loaded successfully. Device map: {'': 0}
+Evaluation will use device: cuda
+
+Loading dataset 'HuggingFaceM4/ChartQA' split 'test'...
+Loaded 100 samples using islice for evaluation subset.
+
+--- Evaluation Setup Complete ---
+
+--- Defining Evaluation Helper Functions ---
+Evaluation helper functions defined.
+
+--- Starting Evaluation Generation on 100 samples ---
+total 4392052
+-rw-r--r-- 1 root root         92 Apr 12 12:05 added_tokens.json
+-rw-r--r-- 1 root root       4003 Apr 12 12:05 config.json
+-rw-r--r-- 1 root root        132 Apr 12 12:05 generation_config.json
+-rw-r--r-- 1 root root     466391 Apr 12 12:05 merges.txt
+-rw-r--r-- 1 root root 4492630912 Apr 12 12:05 model.safetensors
+-rw-r--r-- 1 root root        694 Apr 12 12:05 special_tokens_map.json
+-rw-r--r-- 1 root root       4076 Apr 12 12:05 tokenizer_config.json
+-rw-r--r-- 1 root root    3523234 Apr 12 12:05 tokenizer.json
+-rw-r--r-- 1 root root       5752 Apr 12 12:05 training_args.bin
+-rw-r--r-- 1 root root     800662 Apr 12 12:05 vocab.json
+total 20
+drwx------ 6 root root 4096 Apr 12 01:22 drive
+drwxr-xr-x 1 root root 4096 Apr 10 13:37 sample_data
+drwxr-xr-x 2 root root 4096 Apr 12 00:44 smolvlm-chartllama-full-tuned
+drwxr-xr-x 6 root root 4096 Apr 12 12:05 smolvlm-chartllama-sft-refactored-full-tuned
+drwxr-xr-x 3 root root 4096 Apr 12 00:44 wandb
+total 105
+drwx------   4 root root  4096 Apr  5 23:01 chartllama_data
+-rw-------   1 root root  8823 Apr 12 01:04 chartllama_load.py
+drwx------   3 root root  4096 Apr 12 07:24 chartqa_cache
+drwx------   2 root root  4096 Apr 12 01:23 __pycache__
+drwx------+ 10 root root  4096 Apr 12 12:05 smolvlm-chartllama-sft-refactored-full-tuned
+-rw-------   1 root root 77450 Apr 12 10:38 test_notebook_2.ipynb
+drwx------  92 root root  4096 Apr 12 12:31 wandb
+total 20
+drwx------ 6 root root 4096 Apr 12 01:22 drive
+drwxr-xr-x 1 root root 4096 Apr 10 13:37 sample_data
+drwxr-xr-x 2 root root 4096 Apr 12 00:44 smolvlm-chartllama-full-tuned
+drwxr-xr-x 6 root root 4096 Apr 12 12:05 smolvlm-chartllama-sft-refactored-full-tuned
+drwxr-xr-x 3 root root 4096 Apr 12 00:44 wandb
+total 105
+drwx------   4 root root  4096 Apr  5 23:01 chartllama_data
+-rw-------   1 root root  8823 Apr 12 01:04 chartllama_load.py
+drwx------   3 root root  4096 Apr 12 07:24 chartqa_cache
+drwx------   2 root root  4096 Apr 12 01:23 __pycache__
+drwx------+ 10 root root  4096 Apr 12 12:05 smolvlm-chartllama-sft-refactored-full-tuned
+-rw-------   1 root root 77450 Apr 12 10:38 test_notebook_2.ipynb
+drwx------  92 root root  4096 Apr 12 12:31 wandb
+
+--- Copying Training Output to Google Drive (with Skip Check) ---
+Local Source Path: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned
+Drive Destination Path: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned
+Verified local source directory exists: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned
+
+Final outputs not found or incomplete in Google Drive destination.
+  Drive Model Check: False (Checked dir: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/final_checkpoint)
+  Drive Processor Check: False (Checked file: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/final_processor/preprocessor_config.json)
+--- Proceeding with Copy to Google Drive ---
+Ensured Drive destination directory exists: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned
+Using 'cp -a' command to copy...
+Executing: cp -a "/content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/." "/content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/"
+cp: '/content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/.' and '/content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/.' are the same file
+Copy command output/errors:
+  cp: '/content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/.' and '/content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/.' are the same file
+
+Verifying key files in Drive destination after copy attempt...
+WARNING: Model file still not found in Drive destination after copy attempt.
+WARNING: Processor config not found in Drive destination after copy attempt.
+WARNING: Copy to Google Drive may have failed or is incomplete. Check command output above.
+
+--- File Copying Check/Attempt Complete ---
+
+Updating OUTPUT_DIR and FINAL_PROCESSOR_DIR to point to Google Drive location for subsequent evaluation cells.
+New OUTPUT_DIR for evaluation: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned
+New FINAL_PROCESSOR_DIR for evaluation: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/final_processor
+
+--- Setting up Evaluation (Loading from Local Path) ---
+Attempting to load from LOCAL paths:
+  Model/Adapter: /content/smolvlm-chartllama-sft-refactored-full-tuned/final_checkpoint
+  Processor: /content/smolvlm-chartllama-sft-refactored-full-tuned/final_processor
+Results will be saved to Drive: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/chartqa_evaluation_results.json
+
+Loading processor from /content/smolvlm-chartllama-sft-refactored-full-tuned/final_processor...
+Processor loaded from local path.
+
+Loading model/adapter from /content/smolvlm-chartllama-sft-refactored-full-tuned/final_checkpoint...
+Loading fully fine-tuned model from /content/smolvlm-chartllama-sft-refactored-full-tuned/final_checkpoint
+Model loaded successfully. Device map: {'': 0}
+Evaluation will use device: cuda
+
+Loading dataset 'HuggingFaceM4/ChartQA' split 'test'...
+Loaded 100 samples using islice for evaluation subset.
+
+--- Evaluation Setup Complete ---
+
+--- Defining Evaluation Helper Functions ---
+Evaluation helper functions defined.
+
+--- Starting Evaluation Generation on 100 samples ---
+
+Finished generation. Processed 100 samples.
+
+--- Calculating Evaluation Metrics ---
+
+Sample Normalized Comparison:
+  Pred 0: '7' | Ref 0: '14' -> Match: False
+  Pred 1: '100' | Ref 1: '057' -> Match: False
+  Pred 2: '4' | Ref 2: '3' -> Match: False
+  Pred 3: 'no' | Ref 3: 'no' -> Match: True
+  Pred 4: '25' | Ref 4: '23' -> Match: False
+
+--- Evaluation Summary ---
+Total samples attempted: 100
+Samples with generation errors: 0
+Samples used for EM calculation: 100
+Exact Match (Normalized): 14.00%
+-------------------------
+
+Sample Evaluation Results (DataFrame):
+   id                                           question ground_truth  \
+0   0      How many food item is shown in the bar graph?       ['14']
+1   1  What is the difference in value between Lamb a...     ['0.57']
+2   2              How many bars are shown in the chart?        ['3']
+3   3     Is the sum value of Madagascar more then Fiji?       ['No']
+4   4                What's the value of the lowest bar?       ['23']
+
+  predicted_answer
+0                7
+1              100
+2                4
+3               No
+4               25
+
+Saving evaluation results to: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/chartqa_evaluation_results.json
+Results saved successfully to Google Drive.
+
+Detailed Examples (from valid results):
+--------------------
+ID: 0
+Question: How many food item is shown in the bar graph?
+Ground Truth: ['14']
+Prediction: 7
+Normalized GT: '14'
+Normalized Pred: '7'
+--------------------
+--------------------
+ID: 1
+Question: What is the difference in value between Lamb and Corn?
+Ground Truth: ['0.57']
+Prediction: 100
+Normalized GT: '057'
+Normalized Pred: '100'
+--------------------
+--------------------
+ID: 2
+Question: How many bars are shown in the chart?
+Ground Truth: ['3']
+Prediction: 4
+Normalized GT: '3'
+Normalized Pred: '4'
+--------------------
+--------------------
+ID: 3
+Question: Is the sum value of Madagascar more then Fiji?
+Ground Truth: ['No']
+Prediction: No
+Normalized GT: 'no'
+Normalized Pred: 'no'
+--------------------
+--------------------
+ID: 4
+Question: What's the value of the lowest bar?
+Ground Truth: ['23']
+Prediction: 25
+Normalized GT: '23'
+Normalized Pred: '25'
+--------------------
+
+--- Evaluation Script Finished ---
+
+--- Processing Evaluation Results ---
+
+Total samples processed: 100
+No generation errors encountered.
+
+Processing 100 valid samples for metrics...
+
+--- Evaluation Summary ---
+Total samples attempted: 100
+Samples with generation errors: 0
+Samples used for EM calculation: 100
+Exact Match (Normalized): 14.00%
+-------------------------
+
+Sample Correct Predictions (from DataFrame):
+    id                                                                    question ground_truth predicted_answer Normalized GT Normalized Pred
+3    3                              Is the sum value of Madagascar more then Fiji?       ['No']               No            no              no
+6    6              What percent who think of President Donald Trump as Dangerous?       ['62']               62            62              62
+19  19  Is the sum of largest two bars is greater then the sum of smallest 3 bars?       ['No']               No            no              no
+26  26                                   What's the percentage of biggest segment?       ['80']              80%            80              80
+34  34                Which country has highest secondary graduation rate in 2018?    ['Italy']            Italy         italy           italy
+
+Sample Incorrect Predictions (from DataFrame):
+   id                                                               question ground_truth predicted_answer Normalized GT Normalized Pred
+0   0                          How many food item is shown in the bar graph?       ['14']                7            14               7
+1   1                 What is the difference in value between Lamb and Corn?     ['0.57']              100           057             100
+2   2                                  How many bars are shown in the chart?        ['3']                4             3               4
+4   4                                    What's the value of the lowest bar?       ['23']               25            23              25
+5   5  What is the difference between the highest and the lowest green bar??        ['6']               25             6              25
+
+Saving full evaluation results (including errors) to: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/chartqa_evaluation_results.json
+Full results saved successfully to Google Drive.
+
+--- Evaluation Script Finished ---
+
+--- Processing Evaluation Results ---
+
+Total samples processed: 100
+No generation errors encountered.
+
+Processing 100 valid samples for metrics...
+
+--- Evaluation Summary ---
+Total samples attempted: 100
+Samples with generation errors: 0
+Samples used for EM calculation: 100
+Exact Match (Normalized): 14.00%
+-------------------------
+
+Sample Correct Predictions (from DataFrame):
+
+Sample Incorrect Predictions (from DataFrame):
+
+Saving full evaluation results (including errors) to: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/chartqa_evaluation_results.json
+Full results saved successfully to Google Drive.
+
+--- Evaluation Script Finished ---
+
+--- Setting up Evaluation (Loading Fine-tuned AND Base Models) ---
+Fine-tuned model will be loaded from LOCAL path: /content/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_checkpoint
+Processor will be loaded from LOCAL path: /content/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_processor
+Base model will be loaded from Hub ID: HuggingFaceTB/SmolVLM-Base
+Results will be saved to Drive: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/chartqa_evaluation_results_comparison.json
+
+Loading processor from /content/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_processor...
+ERROR loading processor: Local processor directory not found: /content/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_processor
+Traceback (most recent call last):
+  File "<ipython-input-37-90cd731a7db3>", line 46, in <cell line: 0>
+    raise FileNotFoundError(f"Local processor directory not found: {LOCAL_SAVED_PROCESSOR_PATH}")
+FileNotFoundError: Local processor directory not found: /content/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_processor
+Skipping fine-tuned model loading due to processor error.
+Skipping base model loading due to processor error.
+Skipping dataset loading due to processor error.
+
+Evaluation Readiness:
+  - Fine-tuned Model Ready: None
+  - Base Model Ready: None
+  - Dataset Ready: False
+Evaluation will use device: cuda
+
+--- Evaluation Setup Complete ---
+
+--- Defining Evaluation Helper Functions ---
+Evaluation helper functions defined.
+
+--- Starting Comparative Evaluation Generation ---
+Skipping generation loop: Dataset not loaded.
+
+--- Calculating and Displaying Comparative Evaluation Metrics ---
+No evaluation results were generated in the previous step.
+
+--- Comparative Evaluation Script Finished ---
+
+Final Metrics Summary Dictionary:
+{'error': 'No results generated'}
+
+--- Setting up Evaluation (Loading Fine-tuned AND Base Models) ---
+Fine-tuned model will be loaded from LOCAL path: /content/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_checkpoint
+Processor will be loaded from LOCAL path: /content/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_processor
+Base model will be loaded from Hub ID: HuggingFaceTB/SmolVLM-Base
+Results will be saved to Drive: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/chartqa_evaluation_results_comparison.json
+
+Loading processor from /content/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_processor...
+ERROR loading processor: Local processor directory not found: /content/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_processor
+Traceback (most recent call last):
+  File "<ipython-input-41-ff92c3d43e0b>", line 46, in <cell line: 0>
+    raise FileNotFoundError(f"Local processor directory not found: {LOCAL_SAVED_PROCESSOR_PATH}")
+FileNotFoundError: Local processor directory not found: /content/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_processor
+Skipping fine-tuned model loading due to processor error.
+Skipping base model loading due to processor error.
+Skipping dataset loading due to processor error.
+
+Evaluation Readiness:
+  - Fine-tuned Model Ready: None
+  - Base Model Ready: None
+  - Dataset Ready: False
+Evaluation will use device: cuda
+
+--- Evaluation Setup Complete ---
+
+--- Defining Evaluation Helper Functions ---
+Evaluation helper functions defined.
+
+--- Starting Comparative Evaluation Generation ---
+Skipping generation loop: Dataset not loaded.
+
+--- Setting up Evaluation (Loading Fine-tuned AND Base Models) ---
+Fine-tuned model will be loaded from LOCAL path: /content/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_checkpoint
+Processor will be loaded from LOCAL path: /content/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_processor
+Base model will be loaded from Hub ID: HuggingFaceTB/SmolVLM-Base
+Results will be saved to Drive: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/chartqa_evaluation_results_comparison.json
+
+Loading processor from /content/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_processor...
+ERROR loading processor: Local processor directory not found: /content/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_processor
+Traceback (most recent call last):
+  File "<ipython-input-44-dd7c4d58caa7>", line 59, in <cell line: 0>
+    raise FileNotFoundError(f"Local processor directory not found: {LOCAL_SAVED_PROCESSOR_PATH}")
+FileNotFoundError: Local processor directory not found: /content/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_processor
+Skipping fine-tuned model loading due to processor error.
+Skipping base model loading due to processor error.
+Skipping dataset loading due to processor error.
+
+Evaluation Readiness:
+  - Processor Ready: False
+  - Fine-tuned Model Ready: None
+  - Base Model Ready: None
+  - Dataset Ready: False
+Evaluation will use device: cuda
+
+--- Evaluation Setup Complete ---
+ls: cannot access '/content/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/': No such file or directory
+
+--- Setting up Evaluation (Loading Fine-tuned AND Base Models) ---
+Fine-tuned model will be loaded from LOCAL path: /content/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_checkpoint
+Processor will be loaded from LOCAL path: /content/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned
+Fine-tuned model will be loaded from LOCAL path: /content/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_checkpoint
+Processor will be loaded from LOCAL path: /content/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_processor
+Base model will be loaded from Hub ID: HuggingFaceTB/SmolVLM-Base
+Results will be saved to Drive: /content/drive/MyDrive/code/smolvlm-chartllama-sft-refactored-full-tuned/chartqa_evaluation_results_comparison.json
+
+Loading processor from /content/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_processor...
+ERROR loading processor: Local processor directory not found: /content/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_processor
+Traceback (most recent call last):
+  File "<ipython-input-46-a90d4ef53554>", line 70, in <cell line: 0>
+    raise FileNotFoundError(f"Local processor directory not found: {LOCAL_SAVED_PROCESSOR_PATH}")
+FileNotFoundError: Local processor directory not found: /content/smolvlm-chartllama-sft-refactored-SmolVLM-Base-full-tuned/final_processor
+Skipping fine-tuned model loading due to processor error.
+Skipping base model loading due to processor error.
+Skipping dataset loading due to processor error.
+
+Evaluation Readiness:
+  - Processor Ready: False
+  - Fine-tuned Model Ready: None
+  - Base Model Ready: None
+  - Dataset Ready: False
+Evaluation will use device: cuda
+
+--- Evaluation Setup Complete ---

@@ -1,0 +1,34 @@
+WandB initialized.
+--- Environment Setup Complete ---
+
+--- Defining Data Loading Function ---
+
+--- Loading and Splitting Data ---
+Found 7 JSON files in chartllama_data.
+Loaded 980 raw examples. Skipped 0 invalid samples.
+
+Raw data loaded and split.
+Train samples: 882
+Eval samples: 98
+
+Sample train data point (raw):
+{'id': 'ours_simplified_qa_59_0', 'question': 'What is the theme of the chart?', 'answer': 'Variation in the Consumer Price Index (CPI)', 'image_path': 'chartllama_data/extracted_images/ours/candlestick_chart/png/candlestick_chart_100examples_59.png'}
+
+--- Loading Model and Processor ---
+/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_auth.py:94: UserWarning:
+The secret `HF_TOKEN` does not exist in your Colab secrets.
+To authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.
+You will be able to reuse this secret in all of your notebooks.
+Please note that authentication is recommended but still optional to access public models or datasets.
+  warnings.warn(
+Processor loaded.
+Using standard attention implementation: eager
+Configuring model for QLoRA (4-bit)...
+Loading model 'HuggingFaceTB/SmolVLM-Base'...
+
+ERROR during model/processor loading or PEFT setup: name 'AutoConfig' is not defined
+Traceback (most recent call last):
+  File "<ipython-input-14-d636499588bf>", line 51, in <cell line: 0>
+    config = AutoConfig.from_pretrained(MODEL_ID, trust_remote_code=True)
+             ^^^^^^^^^^
+NameError: name 'AutoConfig' is not defined

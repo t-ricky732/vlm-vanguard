@@ -1,0 +1,41 @@
+PyTorch version: 2.6.0+cu124
+CUDA available: True
+CUDA version: 12.4
+GPU: NVIDIA A100-SXM4-40GB
+GPU memory: 42.47 GB
+Using dtype: torch.bfloat16
+Checking data directory: /content/drive/MyDrive/code/chartllama_data
+Does directory exist? True
+Files in directory:
+  - candlestick_chart_100examples_simplified_qa.json
+  - funnel_chart_100examples_simplified_qa.json
+  - gantt_chart_100examples_simplified_qa.json
+  - polar_chart_100examples_simplified_qa.json
+  - heatmap_chart_100examples_simplified_qa.json
+  - box_chart_100examples_simplified_qa.json
+  - .gitattributes
+  - ours.zip
+  - scatter_chart_100examples_simplified_qa.json
+  - extracted_images
+  - .cache
+Loading processor...
+Loading dataset using custom ChartDataset...
+Reading JSONs: 100%|██████████| 7/7 [00:14<00:00,  2.07s/it]
+Total samples: 980
+Training samples: 784
+Validation samples: 98
+Test samples: 98
+Configuring model for standard LoRA (dtype: torch.bfloat16)...
+/usr/local/lib/python3.11/dist-packages/transformers/training_args.py:1611: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+Initializing Trainer...
+No label_names provided for model class `PeftModelForCausalLM`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+Starting training...
+/usr/local/lib/python3.11/dist-packages/bitsandbytes/autograd/_functions.py:315: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+/usr/local/lib/python3.11/dist-packages/bitsandbytes/autograd/_functions.py:315: UserWarning: MatMul8bitLt: inputs will be cast from torch.bfloat16 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+/usr/local/lib/python3.11/dist-packages/bitsandbytes/autograd/_functions.py:315: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+/usr/local/lib/python3.11/dist-packages/bitsandbytes/autograd/_functions.py:315: UserWarning: MatMul8bitLt: inputs will be cast from torch.bfloat16 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")

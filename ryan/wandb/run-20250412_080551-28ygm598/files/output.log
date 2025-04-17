@@ -1,0 +1,37 @@
+WandB initialized.
+
+--- Loading Raw ChartLlama Data ---
+
+--- Loading Raw ChartLlama Data ---
+
+ERROR during data loading: name 'SAMPLE_LIMIT' is not defined
+Traceback (most recent call last):
+  File "<ipython-input-18-c69a8fc3e562>", line 3, in <cell line: 0>
+    raw_dataset = load_raw_chartllama(DATA_DIR, DATA_DIR, limit=SAMPLE_LIMIT)
+                                                                ^^^^^^^^^^^^
+NameError: name 'SAMPLE_LIMIT' is not defined
+
+--- Loading Model and Processor ---
+/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_auth.py:94: UserWarning:
+The secret `HF_TOKEN` does not exist in your Colab secrets.
+To authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.
+You will be able to reuse this secret in all of your notebooks.
+Please note that authentication is recommended but still optional to access public models or datasets.
+  warnings.warn(
+Processor loaded.
+Configuring model for QLoRA (4-bit quantization)...
+Loading model 'HuggingFaceTB/SmolVLM-Base'...
+Model loaded. Device: cuda:0. Footprint: 1.43 GB
+
+Applying PEFT/LoRA configuration...
+Preparing model for K-bit training (QLoRA)...
+trainable params: 10,946,584 || all params: 2,257,219,464 || trainable%: 0.4850
+
+--- Defining Collator ---
+Custom Collator defined.
+
+--- Configuring Training Arguments ---
+
+--- Configuring Training Arguments ---
+
+--- Configuring Training Arguments ---

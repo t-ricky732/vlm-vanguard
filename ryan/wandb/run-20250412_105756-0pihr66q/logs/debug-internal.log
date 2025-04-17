@@ -1,0 +1,20 @@
+{"time":"2025-04-12T10:57:56.948125434Z","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/content/drive/MyDrive/code/wandb/run-20250412_105756-0pihr66q/logs/debug-core.log"}
+{"time":"2025-04-12T10:57:57.084296861Z","level":"INFO","msg":"created new stream","id":"0pihr66q"}
+{"time":"2025-04-12T10:57:57.084900957Z","level":"INFO","msg":"stream: started","id":"0pihr66q"}
+{"time":"2025-04-12T10:57:57.084960266Z","level":"INFO","msg":"writer: Do: started","stream_id":"0pihr66q"}
+{"time":"2025-04-12T10:57:57.084976366Z","level":"INFO","msg":"handler: started","stream_id":"0pihr66q"}
+{"time":"2025-04-12T10:57:57.085008862Z","level":"INFO","msg":"sender: started","stream_id":"0pihr66q"}
+{"time":"2025-04-12T10:57:57.233760313Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-12T10:57:58.069338839Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-12T10:57:58.069498966Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-12T10:57:58.069605636Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-12T10:57:58.069676048Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-04-12T10:57:58.31527821Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-04-12T10:58:54.654005337Z","level":"INFO","msg":"stream: closing","id":"0pihr66q"}
+{"time":"2025-04-12T10:58:54.65412938Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-12T10:58:54.654263378Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-12T10:58:54.92847119Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-12T10:58:54.966901556Z","level":"INFO","msg":"handler: closed","stream_id":"0pihr66q"}
+{"time":"2025-04-12T10:58:54.966920106Z","level":"INFO","msg":"writer: Close: closed","stream_id":"0pihr66q"}
+{"time":"2025-04-12T10:58:54.966972704Z","level":"INFO","msg":"sender: closed","stream_id":"0pihr66q"}
+{"time":"2025-04-12T10:58:54.968370529Z","level":"INFO","msg":"stream: closed","id":"0pihr66q"}

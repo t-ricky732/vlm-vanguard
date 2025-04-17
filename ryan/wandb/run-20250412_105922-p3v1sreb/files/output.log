@@ -1,0 +1,340 @@
+WandB initialized.
+--- Environment Setup Complete ---
+
+--- Defining Data Loading Function (with Debugging) ---
+
+--- Loading and Splitting Data ---
+Found 7 JSON files in chartllama_data.
+
+Processing file: candlestick_chart_100examples_simplified_qa.json (165 entries)
+  Entry 0:
+    img_rel_path from JSON: 'ours/candlestick_chart/png/candlestick_chart_100examples_86.png'
+    Constructed full path: 'chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_86.png'
+    Path exists (is_file)? True
+  Entry 1:
+    img_rel_path from JSON: 'ours/candlestick_chart/png/candlestick_chart_100examples_83.png'
+    Constructed full path: 'chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_83.png'
+    Path exists (is_file)? True
+  Entry 2:
+    img_rel_path from JSON: 'ours/candlestick_chart/png/candlestick_chart_100examples_0.png'
+    Constructed full path: 'chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_0.png'
+    Path exists (is_file)? True
+  Entry 3:
+    img_rel_path from JSON: 'ours/candlestick_chart/png/candlestick_chart_100examples_22.png'
+    Constructed full path: 'chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_22.png'
+    Path exists (is_file)? True
+  Entry 4:
+    img_rel_path from JSON: 'ours/candlestick_chart/png/candlestick_chart_100examples_68.png'
+    Constructed full path: 'chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_68.png'
+    Path exists (is_file)? True
+  Entry 5:
+    img_rel_path from JSON: 'ours/candlestick_chart/png/candlestick_chart_100examples_1.png'
+    Constructed full path: 'chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_1.png'
+    Path exists (is_file)? True
+  Entry 6:
+    img_rel_path from JSON: 'ours/candlestick_chart/png/candlestick_chart_100examples_54.png'
+    Constructed full path: 'chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_54.png'
+    Path exists (is_file)? True
+  Entry 7:
+    img_rel_path from JSON: 'ours/candlestick_chart/png/candlestick_chart_100examples_87.png'
+    Constructed full path: 'chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_87.png'
+    Path exists (is_file)? True
+  Entry 8:
+    img_rel_path from JSON: 'ours/candlestick_chart/png/candlestick_chart_100examples_12.png'
+    Constructed full path: 'chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_12.png'
+    Path exists (is_file)? True
+  Entry 9:
+    img_rel_path from JSON: 'ours/candlestick_chart/png/candlestick_chart_100examples_21.png'
+    Constructed full path: 'chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_21.png'
+    Path exists (is_file)? True
+
+Processing file: funnel_chart_100examples_simplified_qa.json (153 entries)
+  Entry 0:
+    img_rel_path from JSON: 'ours/funnel_chart/png/funnel_chart_100examples_6.png'
+    Constructed full path: 'chartllama_data/ours/funnel_chart/png/funnel_chart_100examples_6.png'
+    Path exists (is_file)? True
+  Entry 1:
+    img_rel_path from JSON: 'ours/funnel_chart/png/funnel_chart_100examples_29.png'
+    Constructed full path: 'chartllama_data/ours/funnel_chart/png/funnel_chart_100examples_29.png'
+    Path exists (is_file)? True
+  Entry 2:
+    img_rel_path from JSON: 'ours/funnel_chart/png/funnel_chart_100examples_6.png'
+    Constructed full path: 'chartllama_data/ours/funnel_chart/png/funnel_chart_100examples_6.png'
+    Path exists (is_file)? True
+  Entry 3:
+    img_rel_path from JSON: 'ours/funnel_chart/png/funnel_chart_100examples_39.png'
+    Constructed full path: 'chartllama_data/ours/funnel_chart/png/funnel_chart_100examples_39.png'
+    Path exists (is_file)? True
+  Entry 4:
+    img_rel_path from JSON: 'ours/funnel_chart/png/funnel_chart_100examples_49.png'
+    Constructed full path: 'chartllama_data/ours/funnel_chart/png/funnel_chart_100examples_49.png'
+    Path exists (is_file)? True
+  Entry 5:
+    img_rel_path from JSON: 'ours/funnel_chart/png/funnel_chart_100examples_17.png'
+    Constructed full path: 'chartllama_data/ours/funnel_chart/png/funnel_chart_100examples_17.png'
+    Path exists (is_file)? True
+  Entry 6:
+    img_rel_path from JSON: 'ours/funnel_chart/png/funnel_chart_100examples_41.png'
+    Constructed full path: 'chartllama_data/ours/funnel_chart/png/funnel_chart_100examples_41.png'
+    Path exists (is_file)? True
+  Entry 7:
+    img_rel_path from JSON: 'ours/funnel_chart/png/funnel_chart_100examples_2.png'
+    Constructed full path: 'chartllama_data/ours/funnel_chart/png/funnel_chart_100examples_2.png'
+    Path exists (is_file)? True
+  Entry 8:
+    img_rel_path from JSON: 'ours/funnel_chart/png/funnel_chart_100examples_47.png'
+    Constructed full path: 'chartllama_data/ours/funnel_chart/png/funnel_chart_100examples_47.png'
+    Path exists (is_file)? True
+  Entry 9:
+    img_rel_path from JSON: 'ours/funnel_chart/png/funnel_chart_100examples_67.png'
+    Constructed full path: 'chartllama_data/ours/funnel_chart/png/funnel_chart_100examples_67.png'
+    Path exists (is_file)? True
+
+Processing file: gantt_chart_100examples_simplified_qa.json (167 entries)
+  Entry 0:
+    img_rel_path from JSON: 'ours/gantt_chart/png/gantt_chart_100examples_38.png'
+    Constructed full path: 'chartllama_data/ours/gantt_chart/png/gantt_chart_100examples_38.png'
+    Path exists (is_file)? True
+  Entry 1:
+    img_rel_path from JSON: 'ours/gantt_chart/png/gantt_chart_100examples_65.png'
+    Constructed full path: 'chartllama_data/ours/gantt_chart/png/gantt_chart_100examples_65.png'
+    Path exists (is_file)? True
+  Entry 2:
+    img_rel_path from JSON: 'ours/gantt_chart/png/gantt_chart_100examples_6.png'
+    Constructed full path: 'chartllama_data/ours/gantt_chart/png/gantt_chart_100examples_6.png'
+    Path exists (is_file)? True
+  Entry 3:
+    img_rel_path from JSON: 'ours/gantt_chart/png/gantt_chart_100examples_0.png'
+    Constructed full path: 'chartllama_data/ours/gantt_chart/png/gantt_chart_100examples_0.png'
+    Path exists (is_file)? True
+  Entry 4:
+    img_rel_path from JSON: 'ours/gantt_chart/png/gantt_chart_100examples_60.png'
+    Constructed full path: 'chartllama_data/ours/gantt_chart/png/gantt_chart_100examples_60.png'
+    Path exists (is_file)? True
+  Entry 5:
+    img_rel_path from JSON: 'ours/gantt_chart/png/gantt_chart_100examples_36.png'
+    Constructed full path: 'chartllama_data/ours/gantt_chart/png/gantt_chart_100examples_36.png'
+    Path exists (is_file)? True
+  Entry 6:
+    img_rel_path from JSON: 'ours/gantt_chart/png/gantt_chart_100examples_98.png'
+    Constructed full path: 'chartllama_data/ours/gantt_chart/png/gantt_chart_100examples_98.png'
+    Path exists (is_file)? True
+  Entry 7:
+    img_rel_path from JSON: 'ours/gantt_chart/png/gantt_chart_100examples_13.png'
+    Constructed full path: 'chartllama_data/ours/gantt_chart/png/gantt_chart_100examples_13.png'
+    Path exists (is_file)? True
+  Entry 8:
+    img_rel_path from JSON: 'ours/gantt_chart/png/gantt_chart_100examples_56.png'
+    Constructed full path: 'chartllama_data/ours/gantt_chart/png/gantt_chart_100examples_56.png'
+    Path exists (is_file)? True
+  Entry 9:
+    img_rel_path from JSON: 'ours/gantt_chart/png/gantt_chart_100examples_60.png'
+    Constructed full path: 'chartllama_data/ours/gantt_chart/png/gantt_chart_100examples_60.png'
+    Path exists (is_file)? True
+
+Processing file: polar_chart_100examples_simplified_qa.json (142 entries)
+  Entry 0:
+    img_rel_path from JSON: 'ours/polar_chart/png/polar_chart_100examples_119.png'
+    Constructed full path: 'chartllama_data/ours/polar_chart/png/polar_chart_100examples_119.png'
+    Path exists (is_file)? True
+  Entry 1:
+    img_rel_path from JSON: 'ours/polar_chart/png/polar_chart_100examples_76.png'
+    Constructed full path: 'chartllama_data/ours/polar_chart/png/polar_chart_100examples_76.png'
+    Path exists (is_file)? True
+  Entry 2:
+    img_rel_path from JSON: 'ours/polar_chart/png/polar_chart_100examples_121.png'
+    Constructed full path: 'chartllama_data/ours/polar_chart/png/polar_chart_100examples_121.png'
+    Path exists (is_file)? True
+  Entry 3:
+    img_rel_path from JSON: 'ours/polar_chart/png/polar_chart_100examples_90.png'
+    Constructed full path: 'chartllama_data/ours/polar_chart/png/polar_chart_100examples_90.png'
+    Path exists (is_file)? True
+  Entry 4:
+    img_rel_path from JSON: 'ours/polar_chart/png/polar_chart_100examples_67.png'
+    Constructed full path: 'chartllama_data/ours/polar_chart/png/polar_chart_100examples_67.png'
+    Path exists (is_file)? True
+  Entry 5:
+    img_rel_path from JSON: 'ours/polar_chart/png/polar_chart_100examples_100.png'
+    Constructed full path: 'chartllama_data/ours/polar_chart/png/polar_chart_100examples_100.png'
+    Path exists (is_file)? True
+  Entry 6:
+    img_rel_path from JSON: 'ours/polar_chart/png/polar_chart_100examples_160.png'
+    Constructed full path: 'chartllama_data/ours/polar_chart/png/polar_chart_100examples_160.png'
+    Path exists (is_file)? True
+  Entry 7:
+    img_rel_path from JSON: 'ours/polar_chart/png/polar_chart_100examples_10.png'
+    Constructed full path: 'chartllama_data/ours/polar_chart/png/polar_chart_100examples_10.png'
+    Path exists (is_file)? True
+  Entry 8:
+    img_rel_path from JSON: 'ours/polar_chart/png/polar_chart_100examples_149.png'
+    Constructed full path: 'chartllama_data/ours/polar_chart/png/polar_chart_100examples_149.png'
+    Path exists (is_file)? True
+  Entry 9:
+    img_rel_path from JSON: 'ours/polar_chart/png/polar_chart_100examples_112.png'
+    Constructed full path: 'chartllama_data/ours/polar_chart/png/polar_chart_100examples_112.png'
+    Path exists (is_file)? True
+
+Processing file: heatmap_chart_100examples_simplified_qa.json (155 entries)
+  Entry 0:
+    img_rel_path from JSON: 'ours/heatmap_chart/png/heatmap_chart_100examples_38.png'
+    Constructed full path: 'chartllama_data/ours/heatmap_chart/png/heatmap_chart_100examples_38.png'
+    Path exists (is_file)? True
+  Entry 1:
+    img_rel_path from JSON: 'ours/heatmap_chart/png/heatmap_chart_100examples_27.png'
+    Constructed full path: 'chartllama_data/ours/heatmap_chart/png/heatmap_chart_100examples_27.png'
+    Path exists (is_file)? True
+  Entry 2:
+    img_rel_path from JSON: 'ours/heatmap_chart/png/heatmap_chart_100examples_71.png'
+    Constructed full path: 'chartllama_data/ours/heatmap_chart/png/heatmap_chart_100examples_71.png'
+    Path exists (is_file)? True
+  Entry 3:
+    img_rel_path from JSON: 'ours/heatmap_chart/png/heatmap_chart_100examples_35.png'
+    Constructed full path: 'chartllama_data/ours/heatmap_chart/png/heatmap_chart_100examples_35.png'
+    Path exists (is_file)? True
+  Entry 4:
+    img_rel_path from JSON: 'ours/heatmap_chart/png/heatmap_chart_100examples_66.png'
+    Constructed full path: 'chartllama_data/ours/heatmap_chart/png/heatmap_chart_100examples_66.png'
+    Path exists (is_file)? True
+  Entry 5:
+    img_rel_path from JSON: 'ours/heatmap_chart/png/heatmap_chart_100examples_25.png'
+    Constructed full path: 'chartllama_data/ours/heatmap_chart/png/heatmap_chart_100examples_25.png'
+    Path exists (is_file)? True
+  Entry 6:
+    img_rel_path from JSON: 'ours/heatmap_chart/png/heatmap_chart_100examples_71.png'
+    Constructed full path: 'chartllama_data/ours/heatmap_chart/png/heatmap_chart_100examples_71.png'
+    Path exists (is_file)? True
+  Entry 7:
+    img_rel_path from JSON: 'ours/heatmap_chart/png/heatmap_chart_100examples_17.png'
+    Constructed full path: 'chartllama_data/ours/heatmap_chart/png/heatmap_chart_100examples_17.png'
+    Path exists (is_file)? True
+  Entry 8:
+    img_rel_path from JSON: 'ours/heatmap_chart/png/heatmap_chart_100examples_47.png'
+    Constructed full path: 'chartllama_data/ours/heatmap_chart/png/heatmap_chart_100examples_47.png'
+    Path exists (is_file)? True
+  Entry 9:
+    img_rel_path from JSON: 'ours/heatmap_chart/png/heatmap_chart_100examples_31.png'
+    Constructed full path: 'chartllama_data/ours/heatmap_chart/png/heatmap_chart_100examples_31.png'
+    Path exists (is_file)? True
+
+Processing file: box_chart_100examples_simplified_qa.json (109 entries)
+  Entry 0:
+    img_rel_path from JSON: 'ours/box_chart/png/box_chart_100examples_37.png'
+    Constructed full path: 'chartllama_data/ours/box_chart/png/box_chart_100examples_37.png'
+    Path exists (is_file)? True
+  Entry 1:
+    img_rel_path from JSON: 'ours/box_chart/png/box_chart_100examples_56.png'
+    Constructed full path: 'chartllama_data/ours/box_chart/png/box_chart_100examples_56.png'
+    Path exists (is_file)? True
+  Entry 2:
+    img_rel_path from JSON: 'ours/box_chart/png/box_chart_100examples_69.png'
+    Constructed full path: 'chartllama_data/ours/box_chart/png/box_chart_100examples_69.png'
+    Path exists (is_file)? True
+  Entry 3:
+    img_rel_path from JSON: 'ours/box_chart/png/box_chart_100examples_63.png'
+    Constructed full path: 'chartllama_data/ours/box_chart/png/box_chart_100examples_63.png'
+    Path exists (is_file)? True
+  Entry 4:
+    img_rel_path from JSON: 'ours/box_chart/png/box_chart_100examples_71.png'
+    Constructed full path: 'chartllama_data/ours/box_chart/png/box_chart_100examples_71.png'
+    Path exists (is_file)? True
+  Entry 5:
+    img_rel_path from JSON: 'ours/box_chart/png/box_chart_100examples_26.png'
+    Constructed full path: 'chartllama_data/ours/box_chart/png/box_chart_100examples_26.png'
+    Path exists (is_file)? True
+  Entry 6:
+    img_rel_path from JSON: 'ours/box_chart/png/box_chart_100examples_27.png'
+    Constructed full path: 'chartllama_data/ours/box_chart/png/box_chart_100examples_27.png'
+    Path exists (is_file)? True
+  Entry 7:
+    img_rel_path from JSON: 'ours/box_chart/png/box_chart_100examples_80.png'
+    Constructed full path: 'chartllama_data/ours/box_chart/png/box_chart_100examples_80.png'
+    Path exists (is_file)? True
+  Entry 8:
+    img_rel_path from JSON: 'ours/box_chart/png/box_chart_100examples_7.png'
+    Constructed full path: 'chartllama_data/ours/box_chart/png/box_chart_100examples_7.png'
+    Path exists (is_file)? True
+  Entry 9:
+    img_rel_path from JSON: 'ours/box_chart/png/box_chart_100examples_37.png'
+    Constructed full path: 'chartllama_data/ours/box_chart/png/box_chart_100examples_37.png'
+    Path exists (is_file)? True
+
+Processing file: scatter_chart_100examples_simplified_qa.json (89 entries)
+  Entry 0:
+    img_rel_path from JSON: 'ours/scatter_chart/png/scatter_chart_100examples_52.png'
+    Constructed full path: 'chartllama_data/ours/scatter_chart/png/scatter_chart_100examples_52.png'
+    Path exists (is_file)? True
+  Entry 1:
+    img_rel_path from JSON: 'ours/scatter_chart/png/scatter_chart_100examples_79.png'
+    Constructed full path: 'chartllama_data/ours/scatter_chart/png/scatter_chart_100examples_79.png'
+    Path exists (is_file)? True
+  Entry 2:
+    img_rel_path from JSON: 'ours/scatter_chart/png/scatter_chart_100examples_28.png'
+    Constructed full path: 'chartllama_data/ours/scatter_chart/png/scatter_chart_100examples_28.png'
+    Path exists (is_file)? True
+  Entry 3:
+    img_rel_path from JSON: 'ours/scatter_chart/png/scatter_chart_100examples_21.png'
+    Constructed full path: 'chartllama_data/ours/scatter_chart/png/scatter_chart_100examples_21.png'
+    Path exists (is_file)? True
+  Entry 4:
+    img_rel_path from JSON: 'ours/scatter_chart/png/scatter_chart_100examples_46.png'
+    Constructed full path: 'chartllama_data/ours/scatter_chart/png/scatter_chart_100examples_46.png'
+    Path exists (is_file)? True
+  Entry 5:
+    img_rel_path from JSON: 'ours/scatter_chart/png/scatter_chart_100examples_29.png'
+    Constructed full path: 'chartllama_data/ours/scatter_chart/png/scatter_chart_100examples_29.png'
+    Path exists (is_file)? True
+  Entry 6:
+    img_rel_path from JSON: 'ours/scatter_chart/png/scatter_chart_100examples_64.png'
+    Constructed full path: 'chartllama_data/ours/scatter_chart/png/scatter_chart_100examples_64.png'
+    Path exists (is_file)? True
+  Entry 7:
+    img_rel_path from JSON: 'ours/scatter_chart/png/scatter_chart_100examples_31.png'
+    Constructed full path: 'chartllama_data/ours/scatter_chart/png/scatter_chart_100examples_31.png'
+    Path exists (is_file)? True
+  Entry 8:
+    img_rel_path from JSON: 'ours/scatter_chart/png/scatter_chart_100examples_54.png'
+    Constructed full path: 'chartllama_data/ours/scatter_chart/png/scatter_chart_100examples_54.png'
+    Path exists (is_file)? True
+  Entry 9:
+    img_rel_path from JSON: 'ours/scatter_chart/png/scatter_chart_100examples_68.png'
+    Constructed full path: 'chartllama_data/ours/scatter_chart/png/scatter_chart_100examples_68.png'
+    Path exists (is_file)? True
+
+Loaded 980 raw examples. Skipped 0 invalid samples.
+
+Raw data loaded and split.
+Train samples: 882
+Eval samples: 98
+
+Sample train data point (raw):
+{'id': 'ours_simplified_qa_59_0', 'question': 'What is the theme of the chart?', 'answer': 'Variation in the Consumer Price Index (CPI)', 'image_path': 'chartllama_data/ours/candlestick_chart/png/candlestick_chart_100examples_59.png'}
+
+--- Loading Model and Processor ---
+/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_auth.py:94: UserWarning:
+The secret `HF_TOKEN` does not exist in your Colab secrets.
+To authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.
+You will be able to reuse this secret in all of your notebooks.
+Please note that authentication is recommended but still optional to access public models or datasets.
+  warnings.warn(
+Processor loaded.
+Using standard attention implementation: eager
+Configuring model for Full Fine-Tuning (dtype: torch.bfloat16)...
+Loading model 'HuggingFaceTB/SmolVLM-Base'...
+Moving model to device: cuda
+Model loaded. Device: cuda:0. Footprint: 4.49 GB
+Enabling gradient checkpointing for Full Fine-Tuning.
+
+--- Defining Formatting and Collator ---
+Custom Collator defined.
+
+--- Configuring Training Arguments ---
+/usr/local/lib/python3.11/dist-packages/transformers/training_args.py:1611: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+SFTConfig set.
+
+--- Initializing SFTTrainer ---
+SFTTrainer initialized.
+
+--- Starting Training ---
+Calling trainer.train()...
+[34m[1mwandb[0m: [33mWARNING[0m The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
