@@ -1,12 +1,12 @@
 import argparse
 import yaml
 import copy
-import vlm_model
+from vlm_model import vlm_model
 
 import random, time, gc, re
 import pickle
 import torch
-import transformers, trl, bitsandbytes, peft, accelerate, flash-attn
+import transformers, trl, bitsandbytes, peft, accelerate, flash_attn
 from PIL import Image
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 from trl import SFTConfig, SFTTrainer

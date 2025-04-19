@@ -1,12 +1,12 @@
 import argparse
 import yaml
 import copy
-import vlm_model
+from vlm_model import vlm_model
 
 import random, time, gc
 import pickle
 import torch
-import transformers, trl, bitsandbytes, peft, accelerate, flash-attn
+import transformers, trl, bitsandbytes, peft, accelerate, flash_attn
 from PIL import Image
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 from trl import SFTConfig, SFTTrainer
@@ -75,7 +75,9 @@ class vlm_train:
             val_CL = pickle.load(f)
         
         # Prepare model
-        model, processor = vlm_model(args.model_type, args.quantization, use_tuned=False, adapter_path=None)
+        model_instance = vlm_model(args.model_type, args.quantization, use_tuned=False, adapter_path=None)
+        model, processor = model_instance.get_model()
+        vlm_model(args.model_type, args.quantization, use_tuned=False, adapter_path=None)
 
         # Ref: https://huggingface.co/learn/cookbook/en/fine_tuning_smol_vlm_sft_trl#3-load-model-and-check-performance-
         if args.lora:

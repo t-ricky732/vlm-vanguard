@@ -2,7 +2,7 @@
 import argparse, time
 import yaml
 import copy
-import vlm_model
+from vlm_model import vlm_model
 
 import random, time, gc
 import pickle
