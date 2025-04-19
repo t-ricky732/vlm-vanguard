@@ -77,7 +77,6 @@ class vlm_train:
         # Prepare model
         model_instance = vlm_model(args.model_type, args.quantization, use_tuned=False, adapter_path=None)
         model, processor = model_instance.get_model()
-        vlm_model(args.model_type, args.quantization, use_tuned=False, adapter_path=None)
 
         # Ref: https://huggingface.co/learn/cookbook/en/fine_tuning_smol_vlm_sft_trl#3-load-model-and-check-performance-
         if args.lora:
@@ -143,9 +142,10 @@ class vlm_train:
                 text=texts,
                 images=images,
                 return_tensors="pt",
-                padding="longest",
-                truncation=True,
-                max_length=args.max_seq_length,
+                #padding="longest",
+                padding=True,
+                #truncation=True,
+                #max_length=args.max_seq_length,
                 )
             labels = batch["input_ids"].clone()
             labels[labels == processor.tokenizer.pad_token_id] = -100

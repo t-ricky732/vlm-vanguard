@@ -64,12 +64,14 @@ class vlm_inference:
 
         # Prepare model
         if self.use_fine_tuned:
-            model, processor = vlm_model(args.model_type, args.quantization,
-                                         use_tuned=True, adapter_path=adapter_path)
+            model_instance = vlm_model(args.model_type, args.quantization,
+                                       use_tuned=True, adapter_path=adapter_path)
+            model, processor = model_instance.get_model()
         else:
-            model, processor = vlm_model(args.model_type, args.quantization,
-                                         use_fine_tuned=False, adapter_path=None)
-            
+            model_instance = vlm_model(args.model_type, args.quantization,
+                                       use_tuned=False, adapter_path=None)
+            model, processor = model_instance.get_model()            
+
         self.model = model
         self.processor = processor
         
@@ -136,8 +138,12 @@ class vlm_inference:
 
 if __name__ == "__main__":
     instance = vlm_inference(use_fine_tuned = False)
+    start_time = time.time()
     score = instance.main()
-    print("relaxed accuracy", score)
+    end_time = time.time()
+    time_taken = (end_time - start_time)/60
+    print("relaxed accuracy:", score)
+    print("inference time:", time_taken)
 
 
     #instance2 = vlm_inference(use_fine_tuned = True)
