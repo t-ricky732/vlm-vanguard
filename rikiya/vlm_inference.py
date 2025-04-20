@@ -104,8 +104,12 @@ class vlm_inference:
             return s
 
     def evaluate_performance(self):
-        score = 0
+        rel_score = 0
+        EM_score = 0
+        EM_denominator = 0
+        rel_denominator = 0
         num_samples = len(self.test_data)
+        #num_samples = 100
         for i in range(num_samples):
             prediction  = (self.inference(self.test_data[i])).lower().replace('%','').removesuffix('.')
             ground_truth = (self.test_data[i][2]['content'][0]['text']).lower()
@@ -115,21 +119,27 @@ class vlm_inference:
             ground_truth = self.normalize(ground_truth)
 
             # check if Yes/No question
-            if ground_truth == 'yes' or ground_truth == "no":
+            if (ground_truth == 'yes' or ground_truth == "no") and (prediction == 'yes' or prediction == "no"):
+                EM_denominator +=1
                 if prediction == ground_truth:
-                    score += 1
+                    EM_score += 1
             else:
                 try:
                     prediction = float(prediction)
                     ground_truth = float(ground_truth)
                     relative_difference = abs((prediction - ground_truth)/ground_truth)
+                    EM_denominator +=1
+                    rel_denominator +=1
+                    if prediction == ground_truth:
+                        EM_score+=1
                     if relative_difference <= 0.05:
-                        score+=1
+                        rel_score+=1
                 except:
                     pass
 
-        accuracy = score / num_samples
-        return accuracy
+        EM = EM_score / EM_denominator
+        rel_accuracy = rel_score / rel_denominator
+        return EM, rel_accuracy, (EM_score, EM_denominator), (rel_score, rel_denominator)
     
     def main(self):
         self.prepare_eval()
@@ -137,15 +147,15 @@ class vlm_inference:
         return score
 
 if __name__ == "__main__":
-    instance = vlm_inference(use_fine_tuned = False)
     start_time = time.time()
-    score = instance.main()
+    #instance = vlm_inference(use_fine_tuned = False)
+    instance = vlm_inference(use_fine_tuned = True)
+    EM, rel, EM_pair, rel_pair = instance.main()
     end_time = time.time()
     time_taken = (end_time - start_time)/60
-    print("relaxed accuracy:", score)
+    
+    print("EM (%)", EM)
+    print("relaxed accuracy (%)", rel)
+    print("EM - correct / # of valid", EM_pair)
+    print("rel. acc. - correct / # of valid", rel_pair)
     print("inference time:", time_taken)
-
-
-    #instance2 = vlm_inference(use_fine_tuned = True)
-    #score2 = instance2.main()
-    #print("relaxed accuracy", score2)

@@ -125,6 +125,10 @@ class vlm_train:
 
             bf16=(self.dtype == torch.bfloat16),
             fp16=(self.dtype == torch.float16),
+            eval_strategy="epoch",
+            eval_steps=50,
+            load_best_model_at_end=True,
+            metric_for_best_model="eval_loss",
             seed=seed,
             remove_unused_columns=False,
             )
@@ -142,8 +146,8 @@ class vlm_train:
                 text=texts,
                 images=images,
                 return_tensors="pt",
+                padding="True",
                 #padding="longest",
-                padding=True,
                 #truncation=True,
                 #max_length=args.max_seq_length,
                 )
