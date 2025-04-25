@@ -96,13 +96,6 @@ class vlm_inference:
         text_input = self.processor.apply_chat_template(sample[1:2], add_generation_prompt=True)
         image_inputs = [sample[1]['content'][0]['image']]
         model_inputs = self.processor(text=[text_input], images=image_inputs,return_tensors="pt").to(self.device)
-        # Seed setting
-        # Ref: https://qiita.com/north_redwing/items/1e153139125d37829d2d
-        seed = 42
-        random.seed(seed)
-        torch.manual_seed(seed)
-        torch.backends.cudnn.benchmark = False
-        torch.backends.cudnn.deterministic = True
         generated_ids = self.model.generate(**model_inputs, max_new_tokens=self.max_new_tokens,
                                             # test_notebook_5 compatibility
                                             do_sample=False,
@@ -190,7 +183,7 @@ class vlm_inference:
     def save_json_and_output(self):
         results_list = []
         i=0
-        for sample in self.test_data:
+        for sample in self.test_data[0:20]:
             entry = {"id": i,
                     "question": sample[1]['content'][1]['text'],
                     "ground_truth": sample[2]['content'][0]['text']} # Convert GT to string here
@@ -223,11 +216,7 @@ class vlm_inference:
 
         for col in [c for c in df.columns if c.startswith(PRED_PREFIX)]:
             proc = f"{col}_proc"
-            print(proc)
             df[proc] = df[col].map(self.to_scalar)
-
-            print(df[proc])
-
             valid   = df[["GT_proc", proc]].dropna()
             numeric = valid[valid["GT_proc"].apply(lambda x:isinstance(x,(int,float))) &
                             valid[proc].apply(lambda x:isinstance(x,(int,float)))]
@@ -235,7 +224,7 @@ class vlm_inference:
             em  = 100 * (valid["GT_proc"] == valid[proc]).mean() if not valid.empty else 0
             rel = 100 * numeric.apply(lambda r: self.relaxed(r["GT_proc"], r[proc]), axis=1).mean() if not numeric.empty else 0
 
-            run = col.replace(PRED_PREFIX, "")
+            run = col.replace(PRED_PREFIX, "").replace("answer_","")
             results[run] = {"EM (%)": round(em,2),
                             "Relaxed Num (%)": round(rel,2),
                             "# Numeric": len(numeric),
