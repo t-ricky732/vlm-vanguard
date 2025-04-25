@@ -3,6 +3,7 @@ import yaml
 import copy
 from vlm_model import vlm_model
 import pandas as pd
+from word2number import w2n
 
 import random, time, gc, re, os, sys
 from pathlib import Path
@@ -39,7 +40,7 @@ class vlm_inference:
         # Length of output tokens
         self.max_new_tokens = 32
 
-        self.json_output = "./chartqa_evaluation_results_comparison.json"
+        self.json_output = os.path.join('./', "chartqa_evaluation_results_comparison.json")
 
 
     def prepare_eval(self):
@@ -95,11 +96,18 @@ class vlm_inference:
         text_input = self.processor.apply_chat_template(sample[1:2], add_generation_prompt=True)
         image_inputs = [sample[1]['content'][0]['image']]
         model_inputs = self.processor(text=[text_input], images=image_inputs,return_tensors="pt").to(self.device)
+        # Seed setting
+        # Ref: https://qiita.com/north_redwing/items/1e153139125d37829d2d
+        seed = 42
+        random.seed(seed)
+        torch.manual_seed(seed)
+        torch.backends.cudnn.benchmark = False
+        torch.backends.cudnn.deterministic = True
         generated_ids = self.model.generate(**model_inputs, max_new_tokens=self.max_new_tokens,
                                             # test_notebook_5 compatibility
                                             do_sample=False,
                                             pad_token_id=self.processor.tokenizer.pad_token_id,
-                                            eos_token_id=self.processor.tokenizer.eos_token_id))
+                                            eos_token_id=self.processor.tokenizer.eos_token_id)
         trimmed_generated_ids = [out_ids[len(in_ids) :] for in_ids, out_ids in zip(model_inputs.input_ids, generated_ids)]
         output_text = self.processor.batch_decode(trimmed_generated_ids, skip_special_tokens=True, clean_up_tokenization_spaces=False)
         return output_text[0].strip()
@@ -156,44 +164,13 @@ class vlm_inference:
         EM = EM_score / EM_denominator
         rel_accuracy = rel_score / rel_denominator
         return EM, rel_accuracy, (EM_score, EM_denominator), (rel_score, rel_denominator)
-    
-    def save_json(self):
-        results_list = []
-        for sample in self.test_data:
-            entry = {"id": sample.get("img_idx", "N/A"),
-                    "question": sample.get("query"),
-                    "ground_truth": str(sample.get("label"))} # Convert GT to string here
 
-            # Basic validation of core sample data needed for processing
-            if not all([entry["id"] != "N/A", entry["question"], entry["ground_truth"] is not None, isinstance(sample.get("image"), Image.Image)]):
-                print(f"Warning: Skipping sample {entry['id']} due to missing/invalid core data.")
-                continue # Skip this sample
-
-            entry[f"predicted_answer_{self.model_name}"] = self.inferece(sample)
-            results_list.append(entry)
-        # --- End Prediction Loop ---   
-
-        # --- Save results_df to JSON ---
-        if results_list:
-            results_df = pd.DataFrame(results_list)
-            if self.json_output in locals() and self.json_output:
-                try:
-                    os.makedirs(os.path.dirname(self.json_output), exist_ok=True)
-                    results_df.to_json(self.json_output, orient="records", indent=2)
-                    print(f"\nEvaluation results (raw predictions) saved to: {self.json_output}")
-                except Exception as e_save:
-                    print(f"\nERROR saving evaluation results to {self.json_output}: {e_save}")
-            else:
-                print("\nWarning: EVAL_OUTPUT_FILE not defined, results not saved.")
-        return None
-    
     # --- Advanced accuracy metrics -------------------------------
     # 2.  Helpers -------------------------------------------------------------------
     def to_scalar(self, v):
         YES, NO      = {"yes","y","true","correct"}, {"no","n","false","incorrect"}
-        TOL, EPS     = 0.05, 1e-9                  # ±5 %, tiny tolerance for 0
 
-        """Clean & convert value → float | 'yes' | 'no' | None."""
+        """Clean & convert value -> float | 'yes' | 'no' | None."""
         if pd.isna(v): return None
         s = str(v).strip()
         m = re.fullmatch(r"\[['\"]?(.*?)['\"]?\]", s)
@@ -207,66 +184,49 @@ class vlm_inference:
         return None
 
     def relaxed(self, gt, pred):
+        TOL, EPS     = 0.05, 1e-9 # +-5 %, tiny tolerance for 0s
         return abs(gt - pred) <= (abs(gt) * TOL or EPS)
-    
-    def aggregate(self):
-        BASE_OUTPUT_DIR = Path('./')
-        OUTPUT_FOLDER_PREFIX = self.output_dir
-        EVAL_FILENAME = "chartqa_evaluation_results_comparison.json"
 
-        search_pattern = f"{OUTPUT_FOLDER_PREFIX}*/{EVAL_FILENAME}"
-        result_files = list(BASE_OUTPUT_DIR.glob(search_pattern))
+    def save_json_and_output(self):
+        results_list = []
+        i=0
+        for sample in self.test_data:
+            entry = {"id": i,
+                    "question": sample[1]['content'][1]['text'],
+                    "ground_truth": sample[2]['content'][0]['text']} # Convert GT to string here
+            i+=1
+            # Basic validation of core sample data needed for processing
+            #if not all([entry["id"] != "N/A", entry["question"], entry["ground_truth"] is not None, isinstance(sample[1]['content'][0]['image'], Image.Image)]):
+            #    print(f"Warning: Skipping sample {entry['id']} due to missing/invalid core data.")
+            #    continue # Skip this sample
 
-        # if not result_files:
-        #     raise FileNotFoundError("No evaluation result files found.")
+            entry[f"predicted_answer_{self.model_name}"] = self.inference(sample)
+            results_list.append(entry)
+        # --- End Prediction Loop ---
 
-        aggregated_dfs = []
-        base_models_added = set()
+        # --- Save results_df to JSON ---
+        if results_list:
+            results_df = pd.DataFrame(results_list)
+            os.makedirs(os.path.dirname(self.json_output), exist_ok=True)
+            results_df.to_json(self.json_output, orient="records", indent=2)
 
-        for file_path in result_files:
-            run_label = file_path.parent.name.replace(f"{OUTPUT_FOLDER_PREFIX}-", "")
-            parts = run_label.split('-')
-            base_model_name = '-'.join(parts[:-1]) if len(parts) >= 2 else "UnknownBase"
-            base_label = f"{base_model_name}-Original"
-
-            df = pd.read_json(file_path)
-
-            columns = ['id', 'question', 'ground_truth'] if not aggregated_dfs else ['id']
-            rename_dict = {}
-
-            if 'predicted_answer_finetuned' in df:
-                columns.append('predicted_answer_finetuned')
-                rename_dict['predicted_answer_finetuned'] = f"Pred_{run_label}"
-
-            if base_model_name not in base_models_added and 'predicted_answer_base' in df:
-                columns.append('predicted_answer_base')
-                rename_dict['predicted_answer_base'] = f"Pred_{base_label}"
-                base_models_added.add(base_model_name)
-
-            df_subset = df[columns].rename(columns=rename_dict)
-            aggregated_dfs.append(df_subset)
-
-        if aggregated_dfs:
-            final_comparison_df = reduce(lambda left, right: pd.merge(left, right, on='id', how='outer'), aggregated_dfs)
-            final_comparison_df.ffill(inplace=True)
-            final_comparison_df.bfill(inplace=True)
-        else:
-            print("No evaluation results found to aggregate.")
-            final_comparison_df = pd.DataFrame()
-        df = final_comparison_df.copy()
+        df = results_df.copy()
         df["GT_proc"] = df["ground_truth"].map(self.to_scalar)
-
         keep = df["GT_proc"].isin(["yes","no"]) | df["GT_proc"].apply(lambda x: isinstance(x,(int,float)))
         df_filt = df[keep]
         if df_filt.empty:
-            sys.exit("  No yes/no/numeric ground‑truth rows after processing.")
+            sys.exit("  No yes/no/numeric ground-truth rows after processing.")
 
         # Metrics per run -----------------------------------------------------------
-        PRED_PREFIX  = "Pred_"                     # rename if your columns differ
+        PRED_PREFIX  = "predicted_"                     # rename if your columns differ
         results = {}
+
         for col in [c for c in df.columns if c.startswith(PRED_PREFIX)]:
             proc = f"{col}_proc"
+            print(proc)
             df[proc] = df[col].map(self.to_scalar)
+
+            print(df[proc])
 
             valid   = df[["GT_proc", proc]].dropna()
             numeric = valid[valid["GT_proc"].apply(lambda x:isinstance(x,(int,float))) &
@@ -283,30 +243,28 @@ class vlm_inference:
 
             print(f"{run:<15} EM={em:6.2f}%  Relaxed={rel:6.2f}%  ({len(numeric)} num / {len(valid)} valid)")
 
-        return em, rel, numeric, valid
-    
+        return None
+
     def main(self):
         self.prepare_eval()
         #score = self.evaluate_performance()
         #return score
-        self.save_json()
-        em, rel, numeric, valid = self.aggregate()
-        return em, rel, numeric, valid
-    
+        self.save_json_and_output()
+        return None
 
 if __name__ == "__main__":
     start_time = time.time()
     #instance = vlm_inference(use_fine_tuned = False)
     instance = vlm_inference(use_fine_tuned = True)
     #em, rel, EM_pair, rel_pair = instance.main()
-    em, rel, numeric, valid = instance.main()
+    instance.main()
     end_time = time.time()
     time_taken = (end_time - start_time)/60
     
-    print("EM (%)", em)
-    print("relaxed accuracy (%)", rel)
+    #print("EM (%)", em)
+    #print("relaxed accuracy (%)", rel)
     #print("EM - correct / # of valid", EM_pair)
     #print("rel. acc. - correct / # of valid", rel_pair)
-    print("EM -  # of valid", numeric)
-    print("rel.- # of valid", valid)
+    #print("EM -  # of valid", numeric)
+    #print("rel.- # of valid", valid)
     print("inference time:", time_taken)
