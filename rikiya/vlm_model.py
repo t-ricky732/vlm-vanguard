@@ -37,13 +37,9 @@ class vlm_model():
         model_kwargs['device_map'] = "auto"
         model_kwargs['torch_dtype'] = self.dtype
         model_kwargs['_attn_implementation'] = "flash_attention_2"
-        #model_kwargs['_attn_implementation'] = "eager"
-        #model_kwargs['_attn_implementation'] = "sdpa"
-        #model_kwargs['_attn_implementation'] = "flex_attention"
 
         # For bitsandbytes quantization
-        #if (self.quantization) and (not self.use_tuned): # Use quantization => use QLoRA
-        if self.quantization: # Use quantization => use QLoRA
+        if (self.quantization) and (not self.use_tuned): # Use quantization only for QLoRA fine tuning
             if self.four_bit:
                 bnb_config = BitsAndBytesConfig(
                     load_in_4bit=True,
@@ -68,7 +64,7 @@ class vlm_model():
         )
 
         # Get processor
-        processor = AutoProcessor.from_pretrained(self.pretrained_model, device_map = 'auto')
+        processor = AutoProcessor.from_pretrained(self.pretrained_model)
         # Ref: Ryan
         if processor.tokenizer.pad_token_id is None:
             processor.tokenizer.pad_token = processor.tokenizer.eos_token

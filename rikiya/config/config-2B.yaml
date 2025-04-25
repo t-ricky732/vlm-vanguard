@@ -18,8 +18,8 @@ Train:
   save_strategy: "epoch"
 
 Model:
-  model_type: "HuggingFaceTB/SmolVLM-256M-Instruct" # Huggingface model ID
-  output_dir: "smolvlm-256-instruct-chartllama"
+  model_type: "HuggingFaceTB/SmolVLM-Instruct" # Huggingface model ID
+  output_dir: "smolvlm-2B-instruct-chartllama"
 
 Data:
   data_path: "./data/" # location of data pickle files
