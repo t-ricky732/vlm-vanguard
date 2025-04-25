@@ -39,8 +39,7 @@ class vlm_model():
         model_kwargs['_attn_implementation'] = "flash_attention_2"
 
         # For bitsandbytes quantization
-        if (self.quantization) and (not self.use_tuned): # Use quantization => use QLoRA
-        #if self.quantization: # Use quantization => use QLoRA
+        if (self.quantization) and (not self.use_tuned): # Use quantization only for QLoRA fine tuning
             if self.four_bit:
                 bnb_config = BitsAndBytesConfig(
                     load_in_4bit=True,
