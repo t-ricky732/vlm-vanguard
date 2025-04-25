@@ -52,6 +52,12 @@ class vlm_inference:
                 setattr(args, k, v)
         ####################################
 
+        # For displaying parameters (for PACE record)
+        print("r", args.r)
+        print("lora_alpha", args.lora_alpha)
+        print("lora_dropout", args.lora_dropout)
+        print("target_modules", args.target_modules)
+
         # Get data from pickle files
         # Ref: https://note.nkmk.me/python-pickle-usage/
         with open(args.data_path+'test_CQ_'+args.data_type+'.pkl', 'rb') as f:

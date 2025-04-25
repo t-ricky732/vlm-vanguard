@@ -83,6 +83,12 @@ class vlm_train:
             if args.quantization:
                 model = prepare_model_for_kbit_training(model)
 
+            # For displaying parameters (for PACE record)
+            print("r",args.r)
+            print("lora_alpha", args.lora_alpha)
+            print("lora_dropout", args.lora_dropout)
+            print("target_modules", args.target_modules)
+
             peft_config = LoraConfig(
                 r=args.r,
                 lora_alpha=args.lora_alpha,
@@ -146,8 +152,8 @@ class vlm_train:
                 text=texts,
                 images=images,
                 return_tensors="pt",
-                padding="True",
-                #padding="longest",
+                #padding="True",
+                padding="longest",
                 #truncation=True,
                 #max_length=args.max_seq_length,
                 )
