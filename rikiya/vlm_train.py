@@ -47,6 +47,11 @@ class vlm_train:
     def main(self):
         config_file, time_taken, log_history = self.run()
 
+        print('config_file for training:', config_file)
+        print('Training time:', time_taken)
+        print('log_history')
+        print(log_history)
+
         return None
 
     def run(self):
@@ -83,6 +88,12 @@ class vlm_train:
             if args.quantization:
                 model = prepare_model_for_kbit_training(model)
 
+            # For displaying parameters (for PACE record)
+            print("r",args.r)
+            print("lora_alpha", args.lora_alpha)
+            print("lora_dropout", args.lora_dropout)
+            print("target_modules", args.target_modules)
+
             peft_config = LoraConfig(
                 r=args.r,
                 lora_alpha=args.lora_alpha,
@@ -96,7 +107,9 @@ class vlm_train:
             model = get_peft_model(model, peft_config)
         
         model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
-        model.config.use_cache = False
+        # to match the condition with test_notebook_5
+        if not args.quantization:
+            model.config.use_cache = False
 
         training_args = SFTConfig(
             output_dir=args.output_dir,
@@ -146,8 +159,8 @@ class vlm_train:
                 text=texts,
                 images=images,
                 return_tensors="pt",
-                padding="True",
-                #padding="longest",
+                #padding="True",
+                padding="longest",
                 #truncation=True,
                 #max_length=args.max_seq_length,
                 )

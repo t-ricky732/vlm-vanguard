@@ -39,8 +39,7 @@ class vlm_model():
         model_kwargs['_attn_implementation'] = "flash_attention_2"
 
         # For bitsandbytes quantization
-        if (self.quantization) and (not self.use_tuned): # Use quantization => use QLoRA
-        #if self.quantization: # Use quantization => use QLoRA
+        if (self.quantization) and (not self.use_tuned): # Use quantization only for QLoRA fine tuning
             if self.four_bit:
                 bnb_config = BitsAndBytesConfig(
                     load_in_4bit=True,
@@ -78,4 +77,6 @@ class vlm_model():
         return model, processor
 
 if __name__ == "__main__":
-    pass
+    instance = vlm_model(model_type="HuggingFaceTB/SmolVLM-256M-Instruct", quantization=False)
+    model, processor = instance.get_model()
+    print(model)

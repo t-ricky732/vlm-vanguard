@@ -25,7 +25,7 @@ class vlm_data:
         self.selector = selector
 
         # chartllama image loading
-        self.image_size = 384
+        #self.image_size = 384
         self.chartllama_path = "chartllama_data/"
         self.chartllama_train_frac = 0.8 # 0.8 => 80% train, 20% validation
 
@@ -80,7 +80,8 @@ class vlm_data:
     def format_chartllama(self, sample):
         #print(sample)
         image_path = self.chartllama_path + sample['image']
-        image_object = Image.open(image_path).resize((self.image_size, self.image_size)).convert('RGB')
+        #image_object = Image.open(image_path).resize((self.image_size, self.image_size)).convert('RGB')
+        image_object = Image.open(image_path).convert('RGB')
         question = sample['conversations'][0]['value'].strip('<image>').strip('\n')
         answer = sample['conversations'][1]['value']
         
@@ -127,11 +128,11 @@ if __name__ == "__main__":
     load_long = vlm_data("long")
     test_CQ_long, train_CL_long, val_CL_long = load_long.load_data()
 
-    load_middle = vlm_data("middle")
-    test_CQ_middle, train_CL_middle, val_CL_middle = load_middle.load_data()
+    #load_middle = vlm_data("middle")
+    #test_CQ_middle, train_CL_middle, val_CL_middle = load_middle.load_data()
 
-    load_short = vlm_data("short")
-    test_CQ_short, train_CL_short, val_CL_short = load_short.load_data()
+    #load_short = vlm_data("short")
+    #test_CQ_short, train_CL_short, val_CL_short = load_short.load_data()
 
     load_other = vlm_data("other")
     test_CQ_other, train_CL_other, val_CL_other = load_other.load_data()
@@ -153,20 +154,20 @@ if __name__ == "__main__":
         pickle.dump(val_CL_long, f)
 
     # For middle system_message
-    with open('data/test_CQ_middle.pkl', 'wb') as f:
-        pickle.dump(test_CQ_middle, f)
-    with open('data/train_CL_middle.pkl', 'wb') as f:
-        pickle.dump(train_CL_middle, f)
-    with open('data/val_CL_middle.pkl', 'wb') as f:
-        pickle.dump(val_CL_middle, f)
+    #with open('data/test_CQ_middle.pkl', 'wb') as f:
+    #    pickle.dump(test_CQ_middle, f)
+    #with open('data/train_CL_middle.pkl', 'wb') as f:
+    #    pickle.dump(train_CL_middle, f)
+    #with open('data/val_CL_middle.pkl', 'wb') as f:
+    #    pickle.dump(val_CL_middle, f)
 
     # For short system_message
-    with open('data/test_CQ_short.pkl', 'wb') as f:
-        pickle.dump(test_CQ_short, f)
-    with open('data/train_CL_short.pkl', 'wb') as f:
-        pickle.dump(train_CL_short, f)
-    with open('data/val_CL_short.pkl', 'wb') as f:
-        pickle.dump(val_CL_short, f)
+    #with open('data/test_CQ_short.pkl', 'wb') as f:
+    #    pickle.dump(test_CQ_short, f)
+    #with open('data/train_CL_short.pkl', 'wb') as f:
+    #    pickle.dump(train_CL_short, f)
+    #with open('data/val_CL_short.pkl', 'wb') as f:
+    #    pickle.dump(val_CL_short, f)
 
     # For other system_message
     with open('data/test_CQ_other.pkl', 'wb') as f:
