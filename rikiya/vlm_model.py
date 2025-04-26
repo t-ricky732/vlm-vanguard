@@ -77,4 +77,6 @@ class vlm_model():
         return model, processor
 
 if __name__ == "__main__":
-    pass
+    instance = vlm_model(model_type="HuggingFaceTB/SmolVLM-256M-Instruct", quantization=False)
+    model, processor = instance.get_model()
+    print(model)

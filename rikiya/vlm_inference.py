@@ -183,7 +183,7 @@ class vlm_inference:
     def save_json_and_output(self):
         results_list = []
         i=0
-        for sample in self.test_data[0:20]:
+        for sample in self.test_data:
             entry = {"id": i,
                     "question": sample[1]['content'][1]['text'],
                     "ground_truth": sample[2]['content'][0]['text']} # Convert GT to string here
