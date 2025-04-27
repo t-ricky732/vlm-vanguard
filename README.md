@@ -22,7 +22,7 @@ The primary objective of this project is to improve the SmolVLM model’s abilit
 *   Access to the ChartLlama dataset (JSON files and corresponding images).
 *   Access to the ChartQA dataset (via Hugging Face `datasets`).
 
-Our work was mostly done with **Georgia Tech's PACE ICE GPU cluster**, **Amazon SageMaker**, and **Google Colab**. The sample notebook is built to be run in Google colab, but you can adapt it for use in alternative environments.
+Our work was mostly done with **Georgia Tech's PACE ICE GPU cluster**, **Amazon SageMaker**, and **Google Colab**. The sample notebook `final_notebook.ipynb` is built to be run in Google colab, but you can adapt it for use in alternative environments.
 
 ## Dependencies
 
