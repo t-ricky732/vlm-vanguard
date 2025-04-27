@@ -1,6 +1,9 @@
+# vlm_vanguard
 # Fine-tuning SmolVLM on the ChartLlama Dataset using LoRA/QLoRA
 
 This repository contains code and instructions for fine-tuning the **SmolVLM** models from Hugging Face, such as `HuggingFaceTB/SmolVLM-256M-Instruct`, on the [ChartLlama dataset](https://huggingface.co/datasets/listen2you002/ChartLlama-Dataset/tree/main). The fine-tuning process leverages **Parameter-Efficient Fine-Tuning (PEFT)** methods—specifically **LoRA (Low-Rank Adaptation)** and **QLoRA (Quantized LoRA)**—via the Hugging Face `transformers`, `peft`, and `trl` libraries. Since the complete ChartLlama dataset is not publicly accessible, we fine-tuned the model using the publicly available subset obtained from the above link, which includes 980 chart images paired with corresponding question–answer dialogues.
+
+This repository contains the code and resources for a project that aims to explore and enhance the capabilities of Vision Language Models through fine-tuning techniques. The project is part of a Deep Learning course at the Georgia Institute of Technology (CS7643 in Spring 2025). 
 
 ## Overview
 
