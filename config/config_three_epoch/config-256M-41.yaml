@@ -1,0 +1,26 @@
+Train:
+  quantization: True # True for QLoRA, relevant for training only
+  lora: True # Use True for lora, False for full tuning
+  r: 512 # default:8 LoRA config
+  lora_alpha: 256 # default:8 LoRA config
+  lora_dropout: 0.1 # default:0.1 LoRA config
+  target_modules: ["q_proj","k_proj","v_proj","o_proj","gate_proj", "up_proj","down_proj","lm_head"] # default:["down_proj", "o_proj", "k_proj", "q_proj", "gate_proj", "up_proj", "v_proj"] LoRA config
+  max_seq_length: 2048 # Fix this
+  per_device_train_batch_size: 4 # Fix this
+  gradient_accumulation_steps: 4  # Fix this
+  optim: "adamw_torch_fused" # Fix this
+  num_train_epochs: 3
+  learning_rate: 0.001
+  lr_scheduler_type: "reduce_lr_on_plateau"
+  weight_decay: 0.01 # Fix this
+  warmup_ratio: 0.1 # Fix this
+  logging_steps: 25 # Fix this
+  save_strategy: "epoch" # Fix this
+
+Model:
+  model_type: "HuggingFaceTB/SmolVLM-256M-Instruct" # Huggingface model ID
+  output_dir: "256M-instruct-comp-ti-41"
+
+Data:
+  data_path: "./data/" # location of data pickle files
+  data_type: "long" # "long", "middle", "short", "other"

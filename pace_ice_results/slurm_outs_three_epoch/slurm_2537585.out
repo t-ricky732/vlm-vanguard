@@ -1,0 +1,27 @@
+---------------------------------------
+Begin Slurm Prolog: Apr-26-2025 02:27:40
+Job ID:    2537585
+User ID:   ryoshida7
+Account:   coc
+Job name:  smolvlm-orig-inst-256M
+Partition: coc-gpu
+QOS:       coc-ice
+---------------------------------------
+r 8
+lora_alpha 8
+lora_dropout 0.1
+target_modules ['down_proj', 'o_proj', 'k_proj', 'q_proj', 'gate_proj', 'up_proj', 'v_proj']
+HuggingFaceTB/SmolVLM-256M-Instruct EM= 16.39%  Relaxed= 21.94%  (720 num / 726 valid)
+inference time: 49.878850011030835
+---------------------------------------
+Begin Slurm Epilog: Apr-26-2025 03:17:47
+Job ID:        2537585
+User ID:       ryoshida7
+Account:       coc
+Job name:      smolvlm-orig-inst-256M
+Resources:     cpu=1,gres/gpu:a100=1,mem=32G,node=1
+Rsrc Used:     cput=00:50:07,vmem=0,walltime=00:50:07,mem=10523672K,energy_used=0
+Partition:     coc-gpu
+QOS:           coc-ice
+Nodes:         atl1-1-01-005-15-0
+---------------------------------------
