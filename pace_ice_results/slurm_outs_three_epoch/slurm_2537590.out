@@ -1,0 +1,28 @@
+---------------------------------------
+Begin Slurm Prolog: Apr-26-2025 03:02:26
+Job ID:    2537590
+User ID:   ryoshida7
+Account:   coc
+Job name:  smolvlm-orig-base-2B
+Partition: coc-gpu
+QOS:       coc-ice
+---------------------------------------
+Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+r 8
+lora_alpha 8
+lora_dropout 0.1
+target_modules ['down_proj', 'o_proj', 'k_proj', 'q_proj', 'gate_proj', 'up_proj', 'v_proj']
+HuggingFaceTB/SmolVLM-Base EM=  0.90%  Relaxed=  2.42%  (866 num / 893 valid)
+inference time: 41.3220897436142
+---------------------------------------
+Begin Slurm Epilog: Apr-26-2025 03:44:04
+Job ID:        2537590
+User ID:       ryoshida7
+Account:       coc
+Job name:      smolvlm-orig-base-2B
+Resources:     cpu=1,gres/gpu:a100=1,mem=32G,node=1
+Rsrc Used:     cput=00:41:38,vmem=0,walltime=00:41:38,mem=14930248K,energy_used=0
+Partition:     coc-gpu
+QOS:           coc-ice
+Nodes:         atl1-1-01-005-13-0
+---------------------------------------

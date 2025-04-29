@@ -1,0 +1,13 @@
+
+Model,EM (%),Relaxed Num (%),# Numeric,# Valid,Average Accuracy (%),base_model,Average Accuracy (%)_Original,Improvement (%)
+SmolVLM-256M-Instruct-lora-tuned,26.46,32.64,766.0,824.0,29.55,SmolVLM-256M-Instruct,,
+SmolVLM-256M-Instruct-lora-tuned-customised,26.74,32.73,718.0,774.0,29.735,SmolVLM-256M-Instruct,,
+SmolVLM-256M-Instruct-lora-tuned-null,25.61,32.47,730.0,785.0,29.04,SmolVLM-256M-Instruct,,
+SmolVLM-256M-Instruct-lora-tuned-short,24.68,31.92,733.0,790.0,28.3,SmolVLM-256M-Instruct,,
+SmolVLM-256M-Instruct-qlora-tuned,25.0,30.89,845.0,900.0,27.945,SmolVLM-256M-Instruct,,
+SmolVLM-256M-Instruct-qlora-tuned-BEST-long,44.62,53.23,1843.0,1943.0,48.925,SmolVLM-256M-Instruct,,
+SmolVLM-256M-Instruct-qlora-tuned-BEST-null,40.93,50.3,1843.0,1945.0,45.614999999999995,SmolVLM-256M-Instruct,,
+SmolVLM-256M-Instruct-qlora-tuned-BEST-short,39.31,48.27,1850.0,1951.0,43.790000000000006,SmolVLM-256M-Instruct,,
+SmolVLM-256M-Instruct-qlora-tuned-customised,25.09,30.17,779.0,837.0,27.630000000000003,SmolVLM-256M-Instruct,,
+SmolVLM-256M-Instruct-qlora-tuned-null,24.15,29.96,831.0,886.0,27.055,SmolVLM-256M-Instruct,,
+SmolVLM-256M-Instruct-qlora-tuned-short,24.43,29.66,816.0,872.0,27.045,SmolVLM-256M-Instruct,,
